@@ -1,0 +1,46 @@
+.ui-kit-logo {
+  width: 48px;
+  height: 48px;
+  margin: 30px 0 0 30px;
+  /*outline: 2px solid red;*/
+  box-sizing: border-box;
+}
+
+.inputs-wrapper {
+  width: 320px;
+  padding: 0px;
+  margin-left: 141px;
+  margin-top: 65px;
+  /*outline: 2px solid green;*/
+  box-sizing: border-box;
+
+  &--small {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 42px;
+  }
+}
+
+@import "inputs/input.scss";
+
+.input-item {
+  margin-bottom: 20px;
+  /*outline: 2px solid green;*/
+  box-sizing: border-box;
+
+  &--middle {
+    max-width: 83%;
+    margin-top: 21px;
+    margin-bottom: 43px;
+    /*outline: 2px solid red;*/
+    box-sizing: border-box;
+  }
+
+  &--small {
+    max-width: 47%;
+    /*margin-top: 22px;*/
+    /*outline: 2px solid red;*/
+    box-sizing: border-box;
+  }
+}

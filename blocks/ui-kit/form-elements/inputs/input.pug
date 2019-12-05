@@ -1,0 +1,18 @@
+//- текстовое поле - общее
+
+//-block append style
+  //- не забыть поменять на scss!!!//
+//doctype html
+//head
+  link(rel="stylesheet" href="input.css")
+
+mixin textField(title="Default", style, type="text", name="text-field", placeholder="", action="echo", method="post")
+  .form-wrapper
+    form(action= action method= method)
+      label
+        .input__title= title
+        if style=="Hover / Focus"
+          .input__description.input__description--hover= style
+        else
+          .input__description= style
+        input(type= type, name= name, placeholder= placeholder)&attributes(attributes)
