@@ -1,81 +1,137 @@
-@mixin fonts($font: 'Montserrat', $fontPath: '../fonts/Montserrat/montserrat-') {
-
-  font-family: $font;
-  src: url($fontPath + '-webfont.eot?') format('eot'), 
-       url($fontPath + '-webfont.woff2') format('woff2'),
-       url($fontPath + '-webfont.ttf')  format('truetype'),
-       url($fontPath + '-webfont.svg#svgFontName') format('svg');
-}
-
-$fontType: regular; 
 @font-face {
-  @include fonts('Montserrat', '../fonts/Montserrat/montserrat-#{$fontType}');
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/montserrat-regular-webfont.eot?") format("eot"),
+       url("../fonts/Montserrat/montserrat-regular-webfont.woff2") format("woff2"),
+       url("../fonts/Montserrat/montserrat-regular-webfont.woff") format("woff"),
+       url("../fonts/Montserrat/montserrat-regular-webfont.ttf") format("truetype"),
+       url("../fonts/Montserrat/montserrat-regular-webfont.svg#svgFontName") format("svg");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  @include fonts('Opensans', '../fonts/Opensans/opensans-#{$fontType}');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  @include fonts('Quicksand', '../fonts/Quicksand/quicksand-#{$fontType}');
-  font-weight: 400;
-  font-style: normal;
-}
-
-$fontType: italic; 
-@font-face {
-  @include fonts('Montserrat', '../fonts/Montserrat/montserrat-#{$fontType}');
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/montserrat-italic-webfont.eot?") format("eot"),
+       url("../fonts/Montserrat/montserrat-italic-webfont.woff2") format("woff2"),
+       url("../fonts/Montserrat/montserrat-italic-webfont.woff") format("woff"),
+       url("../fonts/Montserrat/montserrat-italic-webfont.ttf") format("truetype"),
+       url("../fonts/Montserrat/montserrat-italic-webfont.svg#svgFontName") format("svg");
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
-  @include fonts('Opensans', '../fonts/Opensans/opensans-#{$fontType}');
-  font-weight: 400;
-  font-style: italic;
-}
-@font-face {
-  @include fonts('Quicksand', '../fonts/Quicksand/quicksand-#{$fontType}');
-  font-weight: 400;
-  font-style: italic;
-}
-
-$fontType: bold; 
-@font-face {
-  @include fonts('Montserrat', '../fonts/Montserrat/montserrat-#{$fontType}');
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/montserrat-bold-webfont.eot?") format("eot"),
+       url("../fonts/Montserrat/montserrat-bold-webfont.woff2") format("woff2"),
+       url("../fonts/Montserrat/montserrat-bold-webfont.woff") format("woff"),
+       url("../fonts/Montserrat/montserrat-bold-webfont.ttf") format("truetype"),
+       url("../fonts/Montserrat/montserrat-bold-webfont.svg#svgFontName") format("svg");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  @include fonts('Opensans', '../fonts/Opensans/opensans-#{$fontType}');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  @include fonts('Quicksand', '../fonts/Quicksand/quicksand-#{$fontType}');
-  font-weight: 700;
-  font-style: normal;
-}
-
-$fontType: bolditalic; 
-@font-face {
-  @include fonts('Montserrat', '../fonts/Montserrat/montserrat-#{$fontType}');
-  font-weight: 700;
-  font-style: italic;
-}
-@font-face {
-  @include fonts('Opensans', '../fonts/Opensans/opensans-#{$fontType}');
-  font-weight: 700;
-  font-style: italic;
-}
-@font-face {
-  @include fonts('Quicksand', '../fonts/Quicksand/quicksand-#{$fontType}');
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/montserrat-bolditalic-webfont.eot?") format("eot"),
+       url("../fonts/Montserrat/montserrat-bolditalic-webfont.woff2") format("woff2"),
+       url("../fonts/Montserrat/montserrat-bolditalic-webfont.woff") format("woff"),
+       url("../fonts/Montserrat/montserrat-bolditalic-webfont.ttf") format("truetype"),
+       url("../fonts/Montserrat/montserrat-bolditalic-webfont.svg#svgFontName") format("svg");
   font-weight: 700;
   font-style: italic;
 }
 
-//Material Icons Font without Mixins
+@font-face {
+  font-family: "Opensans";
+  src: url("../fonts/Opensans/opensans-regular-webfont.eot?") format("eot"),
+       url("../fonts/Opensans/opensans-regular-webfont.woff2") format("woff2"),
+       url("../fonts/Opensans/opensans-regular-webfont.woff") format("woff"),
+       url("../fonts/Opensans/opensans-regular-webfont.ttf") format("truetype"),
+       url("../fonts/Opensans/opensans-regular-webfont.svg#svgFontName") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Opensans";
+  src: url("../fonts/Opensans/opensans-italic-webfont.eot?") format("eot"),
+       url("../fonts/Opensans/opensans-italic-webfont.woff2") format("woff2"),
+       url("../fonts/Opensans/opensans-italic-webfont.woff") format("woff"),
+       url("../fonts/Opensans/opensans-italic-webfont.ttf") format("truetype"),
+       url("../fonts/Opensans/opensans-italic-webfont.svg#svgFontName") format("svg");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Opensans";
+  src: url("../fonts/Opensans/opensans-bold-webfont.eot?") format("eot"),
+      url("../fonts/Opensans/opensans-bold-webfont.woff2") format("woff2"),
+      url("../fonts/Opensans/opensans-bold-webfont.woff") format("woff"),
+      url("../fonts/Opensans/opensans-bold-webfont.ttf") format("truetype"),
+      url("../fonts/Opensans/opensans-bold-webfont.svg#svgFontName") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Opensans";
+  src: url("../fonts/Opensans/opensans-bolditalic-webfont.eot?") format("eot"),
+       url("../fonts/Opensans/opensans-bolditalic-webfont.woff2") format("woff2"),
+       url("../fonts/Opensans/opensans-bolditalic-webfont.woff") format("woff"),
+       url("../fonts/Opensans/opensans-bolditalic-webfont.ttf") format("truetype"),
+       url("../fonts/Opensans/opensans-bolditalic-webfont.svg#svgFontName") format("svg");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand/quicksand-400-normal-webfont.eot?") format("eot"),
+       url("../fonts/Quicksand/quicksand-400-normal-webfont.woff2") format("woff2"),
+       url("../fonts/Quicksand/quicksand-400-normal-webfont.woff") format("woff"),
+       url("../fonts/Quicksand/quicksand-400-normal-webfont.ttf") format("truetype"),
+       url("../fonts/Quicksand/quicksand-400-normal-webfont.svg#svgFontName") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand/quicksand-400-normal-webfont.eot?") format("eot"),
+       url("../fonts/Quicksand/quicksand-400-normal-webfont.woff2") format("woff2"),
+       url("../fonts/Quicksand/quicksand-400-normal-webfont.woff") format("woff"),
+       url("../fonts/Quicksand/quicksand-400-normal-webfont.ttf") format("truetype"),
+       url("../fonts/Quicksand/quicksand-400-normal-webfont.svg#svgFontName") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand/quicksand-400-italic-webfont.eot?") format("eot"),
+       url("../fonts/Quicksand/quicksand-400-italic-webfont.woff2") format("woff2"),
+       url("../fonts/Quicksand/quicksand-400-italic-webfont.woff") format("woff"),
+       url("../fonts/Quicksand/quicksand-400-italic-webfont.ttf") format("truetype"),
+       url("../fonts/Quicksand/quicksand-400-italic-webfont.svg#svgFontName") format("svg");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand/quicksand-700-normal-webfont.eot?") format("eot"),
+       url("../fonts/Quicksand/quicksand-700-normal-webfont.woff2") format("woff2"),
+       url("../fonts/Quicksand/quicksand-700-normal-webfont.woff") format("woff"),
+       url("../fonts/Quicksand/quicksand-700-normal-webfont.ttf") format("truetype"),
+       url("../fonts/Quicksand/quicksand-700-normal-webfont.svg#svgFontName") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand/quicksand-700-italic-webfont.eot?") format("eot"),
+       url("../fonts/Quicksand/quicksand-700-italic-webfont.woff2") format("woff2"),
+       url("../fonts/Quicksand/quicksand-700-italic-webfont.woff") format("woff"),
+       url("../fonts/Quicksand/quicksand-700-italic-webfont.ttf") format("truetype"),
+       url("../fonts/Quicksand/quicksand-700-italic-webfont.svg#svgFontName") format("svg");
+  font-weight: 700;
+  font-style: italic;
+}
+
+/*Material Icons Font without Mixins
 
 //@font-face
-  //font-family: MaterialIcons;
+  //font-family: MaterialIcons;*/

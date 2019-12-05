@@ -1,0 +1,4 @@
+.cache/
+node_modules/
+Pages in .jpg/
+dist/

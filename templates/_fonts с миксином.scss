@@ -1,0 +1,86 @@
+@mixin fonts($font: 'Montserrat', $fontPath: '../fonts/Montserrat/montserrat-') {
+
+  font-family: $font;
+  src: url($fontPath + '-webfont.eot?') format('eot'), 
+       url($fontPath + '-webfont.woff2') format('woff2'),
+       url($fontPath + '-webfont.woff') format('woff'),
+       url($fontPath + '-webfont.ttf')  format('truetype'),
+       url($fontPath + '-webfont.svg#svgFontName') format('svg');
+}
+
+$fontType: regular; 
+@font-face {
+  @include fonts('Montserrat', '../fonts/Montserrat/montserrat-#{$fontType}');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  @include fonts('Opensans', '../fonts/Opensans/opensans-#{$fontType}');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  @include fonts('Quicksand', '../fonts/Quicksand/quicksand-#{$fontType}');
+  font-weight: 400;
+  font-style: normal;
+}
+
+$fontType: italic; 
+@font-face {
+  @include fonts('Montserrat', '../fonts/Montserrat/montserrat-#{$fontType}');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  @include fonts('Opensans', '../fonts/Opensans/opensans-#{$fontType}');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  @include fonts('Quicksand', '../fonts/Quicksand/quicksand-#{$fontType}');
+  font-weight: 400;
+  font-style: italic;
+}
+
+$fontType: bold; 
+@font-face {
+  @include fonts('Montserrat', '../fonts/Montserrat/montserrat-#{$fontType}');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  @include fonts('Opensans', '../fonts/Opensans/opensans-#{$fontType}');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  @include fonts('Quicksand', '../fonts/Quicksand/quicksand-#{$fontType}');
+  font-weight: 700;
+  font-style: normal;
+}
+
+$fontType: bolditalic; 
+@font-face {
+  @include fonts('Montserrat', '../fonts/Montserrat/montserrat-#{$fontType}');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  @include fonts('Opensans', '../fonts/Opensans/opensans-#{$fontType}');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  @include fonts('Quicksand', '../fonts/Quicksand/quicksand-#{$fontType}');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  @include fonts('Quicksand', '../fonts/Quicksand/quicksand-variablefont_wght');
+}
+
+//Material Icons Font without Mixins
+
+//@font-face
+  //font-family: MaterialIcons;
