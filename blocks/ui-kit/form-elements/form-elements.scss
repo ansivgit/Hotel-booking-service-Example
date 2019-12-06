@@ -2,17 +2,26 @@
   width: 48px;
   height: 48px;
   margin: 30px 0 0 30px;
-  /*outline: 2px solid red;*/
+  /*outline: 2px solid red;
+  box-sizing: border-box;*/
+}
+
+section.inputs {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  margin-left: 141px;
+  margin-top: 65px;
+  outline: 2px solid green;
   box-sizing: border-box;
 }
 
 .inputs-wrapper {
   width: 320px;
-  padding: 0px;
-  margin-left: 141px;
-  margin-top: 65px;
-  /*outline: 2px solid green;*/
-  box-sizing: border-box;
+  padding: 0; /*trying wo it попробовать без них и маргинов*/
+  margin: 0;
+  /*outline: 2px solid green;
+  box-sizing: border-box;*/
 
   &--small {
     display: flex;
@@ -26,21 +35,39 @@
 
 .input-item {
   margin-bottom: 20px;
-  /*outline: 2px solid green;*/
-  box-sizing: border-box;
+  /*outline: 2px solid green;
+  box-sizing: border-box;*/
 
   &--middle {
-    max-width: 83%;
+    max-width: 266px / 320 px * 100%;
     margin-top: 21px;
     margin-bottom: 43px;
-    /*outline: 2px solid red;*/
-    box-sizing: border-box;
+    /*outline: 2px solid red;
+    box-sizing: border-box;*/
   }
 
   &--small {
-    max-width: 47%;
+    max-width: 150px / 320 px * 100%;
     /*margin-top: 22px;*/
-    /*outline: 2px solid red;*/
-    box-sizing: border-box;
+    /*outline: 2px solid red;
+    box-sizing: border-box;*/
   }
+}
+
+.toggles-wrapper {
+  width: 270px;
+  padding: 0; /*trying wo it попробовать без них и маргинов*/
+  margin: 0;
+  outline: 2px solid green;
+  box-sizing: border-box;
+}
+
+.checkbox-buttons {
+  max-width: 100%;
+  outline: 2px solid red;
+  box-sizing: border-box;
+}
+
+.checkbox-buttons__title {
+  color: red;
 }
