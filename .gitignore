@@ -6,3 +6,5 @@ blocks/ui-kit/form-elements/form-elements.css
 *.css
 *.css.map
 *.html
+package-lock.json
+package.json
