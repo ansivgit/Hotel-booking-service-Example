@@ -1,3 +1,5 @@
+@import "../../../templates/_mixins.scss";
+
 .ui-kit-logo {
   width: 48px;
   height: 48px;
@@ -12,14 +14,12 @@ section.inputs {
   padding: 0;
   margin-left: 141px;
   margin-top: 65px;
-  outline: 2px solid green;
+  outline: 2px solid blue;
   box-sizing: border-box;
 }
 
 .inputs-wrapper {
   width: 320px;
-  padding: 0; /*trying wo it попробовать без них и маргинов*/
-  margin: 0;
   /*outline: 2px solid green;
   box-sizing: border-box;*/
 
@@ -33,13 +33,13 @@ section.inputs {
 
 @import "inputs/input.scss";
 
-.input-item {
+.input__item {
   margin-bottom: 20px;
   /*outline: 2px solid green;
   box-sizing: border-box;*/
 
   &--middle {
-    max-width: 266px / 320 px * 100%;
+    max-width: 266px / 320px * 100%;
     margin-top: 21px;
     margin-bottom: 43px;
     /*outline: 2px solid red;
@@ -47,27 +47,76 @@ section.inputs {
   }
 
   &--small {
-    max-width: 150px / 320 px * 100%;
-    /*margin-top: 22px;*/
+    max-width: 150px / 320px * 100%;
     /*outline: 2px solid red;
     box-sizing: border-box;*/
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
 .toggles-wrapper {
-  width: 270px;
-  padding: 0; /*trying wo it попробовать без них и маргинов*/
-  margin: 0;
-  outline: 2px solid green;
-  box-sizing: border-box;
+  width: 260px;
+  margin-left: 126px;
+  /*outline: 2px solid green;
+  box-sizing: border-box;*/
+}
+
+.checkbox-buttons__title,
+.radio-buttons__title,
+.toggles__title,
+.like-buttons__title,
+.rate-buttons__title {
+  @include h3Type;
+  margin-bottom: 16px;
 }
 
 .checkbox-buttons {
-  max-width: 100%;
+  max-width: 225px;
+  margin-bottom: 41px;
+  /*outline: 2px solid red;
+  box-sizing: border-box;*/
+}
+
+.checkbox-buttons__item {
+  margin-top: 14px;
+  line-height: 18px;
+  /* identical to box height, or 129% */
+  color: rgba(31, 32, 65, 0.5); /* Dark 50% */
+  /*outline: 2px solid blueviolet;
+  box-sizing: border-box;*/
+}
+
+@import "checkbox/checkbox.scss";
+
+.radio-buttons {
+  /*max-width: 100%;*/
+  margin-bottom: 37px;
   outline: 2px solid red;
   box-sizing: border-box;
 }
 
-.checkbox-buttons__title {
-  color: red;
+@import "radiobuttons/radiobuttons.scss";
+
+.toggles {
+  /*max-width: 100%;*/
+  margin-bottom: 40px;
+  outline: 2px solid red;
+  box-sizing: border-box;
+}
+
+.like-buttons {
+  /*max-width: 100%;*/
+  margin-bottom: 40px;
+  outline: 2px solid red;
+  box-sizing: border-box;
+}
+
+.rate-buttons {
+  /*max-width: 100%;
+  margin-bottom: 41px;*/
+  outline: 2px solid red;
+  box-sizing: border-box;
 }

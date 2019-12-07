@@ -8,15 +8,7 @@
   margin-top: 0px;
   margin-bottom: 5px;
   max-width: 310px;
-  font-family: Montserrat, Arial, sans-serif;
-  /*это вставить как переменную(или инклюд) из color-types*/
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: #1F2041;
-  /*конец переменной*/
+  @include h3Type; /*здесь только параметры заголовка из ui-kit*/
   /*outline: 2px solid red;*/
 }
 
@@ -58,34 +50,36 @@
   }
 }
 
-input.input__field::-moz-placeholder {
-  color: rgba(31, 32, 65, 0.75);
-}
-input.input__field::-webkit-input-placeholder {
-  color: rgba(31, 32, 65, 0.75);
-}
-input.input__field::-ms-input-placeholder {
-  color: rgba(31, 32, 65, 0.75);
-}
-input.input__field::-ms-input-placeholder {
-  color: rgba(31, 32, 65, 0.75);
-}
-input.input__field::placeholder {
-  color: rgba(31, 32, 65, 0.75);
-}
+input
+  .input__field::-moz-placeholder {
+    color: rgba(31, 32, 65, 0.75);
+  }
+  .input__field::-webkit-input-placeholder {
+    color: rgba(31, 32, 65, 0.75);
+  }
+  .input__field::-ms-input-placeholder {
+    color: rgba(31, 32, 65, 0.75);
+  }
+  .input__field::-ms-input-placeholder {
+    color: rgba(31, 32, 65, 0.75);
+  }
+  .input__field::placeholder {
+    color: rgba(31, 32, 65, 0.75);
+  }
 
-input.input__field--light::-moz-placeholder {
-  color: rgba(31, 32, 65, 0.25);
-}
-input.input__field--light::-webkit-input-placeholder {
-  color: rgba(31, 32, 65, 0.25);
-}
-input.input__field--light::-ms-input-placeholder {
-  color: rgba(31, 32, 65, 0.25);
-}
-input.input__field--light::-ms-input-placeholder {
-  color: rgba(31, 32, 65, 0.25);
-}
-input.input__field--light::placeholder {
-  color: rgba(31, 32, 65, 0.25);
-}
+  /*то, что ниже, тоже можно вставить в блок миксинов, если будет применяться часто*/
+  .input__field--light::-moz-placeholder {
+    color: rgba(31, 32, 65, 0.25);
+  }
+  .input__field--light::-webkit-input-placeholder {
+    color: rgba(31, 32, 65, 0.25);
+  }
+  .input__field--light::-ms-input-placeholder {
+    color: rgba(31, 32, 65, 0.25);
+  }
+  .input__field--light::-ms-input-placeholder {
+    color: rgba(31, 32, 65, 0.25);
+  }
+  .input__field--light::placeholder {
+    color: rgba(31, 32, 65, 0.25);
+  }

@@ -6,9 +6,10 @@
 //head
   link(rel="stylesheet" href="input.css")
 
-mixin textField(title="Default", style, type="text", name="text-field", placeholder="", action="echo", method="post")
+mixin textField(title="Default", style, type="text", name="text-field", placeholder="", action="/some-address/change-me", method="post")
   .form-wrapper
     form(action= action method= method)
+      //- здесь, наверное, форма не нужна, т.к. она будет единая для блока
       label
         .input__title= title
         if style=="Hover / Focus"
