@@ -1,0 +1,39 @@
+@mixin h1Type {
+  font-family: Quicksand, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  color: #1f2041;
+  letter-spacing: -0.015em;  
+}
+
+@mixin h2Type {
+  font-family: Quicksand, Arial, sans-serif;;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  color: #1F2041;
+  letter-spacing: -0.015em;
+}
+
+@mixin h3Type {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+  text-transform: uppercase;
+  color: #1F2041;
+}
+@mixin bodyType {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  /* or 171% */
+}
