@@ -1,0 +1,6 @@
+//- toggles block
+
+mixin toggles(id="offers-agree", name="special-offer", title="Получать спецпредложения", type="checkbox")
+  .toggles-block
+    input(id= id, name= name, type= type)&attributes(attributes)
+    label(for= id)= title

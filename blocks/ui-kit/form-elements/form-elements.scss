@@ -60,8 +60,8 @@ section.inputs {
 .toggles-wrapper {
   width: 260px;
   margin-left: 126px;
-  /*outline: 2px solid green;
-  box-sizing: border-box;*/
+  outline: 2px solid green;
+  box-sizing: border-box;
 }
 
 .checkbox-buttons__title,
@@ -103,14 +103,29 @@ section.inputs {
 .toggles {
   /*max-width: 100%;*/
   margin-bottom: 40px;
+  padding: 0;
   outline: 2px solid red;
   box-sizing: border-box;
 }
 
+@import "toggles/toggles.scss";
+
+.toggle__item {
+  margin-bottom: 10px;
+  outline: 2px solid rosybrown;
+  box-sizing: border-box;
+}
+
 .like-buttons {
-  /*max-width: 100%;*/
   margin-bottom: 40px;
   outline: 2px solid red;
+  box-sizing: border-box;
+}
+
+.like-buttons__item {
+  display: inline-block;
+  margin-right: 10px;
+  outline: 2px solid yellow;
   box-sizing: border-box;
 }
 

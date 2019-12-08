@@ -57,14 +57,22 @@ section.inputs
       include radiobuttons/radiobuttons.pug
 
     .toggles
-      .toggles__title Toggle
-      .toggles__item Получать спецпредложения
-      .toggles__item Получать спецпредложения
+      include toggles/toggles.pug
 
+      .toggles__title Toggle
+      .toggle__item
+        +toggles()(class="", checked)
+      .toggle__item
+        +toggles("offers-no-agree")(class="")
+      
     .like-buttons
+      include likes/likes.pug
+
       .like-buttons__title Like button
-      .like-buttons__item 2
-      .like-buttons__item 12
+      .like-buttons__item
+        +likeButton()(class="")
+      .like-buttons__item
+        +likeButton("more-likes", "12")(class="", checked)
 
     .rate-buttons
       .rate-buttons__title Rate button
