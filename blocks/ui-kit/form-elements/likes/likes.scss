@@ -2,6 +2,8 @@
   width: 40px;
   height: 20px;
   margin: 0px;
+  outline: 2px solid violet;
+  box-sizing: border-box;
 
   input[type=checkbox] {
     display: none;
@@ -10,7 +12,18 @@
   input[type=checkbox] ~ label {
     display: inline-block;
     position: relative;
-    /*margin-left: 50px;*/
+    margin-left: 20px;
+    margin-top: -4px;
+    vertical-align: middle;
+    font-size: 10px;
+    line-height: 20px;
+    /* in ui-kit 12px - identical to box height */
+    text-align: center;
+    color: rgba(31, 32, 65, 0.25);
+  }
+
+  input[type=checkbox]:checked ~ label {
+    color: #BC9CFF;
   }
 
   input[type=checkbox] ~ label::before {
@@ -18,7 +31,7 @@
     display: block;
     position: absolute;
     top: 0px;
-    left: 0px;
+    left: -20px;
     width: 40px;
     height: 20px;
     border: 1px solid rgba(65, 31, 42, 0.25);
@@ -32,26 +45,30 @@
   }
 
   input[type=checkbox] ~ label::after {
-    content: "";
-    display: block;
+    display: inline-block;
     position: absolute;
-    top: 5px;
-    left: -46px;
-    width: 12px;
-    height: 12px;
-    margin-right: 10px;
-    border-radius: 50%;
-    background-color: rgba(31, 32, 65, 0.25);
-    transition-timing-function: ease-in;
-    transition-duration: 200ms;
+    top: 0px;
+    left: -15px;
+    content: "\e87e";
+    font-family: 'Material Icons';
+    font-size: 10px;
+    color: rgba(31, 32, 65, 0.25);
+    margin-right: 12px;
+    /*outline: 2px solid red;
+    box-sizing: border-box;*/
   }
 
-  input[type=checkbox]:checked ~ label::after {    
-    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    transform: translateX(20px);
-    transition-timing-function: ease-in;
-    transition-duration: 200ms;
-  }
-
-  
+  input[type=checkbox]:checked ~ label::after {
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: -15px;
+    content: "\e87d";
+    font-family: 'Material Icons';
+    font-size: 10px;
+    color: #BC9CFF;
+    margin-right: 12px;
+    /*outline: 2px solid red;
+    box-sizing: border-box;*/
+  }  
 }

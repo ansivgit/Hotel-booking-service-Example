@@ -122,10 +122,12 @@ section.inputs {
   box-sizing: border-box;
 }
 
+@import "likes/likes.scss";
+
 .like-buttons__item {
   display: inline-block;
-  margin-right: 10px;
-  outline: 2px solid yellow;
+  margin-right: 5px;
+  outline: 2px dashed yellow;
   box-sizing: border-box;
 }
 
