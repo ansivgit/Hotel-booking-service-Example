@@ -19,11 +19,11 @@
     line-height: 20px;
     /* in ui-kit 12px - identical to box height */
     text-align: center;
-    color: rgba(31, 32, 65, 0.25);
+    color: $secondary-color;
   }
 
   input[type=checkbox]:checked ~ label {
-    color: #BC9CFF;
+    color: $primary-theme-color;
   }
 
   input[type=checkbox] ~ label::before {
@@ -34,14 +34,15 @@
     left: -20px;
     width: 40px;
     height: 20px;
-    border: 1px solid rgba(65, 31, 42, 0.25);
+    border: 1px solid $secondary-color;
+    ;
     /* Dark 25% */
     box-sizing: border-box;
     border-radius: 10px;
   }
 
   input[type=checkbox]:checked ~ label::before {
-    border: 1px solid #BC9CFF;
+    border: 1px solid $primary-theme-color;
   }
 
   input[type=checkbox] ~ label::after {
@@ -50,7 +51,7 @@
     top: 0px;
     left: -15px;
     content: "\e87e";
-    font-family: 'Material Icons';
+    font-family: "Material Icons";
     font-size: 10px;
     color: rgba(31, 32, 65, 0.25);
     margin-right: 12px;
@@ -64,9 +65,9 @@
     top: 0px;
     left: -15px;
     content: "\e87d";
-    font-family: 'Material Icons';
+    font-family: "Material Icons";
     font-size: 10px;
-    color: #BC9CFF;
+    color: $primary-theme-color;
     margin-right: 12px;
     /*outline: 2px solid red;
     box-sizing: border-box;*/

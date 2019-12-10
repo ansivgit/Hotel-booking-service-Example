@@ -1,0 +1,12 @@
+- var rateNumber = 5; // - максимальное кол-во "звезд"
+
+.rate-buttons-block
+  mixin rating(value)
+    .rate-buttons__item
+      - var n = 0;
+        while n < value + 1
+          i.material-icons star
+
+      - var n = 0
+        while n < rateNumber - value + 1
+          i.material-icons star_border

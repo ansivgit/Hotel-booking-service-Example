@@ -27,12 +27,11 @@
   }
 
   input[type=checkbox] ~ label::before {
-    border: 1px solid rgba(65, 31, 42, 0.25);
-    /* Dark 25% */
+    border: 1px solid $secondary-color;
   }
 
   input[type=checkbox]:checked ~ label::before {
-    border: 1px solid #BC9CFF;
+    border: 1px solid $primary-theme-color;
   }
 
   input[type=checkbox] ~ label::after {
@@ -45,13 +44,13 @@
     height: 12px;
     margin-right: 10px;
     border-radius: 50%;
-    background-color: rgba(31, 32, 65, 0.25);
+    background-color: $secondary-color;
     transition-timing-function: ease-in;
     transition-duration: 200ms;
   }
 
   input[type=checkbox]:checked ~ label::after {    
-    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background-image: $primary-gradient;
     transform: translateX(20px);
     transition-timing-function: ease-in;
     transition-duration: 200ms;

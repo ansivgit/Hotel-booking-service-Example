@@ -2,11 +2,13 @@ include ../../../templates/common-template.pug
 
 block append style
   //- не забыть поменять на scss!!!//
-  link(rel="stylesheet" href="colors-type.css") 
+  link(rel="stylesheet" href="colors-type.css")
 
 .ui-kit-logo
-      .logo__picture
-        img(src="../img/logo-gray.svg")
+  .logo__picture
+    // - проверить пути
+    include ../img/logo-gray.svg 
+        
 .colors-type-wrapper
   .colors-wrapper
     .colors-item
@@ -34,13 +36,13 @@ block append style
   .type-wrapper
     .type-item
       .type-item__title.type-item__title--h1 H1
-      .type-item__description.type-item__description--h1 This one is the sub-section or widget title
+      h1.type-item__description This one is the sub-section or widget title
     .type-item
       .type-item__title.type-item__title--h2 H2
-      .type-item__description.type-item__description--h2 Next one is the item title inside widgets
+      h2.type-item__description Next one is the item title inside widgets
     .type-item
       .type-item__title.type-item__title--h3 H3
-      .type-item__description.type-item__description--h3 This is a label or CTA text
+      h3.type-item__description This is a label or CTA text
     .type-item
       .type-item__title.type-item__title--body Body
-      .type-item__description.type-item__description--body This is the body text which is used for most of the design, like paragraphs, sts, etc.
+      .type-item__description This is the body text which is used for most of the design, like paragraphs, sts, etc.

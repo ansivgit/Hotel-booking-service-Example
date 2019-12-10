@@ -1,10 +1,4 @@
-/*.checkbox-wrapper {
-  display: inline-block;
-  width: 100%;
-  margin: 0px;
-}*/
-
-.checkbox-buttons__item {
+.checkbox-block {
   input[type=checkbox] {
     display: none;
   }
@@ -12,6 +6,8 @@
   input[type=checkbox] ~ label {
     display: block;
     margin-left: 30px;
+    line-height: 18px; /* identical to box height, or 129% */
+    color: $middle-color;
   }
 
   input[type=checkbox] ~ label::before {
@@ -23,8 +19,7 @@
     margin-right: 10px;
     margin-top: -7px;
     vertical-align: middle;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    /* Dark 25% */
+    border: 1px solid $secondary-color;
     box-sizing: border-box;
     border-radius: 4px;
   }
@@ -37,7 +32,7 @@
     margin-left: -30px;
     margin-top: -7px;
     vertical-align: middle;
-    border: 1px solid#BC9CFF;
+    border: 1px solid $primary-theme-color;
     box-sizing: border-box;
     border-radius: 4px;
     /*background-color: seagreen;*/

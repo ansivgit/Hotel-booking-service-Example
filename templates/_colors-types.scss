@@ -1,24 +1,42 @@
-@mixin h1Type {
+//- colors
+
+//- text, borders, etc
+$primary-color: rgba(31, 32, 65, 0.75);
+$secondary-color: rgba(31, 32, 65, 0.25);
+$middle-color: rgba(31, 32, 65, 0.5);
+$lightest-color: rgba(31, 32, 65, 0.05);
+$dark-color: #1F2041;
+
+//- theme colors
+$primary-theme-color: #BC9CFF;
+$secondary-theme-color: #6FCF97;
+
+$primary-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+$secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+
+//- types
+
+h1 {
   font-family: Quicksand, Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
   line-height: 30px;
-  color: #1f2041;
+  color: $dark-color;
   letter-spacing: -0.015em;  
 }
 
-@mixin h2Type {
+h2 {
   font-family: Quicksand, Arial, sans-serif;;
   font-style: normal;
   font-weight: bold;
   font-size: 19px;
   line-height: 24px;
-  color: #1F2041;
+  color: $dark-color;
   letter-spacing: -0.015em;
 }
 
-@mixin h3Type {
+h3 {
   font-family: Montserrat, Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -26,14 +44,15 @@
   line-height: 15px;
   /* identical to box height */
   text-transform: uppercase;
-  color: #1F2041;
+  color: $dark-color;
 }
-@mixin bodyType {
+
+body {
   font-family: Montserrat, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 24px;
-  color: rgba(31, 32, 65, 0.75);
   /* or 171% */
+  color: $primary-color;  
 }

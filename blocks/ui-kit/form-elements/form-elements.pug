@@ -6,43 +6,44 @@ block append style
 
 .ui-kit-logo
   .logo__picture
-    img(src="../img/logo-gray.svg")
+    // - проверить пути
+    include ../img/logo-gray.svg 
 
 section.inputs
   .inputs-wrapper
     include inputs/input.pug
 
     .input__item.input__item--default
-      //- textField(title, style[Default/ Hover / Fokus], type, name - requaired; placeholder="", action="echo", method="post")
-      +textField("Text field", "Default", "text", "email", "Email")(class="input__field input__field--default input__field--light")
+      //- textField(title, style[dropdown/subscribe], description[Default/ Hover / Fokus], type, name - requaired; placeholder="", action="echo", method="post")
+      +textField("Text field", "", "Default", "text", "email", "Email")(class="input__field input__field--default input__field--light")
 
     .input__item.input__item--hover
-      +textField("Text field", "Hover / Focus", "text", "default", "This is pretty awesome")(class="input__field input__field--hover")
+      +textField("Text field", "", "Hover / Focus", "text", "default", "This is pretty awesome")(class="input__field input__field--hover")
 
     .input__item.input__item--dropdown
-      +textField("Dropdown", "Default", "text", "numberGuests", "Сколько гостей")(class="input__field input__field--dropdown")
+      +textField("Dropdown", "dropdown", "Default", "text", "numberGuests", "Сколько гостей")(class="input__field input__field--dropdown")
 
     .input__item.input__item--masked
-      +textField("Masked text field", "Default", "text", "datePicker", "ДД.ММ.ГГГГ")(class="input__field input__field--datepicker input__field--light")
+      +textField("Masked text field", "", "Default", "text", "datePicker", "ДД.ММ.ГГГГ")(class="input__field input__field--datepicker input__field--light")
 
     .inputs-wrapper--small
       .input__item.input__item--small.input__item--dropdown
-        +textField("Date dropdown", "", "text", "datePicker", "ДД.ММ.ГГГГ")(class="input__field input__field--small input__field--dropdown")
+        +textField("Date dropdown", "dropdown", "", "text", "datePicker", "ДД.ММ.ГГГГ")(class="input__field input__field--small input__field--dropdown")
 
       .input__item.input__item--small.input__item--dropdown
-        +textField("Date dropdown", "", "text", "datePicker", "19.08.2019")(class="input__field input__field--small input__field--dropdown")
+        +textField("Date dropdown", "dropdown", "", "text", "datePicker", "19.08.2019")(class="input__field input__field--small input__field--dropdown")
 
     .input__item.input__item--middle.input__item--dropdown
-      +textField("Filter date dropdown", "", "text", "datePicker", "19 авг - 23 авг")(class="input__field input__field--middle input__field--dropdown")
+      +textField("Filter date dropdown", "dropdown", "", "text", "datePicker", "19 авг - 23 авг")(class="input__field input__field--middle input__field--dropdown")
 
     .input__item.input__item--middle.input__item--arrow
-      +textField("Subscription text field", "", "text", "email", "Email")(class="input__field input__field--middle input__field--light")
+      +textField("Subscription text field", "subscribe", "", "text", "email", "Email")(class="input__field input__field--middle input__field--light")
 
   .toggles-wrapper
     include checkbox/checkbox.pug
 
     .checkbox-buttons
-      .checkbox-buttons__title Checkbox Buttons
+      h3.checkbox-buttons__title Checkbox Buttons
       .checkbox-buttons__item
         +checkbox("checkbox-smoke", "Можно курить")(class="")
       
@@ -53,13 +54,13 @@ section.inputs
         +checkbox("checkbox-guests", "Можно пригласить гостей (до 10 человек)")(class="", checked)
 
     .radio-buttons
-      .radio-buttons__title Radio Buttons
+      h3.radio-buttons__title Radio Buttons
       include radiobuttons/radiobuttons.pug
 
     .toggles
       include toggles/toggles.pug
 
-      .toggles__title Toggle
+      h3.toggles__title Toggle
       .toggle__item
         +toggles()(class="", checked)
       .toggle__item
@@ -68,16 +69,20 @@ section.inputs
     .like-buttons
       include likes/likes.pug
 
-      .like-buttons__title Like button
+      h3.like-buttons__title Like button
       .like-buttons__item
         +likeButton()(class="")
       .like-buttons__item
         +likeButton("more-likes", "12")(class="", checked)
 
     .rate-buttons
-      .rate-buttons__title Rate button
-      .rate-buttons__item ****
-      .rate-buttons__item *****
+      include ratebuttons/ratebuttons.pug
+
+      h3.rate-buttons__title Rate button
+      .rate-buttons__item
+        +rating(3)
+      .rate-buttons__item
+        +rating(4)
 
 section.dropdowns
 

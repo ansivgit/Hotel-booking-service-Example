@@ -1,4 +1,4 @@
-@import "../../../templates/_mixins.scss";
+@import "../../../templates/common-template.scss";
 
 .ui-kit-logo {
   width: 48px;
@@ -69,7 +69,6 @@ section.inputs {
 .toggles__title,
 .like-buttons__title,
 .rate-buttons__title {
-  @include h3Type;
   margin-bottom: 16px;
 }
 
@@ -82,9 +81,6 @@ section.inputs {
 
 .checkbox-buttons__item {
   margin-top: 14px;
-  line-height: 18px;
-  /* identical to box height, or 129% */
-  color: rgba(31, 32, 65, 0.5); /* Dark 50% */
   /*outline: 2px solid blueviolet;
   box-sizing: border-box;*/
 }
@@ -103,7 +99,6 @@ section.inputs {
 .toggles {
   /*max-width: 100%;*/
   margin-bottom: 40px;
-  padding: 0;
   outline: 2px solid red;
   box-sizing: border-box;
 }
@@ -112,8 +107,8 @@ section.inputs {
 
 .toggle__item {
   margin-bottom: 10px;
-  outline: 2px solid rosybrown;
-  box-sizing: border-box;
+  /*outline: 2px solid rosybrown;
+  box-sizing: border-box;*/
 }
 
 .like-buttons {
@@ -126,7 +121,7 @@ section.inputs {
 
 .like-buttons__item {
   display: inline-block;
-  margin-right: 5px;
+  margin-right: 10px;
   outline: 2px dashed yellow;
   box-sizing: border-box;
 }
@@ -137,3 +132,5 @@ section.inputs {
   outline: 2px solid red;
   box-sizing: border-box;
 }
+
+@import "ratebuttons/ratebuttons.scss";

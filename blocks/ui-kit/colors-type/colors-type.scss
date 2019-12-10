@@ -8,34 +8,31 @@
   display: flex;
   /*width: 100%;*/
   justify-content: space-between;
-  margin: 67px 198px 145px 150px;
-  padding: 0;
-  
+  margin: 67px 191px 145px 150px;
+  padding: 0;  
 }
 
 .colors-wrapper {
   min-width: 270px; /*потом убрать?*/
   margin: 0;
-  padding: 0;
-  
+  padding: 0;  
 }
 
 .colors-item {
   display: flex;
   margin-bottom: 20px;
-  align-items: center;
-  
-}
+  align-items: center;  
 
-.colors-item:last-child {
-  margin-bottom: 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .colors-item__name {
   margin-left: 40px;
   font-family: Quicksand, Arial, sans-serif;
   font-style: normal;
-  /*font-weight: bold;*/
+  font-weight: bold;
   font-size: 19px;
   line-height: 29px;
   letter-spacing: -0.01em;
@@ -44,29 +41,28 @@
 .colors-item__sample {
   width: 70px;
   height: 70px;
-  border: 1px xolid black;
   border-radius: 6px;
 
   &--dark-100 {
-    background-color: rgba(31, 32, 65, 1);
+    background-color: $dark-color;
   }
   &--dark-075 {
-    background-color: rgba(31, 32, 65, 0.75);
+    background-color: $primary-color;
   }
   &--dark-050 {
-    background-color: rgba(31, 32, 65, 0.5);
+    background-color: $middle-color;
   }
   &--dark-025 {
-    background-color: rgba(31, 32, 65, 0.25);
+    background-color: $secondary-color;
   }
   &--dark-005 {
-    background-color: rgba(31, 32, 65, 0.05);
+    background-color: $lightest-color;
   }
   &--purple {
-    background-color: #BC9CFF;
+    background-color: $primary-theme-color;
   }
   &--green {
-    background-color: #6FCF97;
+    background-color: $secondary-theme-color;
   }
 }  
       
@@ -79,6 +75,11 @@
 .type-item {
   display: flex;
   /*align-content: flex-start;*/
+  margin-bottom: 50px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .type-item__title {
@@ -94,11 +95,11 @@
   
   &--h1 {
     font-size: 24px;
-    line-height: 29px;
+    line-height: 1.5em;
   }
   &--h2 {
     font-size: 19px;
-    line-height: 23px;
+    line-height: 1.5em;
   }
   &--h3 {
     font-size: 12px;
@@ -113,50 +114,5 @@
 .type-item__description {
   /*width: 200px;*/
   margin-left: 30px;
-  margin-bottom: 50px;
   text-align: left;
-  color: #1f2041;
-
-
-.type-item__description:last-child {
-  margin-bottom: 0;
-}
-
-  &--h1 {
-    font-family: Quicksand, Arial, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 30px;
-    letter-spacing: -0.015em;
-  }
-  &--h2 {
-    font-family: Quicksand, Arial, sans-serif;;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 19px;
-    line-height: 24px;
-    color: #1F2041;
-    letter-spacing: -0.015em;
-  }  
-  &--h3 {
-    font-family: Montserrat, Arial, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    /* identical to box height */
-    text-transform: uppercase;
-    color: #1F2041;
-  }
-  &--body {
-    font-family: Montserrat, Arial, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    color: rgba(31, 32, 65, 0.75);
-    /*margin-top: -1px; не гонимся за копейками*/
-    /* or 171% */
-  }
 }

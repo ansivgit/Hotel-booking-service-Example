@@ -6,14 +6,25 @@
 //head
   link(rel="stylesheet" href="input.css")
 
-mixin textField(title="Default", style, type="text", name="text-field", placeholder="", action="/some-address/change-me", method="post")
-  .form-wrapper
+mixin textField(title="Default", style, description, type="text", name="text-field", placeholder="", action="/some-address/change-me", method="post")
+  .input-block
     form(action= action method= method)
-      //- здесь, наверное, форма не нужна, т.к. она будет единая для блока
-      label
-        .input__title= title
-        if style=="Hover / Focus"
-          .input__description.input__description--hover= style
+      //- здесь, наверное, форма не нужна??????, т.к. она будет единая для блока
+      - var fieldStyle= "base"
+
+      if style=="dropdown"
+        - var fieldStyle= "dropdown"
+
+      else if style=="subscribe"
+        - var fieldStyle= "subscribe"
+          
+      label(class= fieldStyle)
+        h3.input__title= title
+        if description=="Hover / Focus"
+          .input__description.input__description--hover= description
         else
-          .input__description= style
+          .input__description= description
+
+        //- textField(title, style[dropdown/subscribe], description[Default/ Hover / Fokus], type, name - requaired; placeholder="", action="echo", method="post")
         input(type= type, name= name, placeholder= placeholder)&attributes(attributes)
+        
