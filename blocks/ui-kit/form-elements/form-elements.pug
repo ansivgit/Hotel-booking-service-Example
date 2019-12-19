@@ -1,13 +1,14 @@
 include ../../../templates/common-template.pug
+//-script(src='./main.js')
 
 block append style
   //- не забыть поменять на scss!!!//
-  link(rel="stylesheet" href="form-elements.css") 
+  link(rel="stylesheet" href="form-elements.css")
 
 .ui-kit-logo
   .logo__picture
     // - проверить пути
-    include ../img/logo-gray.svg 
+    include ../img/logo-gray.svg
 
 section.inputs
   .inputs-wrapper
@@ -46,7 +47,7 @@ section.inputs
       h3.checkbox-buttons__title Checkbox Buttons
       .checkbox-buttons__item
         +checkbox("checkbox-smoke", "Можно курить")(class="")
-      
+
       .checkbox-buttons__item
         +checkbox("checkbox-pets", "Можно с питомцами")(class="", checked)
 
@@ -65,7 +66,7 @@ section.inputs
         +toggles()(class="", checked)
       .toggle__item
         +toggles("offers-no-agree")(class="")
-      
+
     .like-buttons
       include likes/likes.pug
 
@@ -76,15 +77,58 @@ section.inputs
         +likeButton("more-likes", "12")(class="", checked)
 
     .rate-buttons
+      h3.rate-buttons__title Rate button
+
       include ratebuttons/ratebuttons.pug
 
-      h3.rate-buttons__title Rate button
-      .rate-buttons__item
-        +rating(3)
       .rate-buttons__item
         +rating(4)
+      .rate-buttons__item
+        +rating(5)
+
+  .buttons-wrapper
+
+    .range-slider
+      include range-slider/range-slider.pug
+
+    .buttons
+      include buttons/button.pug
+
+      h3.buttons__title Buttons
+      //- title="Click me", color, style="default", name="default", value="value",
+        type="button", action="/some-address/change-me", method="post"
+      .buttons__positioner
+        .button__item
+          +button("Click me", "primary", "default", "default", "value")
+        .button__item
+          +button("Click me", "primary", "hover", "default", "value")
+      .buttons__positioner
+        .button__item
+          +button("Click me", "secondary", "default", "default", "value")
+        .button__item
+          +button("Click me", "secondary", "hover", "default", "value")
+
+      span.button__icon.button__icon--primary Click me
+      span.button__icon.button__icon--secondary Click me
+
+      .button__item--wide
+        +button("Перейти к оплате", "primary", "default", "default", "value", "submit")
+
+    .pagination
+      include pagination/pagination.pug
+
+      h3.pagination__title Pagination
+      .pagination__positioner
+        +pagination(1, 15)
+
 
 section.dropdowns
+
+  .dropdown-room-wrapper
+    .dropdown__item
+      +textField("Dropdown", "dropdown", "default", "text", "rooms", "2 спальни, 2 кровати...")(class="input__field input__field--middle input__field--dropdown")
+    .dropdown__item
+      include dropdowns/dropdown.pug
 
 
 section.checkboxes

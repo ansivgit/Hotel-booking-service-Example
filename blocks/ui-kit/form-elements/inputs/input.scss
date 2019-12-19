@@ -1,7 +1,6 @@
 .input-block {
   width: 100%;
   margin: 0px;
-}
 
   .input__title {
     float: left;
@@ -44,6 +43,7 @@
     &:hover,
     &:focus {
       border: 1px solid $middle-color;
+      cursor: pointer;
       outline: none;
     }
   }
@@ -62,11 +62,11 @@
     height: 42px;
     padding: auto 0 auto 0;
     text-align: center;
-    font-family: "Material Icons"; 
+    font-family: "Material Icons";
     font-size: 24px;
     line-height: 42px;
-    color: $middle-color;
-    outline: 2px dashed rosybrown;
+    cursor: pointer;
+    /*outline: 2px dashed rosybrown;*/
   }
 
   label.dropdown::after {
@@ -75,6 +75,11 @@
 
   label.subscribe::after {
     content: "\e5c8";
+    color: $primary-theme-color;
+    background: $primary-gradient;
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   input.input__field {
@@ -90,7 +95,7 @@
     &::placeholder {
       color: $primary-color;
     }
-    
+
     &--light::-moz-placeholder {
       color: $secondary-color;
     }
@@ -104,3 +109,4 @@
       color: $secondary-color;
     }
   }
+}

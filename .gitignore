@@ -3,6 +3,7 @@ node_modules/
 Pages in .jpg/
 dist/
 blocks/ui-kit/form-elements/form-elements.css
+blocks/ui-kit/0fonts/
 *.css
 *.css.map
 *.html

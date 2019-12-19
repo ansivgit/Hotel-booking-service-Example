@@ -14,6 +14,9 @@ $secondary-theme-color: #6FCF97;
 $primary-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 $secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 
+$primary-gradient-half-opacity: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
+$secondary-gradient__half-opacity: linear-gradient(180deg, rgba(111, 207, 151, 0.5) 0%, rgba(102, 210, 234, 0.5) 100%);
+
 //- types
 
 h1 {
@@ -23,7 +26,7 @@ h1 {
   font-size: 24px;
   line-height: 30px;
   color: $dark-color;
-  letter-spacing: -0.015em;  
+  letter-spacing: -0.015em;
 }
 
 h2 {
@@ -54,5 +57,5 @@ body {
   font-size: 14px;
   line-height: 24px;
   /* or 171% */
-  color: $primary-color;  
+  color: $primary-color;
 }

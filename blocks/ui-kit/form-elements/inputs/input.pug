@@ -17,7 +17,7 @@ mixin textField(title="Default", style, description, type="text", name="text-fie
 
       else if style=="subscribe"
         - var fieldStyle= "subscribe"
-          
+
       label(class= fieldStyle)
         h3.input__title= title
         if description=="Hover / Focus"
@@ -27,4 +27,3 @@ mixin textField(title="Default", style, description, type="text", name="text-fie
 
         //- textField(title, style[dropdown/subscribe], description[Default/ Hover / Fokus], type, name - requaired; placeholder="", action="echo", method="post")
         input(type= type, name= name, placeholder= placeholder)&attributes(attributes)
-        
