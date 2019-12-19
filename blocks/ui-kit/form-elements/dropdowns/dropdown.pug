@@ -1,9 +1,0 @@
-//- script(src='./dropdown.js')
-
-+textField("Dropdown", "dropdown", "expanded", "text", "rooms", "2 спальни, 2 кровати...")(class="input__field input__field--middle input__field--dropdown input__field--expanded")
-
-include expand.pug
-.expand.visualy-hidden
-  +selection("Спальни", "bedrooms", 2)
-  +selection("Кровати", "beds", 2)
-  +selection("Ванные комнаты", "bathrooms", 0)
