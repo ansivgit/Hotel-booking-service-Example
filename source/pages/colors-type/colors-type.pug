@@ -1,0 +1,50 @@
+//-extends ../base/template.pug
+block main
+  //-
+    block append style
+    //- не забыть поменять на scss!!!//
+    link(rel="stylesheet" href="colors-type.css")
+
+  .ui-kit-logo
+    .logo__picture
+      // - проверить пути
+      include ../../theme/img/logo-gray.svg
+
+
+  .colors-type-wrapper
+    .colors-wrapper
+      .colors-item
+        .colors-item__sample.colors-item__sample--dark-100
+        .colors-item__name Dark Shade 100%<br>#1F2041
+      .colors-item
+        .colors-item__sample.colors-item__sample--dark-075
+        .colors-item__name Dark Shade 75%<br>#1F2041
+      .colors-item
+        .colors-item__sample.colors-item__sample--dark-050
+        .colors-item__name Dark Shade 50%<br>#1F2041
+      .colors-item
+        .colors-item__sample.colors-item__sample--dark-025
+        .colors-item__name Dark Shade 25%<br>#1F2041
+      .colors-item
+        .colors-item__sample.colors-item__sample--dark-005
+        .colors-item__name Dark Shade 5%<br>#1F2041
+      .colors-item
+        .colors-item__sample.colors-item__sample--purple
+        .colors-item__name Purple<br>#BC9CFF
+      .colors-item
+        .colors-item__sample.colors-item__sample--green
+        .colors-item__name Green<br>#6FCF97
+
+    .type-wrapper
+      .type-item
+        .type-item__title.type-item__title--h1 H1
+        h1.type-item__description This one is the sub-section or widget title
+      .type-item
+        .type-item__title.type-item__title--h2 H2
+        h2.type-item__description Next one is the item title inside widgets
+      .type-item
+        .type-item__title.type-item__title--h3 H3
+        h3.type-item__description This is a label or CTA text
+      .type-item
+        .type-item__title.type-item__title--body Body
+        .type-item__description This is the body text which is used for most of the design, like paragraphs, sts, etc.

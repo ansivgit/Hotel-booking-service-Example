@@ -1,0 +1,120 @@
+@import "../../theme/_colors-types.scss";
+
+.ui-kit-logo {
+  width: 48px;
+  height: 48px;
+  margin: 30px 0 0 30px;
+}
+
+.colors-type-wrapper {
+  display: flex;
+  /*width: 100%;*/
+  justify-content: space-between;
+  margin: 67px 191px 145px 150px;
+  padding: 0;
+}
+
+.colors-wrapper {
+  min-width: 270px; /*потом убрать?*/
+  margin: 0;
+  padding: 0;
+}
+
+.colors-item {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.colors-item__name {
+  margin-left: 40px;
+  font-family: Quicksand, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 29px;
+  letter-spacing: -0.01em;
+}
+
+.colors-item__sample {
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+
+  &--dark-100 {
+    background-color: $dark-color;
+  }
+  &--dark-075 {
+    background-color: $primary-color;
+  }
+  &--dark-050 {
+    background-color: $middle-color;
+  }
+  &--dark-025 {
+    background-color: $secondary-color;
+  }
+  &--dark-005 {
+    background-color: $lightest-color;
+  }
+  &--purple {
+    background-color: $primary-theme-color;
+  }
+  &--green {
+    background-color: $secondary-theme-color;
+  }
+}
+
+.type-wrapper {
+  width: 403px; /*потом убрать?*/
+  margin: 0;
+  padding: 0;
+}
+
+.type-item {
+  display: flex;
+  /*align-content: flex-start;*/
+  margin-bottom: 50px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.type-item__title {
+  min-width: 37px;
+  padding: 0px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  color: rgba(45, 46, 80, 0.25);
+  /*border: 2px solid red;
+  box-sizing: border-box;*/
+
+  &--h1 {
+    font-size: 24px;
+    line-height: 1.5em;
+  }
+  &--h2 {
+    font-size: 19px;
+    line-height: 1.5em;
+  }
+  &--h3 {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  &--body {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.type-item__description {
+  /*width: 200px;*/
+  margin-left: 30px;
+  text-align: left;
+}
