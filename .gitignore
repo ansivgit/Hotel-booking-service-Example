@@ -2,8 +2,9 @@
 node_modules/
 Pages in .jpg/
 dist/
-blocks/ui-kit/form-elements/form-elements.css
-blocks/ui-kit/0fonts/
+0blocks/
+0includes/
+0templates/
 *.css
 *.css.map
 *.html
