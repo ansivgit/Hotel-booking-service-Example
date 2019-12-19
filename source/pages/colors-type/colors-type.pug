@@ -1,34 +1,37 @@
 include ../base/template.pug
 //-extends ../base/template.pug
+block title
+  title TOXIN Colors-Type
+
+block scripts
+
+  script(src='./colors-type.js')
+
 block main
   //-
     block append style
     //- не забыть поменять на scss!!!//
     link(rel="stylesheet" href="colors-type.css")
 
-  .ui-kit-logo
-    .logo__picture
-      // - проверить пути
-      include ../../theme/img/logo-gray.svg
-
+  include ../../blocks/logo-uiKit/logo-uiKit.pug
 
   .colors-type-wrapper
     .colors-wrapper
       .colors-item
         .colors-item__sample.colors-item__sample--dark-100
-        .colors-item__name Dark Shade 100%<br>#1F2041
+        .colors-item__name <b>Dark Shade 100%</b><br>#1F2041
       .colors-item
         .colors-item__sample.colors-item__sample--dark-075
-        .colors-item__name Dark Shade 75%<br>#1F2041
+        .colors-item__name <b>Dark Shade 75%</b><br>#1F2041
       .colors-item
         .colors-item__sample.colors-item__sample--dark-050
-        .colors-item__name Dark Shade 50%<br>#1F2041
+        .colors-item__name <b>Dark Shade 50%</b><br>#1F2041
       .colors-item
         .colors-item__sample.colors-item__sample--dark-025
-        .colors-item__name Dark Shade 25%<br>#1F2041
+        .colors-item__name <b>Dark Shade 25%</b><br>#1F2041
       .colors-item
         .colors-item__sample.colors-item__sample--dark-005
-        .colors-item__name Dark Shade 5%<br>#1F2041
+        .colors-item__name <b>Dark Shade 5%</b><br>#1F2041
       .colors-item
         .colors-item__sample.colors-item__sample--purple
         .colors-item__name Purple<br>#BC9CFF
@@ -49,5 +52,3 @@ block main
       .type-item
         .type-item__title.type-item__title--body Body
         .type-item__description This is the body text which is used for most of the design, like paragraphs, sts, etc.
-
-script(src='./colors-type.js')

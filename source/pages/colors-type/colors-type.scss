@@ -1,10 +1,6 @@
 @import "../../theme/global.scss";
 
-.ui-kit-logo {
-  width: 48px;
-  height: 48px;
-  margin: 30px 0 0 30px;
-}
+@import "../../blocks/logo-uiKit/logo-uiKit.scss";
 
 .colors-type-wrapper {
   display: flex;
@@ -34,7 +30,7 @@
   margin-left: 40px;
   font-family: Quicksand, Arial, sans-serif;
   font-style: normal;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 19px;
   line-height: 29px;
   letter-spacing: -0.01em;
