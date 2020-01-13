@@ -1,0 +1,104 @@
+extends ../base/template.pug
+
+block title
+  title TOXIN Form-Elements
+
+block scripts
+
+  script(src='./form-elements.js')
+
+block main
+
+  include ../../blocks/logo-uiKit/logo-uiKit.pug
+
+  section.inputs
+    .inputs-wrapper
+      include ../../blocks/input/input.pug
+
+      .input__item
+        +textField({
+          title: "Text field",
+          style: "",
+          description: "Default",
+          type: "text",
+          name: "email",
+          placeholder: "Email",
+          placeholderColor: "--light",
+          ariaLabel: "e-mail"
+        })
+
+      .input__item
+        +textField({
+          title: "Text field",
+          style: "",
+          description: "Hover / Focus",
+          type: "text",
+          name: "default",
+          placeholder: "This is pretty awesome",
+          ariaLabel: "hover"
+        })
+
+      .input__item
+        +textField({
+          title: "Dropdown",
+          style: "dropdown",
+          description: "Default",
+          type: "text",
+          name: "numberGuests",
+          placeholder: "Сколько гостей",
+          ariaLabel: "how many guests"
+        })
+
+      .input__item
+        +textField({
+          title: "Masked text field",
+          style: "",
+          description: "Default",
+          type: "text",
+          name: "datePicker",
+          placeholder: "ДД.ММ.ГГГГ",
+          placeholderColor: "--light",
+          ariaLabel: "arrival date"
+        })
+
+      .inputs-wrapper--smaller
+        .input__item.input__item--small
+          +textField({
+            title: "Date dropdown",
+            style: "dropdown",
+            type: "text",
+            name: "datePicker",
+            placeholder: "ДД.ММ.ГГГГ",
+            ariaLabel: "arrival date"
+          })
+
+        .input__item.input__item--small
+          +textField({
+            title: "Date dropdown",
+            style: "dropdown",
+            type: "text",
+            name: "datePicker",
+            placeholder: "19.08.2019",
+            ariaLabel: "arrival date"
+          })
+
+      .input__item.input__item--middle
+        +textField({
+          title: "Filter date dropdown",
+          style: "dropdown",
+          type: "text",
+          name: "datePicker",
+          placeholder: "19 авг - 23 авг",
+          ariaLabel: "arrival interval"
+        })
+
+      .input__item.input__item--middle
+        +textField({
+          title: "Subscription text field",
+          style: "subscribe",
+          type: "text",
+          name: "email",
+          placeholder: "Email",
+          placeholderColor: "--light",
+          ariaLabel: "email for subscribe"
+        })

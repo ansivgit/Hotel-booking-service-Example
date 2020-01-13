@@ -1,0 +1,4 @@
+mixin button(title="Click me", color, style="default", name="default", value="value", type="button", action="/some-address/change-me", method="post")
+  .button-base
+    form(action= action method= method)
+      button(class= "button-base--" + color + "--" + style, name= name, value= value, type= type)= title

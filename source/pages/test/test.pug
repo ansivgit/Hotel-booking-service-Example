@@ -1,0 +1,23 @@
+extends ../base/template.pug
+
+block title
+  title TOXIN TEST
+
+block scripts
+
+  script(src='./test.js')
+
+block main
+  .wrapper TEST
+    include ../../blocks/input/input.pug
+
+    +textField({
+      title: "Text field",
+      style: "",
+      description: "Default",
+      type: "text",
+      name: "email",
+      placeholder: "Email",
+      placeholderColor: "--light",
+      ariaLabel: "gggg"
+      })

@@ -1,0 +1,63 @@
+//- текстовое поле - общее
+
+//-
+  options.title: заголовок поля ввода "Text field";
+  options.style: определяет наличие иконки в правой части:
+                "" - без иконки,
+                dropdown - стрелочка вниз (для дропдаунов)
+                subscribe - стрелка вправо (подписка);
+  options.description: поля описания назначения инпута
+                      (в правой части) - присутствует только в UI-Kit:
+                       - Default
+                       - Hover / Fokus для обозначения наведенного состояния,
+                       - Expanded для развернутого дропдауна;
+  options.type: тип текстового поля - text, email или date (?????);
+  options.name: значение обязательного поля name для инпута;
+  options.placeholder: то,что написано в плейсхолдере;
+  options.placeholderСolor: цвет текста плейсхолдера,
+                              по умолчанию $primary-color, при "--light" - $secondary-color;
+  options.ariaLabel: содержание атрибута aria-label для скринридеров;
+  options.action: обязательное поле action формы "/some-address/change-me",
+  options.method: обязательное поле method формы "post"
+
+block main
+
+mixin textField(options)
+
+  .input-block
+    //- здесь, наверное, форма не нужна??????, т.к. она будет единая для блока
+    //- form(action= options.action, method= options.method)
+
+    - var fieldStyle= "";
+    - var inputStyle= "input__field"
+
+    if (options.placeholderColor)
+      - inputStyle= `${inputStyle} ${inputStyle}${options.placeholderColor}`
+
+    if (options.style== "dropdown")
+      - fieldStyle= "dropdown"
+
+    if (options.style== "subscribe")
+      - fieldStyle= "subscribe"
+
+    label(class= fieldStyle)
+      h3.input__title= options.title
+
+      if (options.description)
+        .input__description= options.description
+
+      input(class= inputStyle, type= options.type, name= options.name, placeholder= options.placeholder aria-label= options.ariaLabel)
+
+
+//-textField({
+  //title: "Text field",
+  //style: "",
+  //description: "Default",
+  //type: "text",
+  //name: "email",
+  //placeholder: "Email",
+  //placeholderСolor: "--light",
+  //ariaLabel: "gggg",
+  //action: "/some-address/change-me",
+  //method: "post"
+  //})*/

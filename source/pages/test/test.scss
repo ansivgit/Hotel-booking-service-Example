@@ -1,0 +1,11 @@
+@import "../../theme/global.scss";
+
+.wrapper {
+  width: 500px;
+  padding: 20px;
+  //background-color: rosybrown;
+  outline: 2px solid blue;
+  box-sizing: border-box;
+}
+
+@import "../../blocks/input/input.scss";

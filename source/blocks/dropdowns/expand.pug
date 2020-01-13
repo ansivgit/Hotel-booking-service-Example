@@ -1,0 +1,7 @@
+mixin selection(title, name, valueDefault="")
+  .select__item
+    .select__name= title
+    .selection__buttons
+      .select__btn.select__btn--minus -
+      input(name= name, value= valueDefault, class="select__value", type="text", action="/some-address/change-me", method="post")
+      .select__btn.select__btn--plus +
