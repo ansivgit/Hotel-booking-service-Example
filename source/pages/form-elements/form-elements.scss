@@ -54,8 +54,8 @@ section.inputs {
   .toggles-wrapper {
     /*width: 265px;*/
     margin-left: 126px;
-    /*outline: 2px solid green;
-    box-sizing: border-box;*/
+    outline: 2px solid green;
+    box-sizing: border-box;
   }
 
   .checkbox-buttons__title,
@@ -77,8 +77,8 @@ section.inputs {
 
   .checkbox-buttons__item {
     margin-top: 14px;
-    /*outline: 2px solid blueviolet;
-    box-sizing: border-box;*/
+    outline: 2px solid blueviolet;
+    box-sizing: border-box;
   }
 
   @import "../../blocks/checkbox/checkbox.scss";
@@ -90,7 +90,7 @@ section.inputs {
     box-sizing: border-box;*/
   }
 
-  @import "../../blocks/radiobuttons/radiobuttons.scss";
+  @import "../../blocks/radiobutton/radiobutton.scss";
 
   .toggles {
     /*max-width: 100%;*/
@@ -99,7 +99,7 @@ section.inputs {
     box-sizing: border-box;*/
   }
 
-  @import "../../blocks/toggles/toggles.scss";
+  @import "../../blocks/toggle/toggle.scss";
 
   .toggle__item {
     margin-bottom: 10px;
@@ -109,8 +109,8 @@ section.inputs {
 
   .like-buttons {
     margin-bottom: 40px;
-    /*outline: 2px solid red;
-    box-sizing: border-box;*/
+    outline: 2px solid red;
+    box-sizing: border-box;
   }
 
   @import "../../blocks/likes/likes.scss";
@@ -124,8 +124,8 @@ section.inputs {
 
   .rate-buttons {
     margin-bottom: 41px;
-    /*outline: 2px solid red;
-    box-sizing: border-box;*/
+    outline: 2px solid red;
+    box-sizing: border-box;
 
     .rate-buttons__item {
       display: inline-block;
@@ -138,7 +138,7 @@ section.inputs {
     }
   }
 
-  @import "../../blocks/ratebuttons/ratebuttons.scss";
+  @import "../../blocks/ratebutton/ratebutton.scss";
 
   .buttons-wrapper {
     margin-left: 128px;

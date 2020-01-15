@@ -9,10 +9,13 @@
   line-height: 18px;
 
   input[type=radio] {
-    display: none;
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 
-  input[type=radio] ~ label {
+  label {
     display: block;
     /*margin-left: 30px;*/
   }

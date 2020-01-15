@@ -9,15 +9,25 @@ block scripts
 
 block main
   .wrapper TEST
-    include ../../blocks/input/input.pug
+    mixin checkbox(id, title="someCheckbox", description= "", type="checkbox", name="default")
 
-    +textField({
-      title: "Text field",
-      style: "",
-      description: "Default",
-      type: "text",
-      name: "email",
-      placeholder: "Email",
-      placeholderColor: "--light",
-      ariaLabel: "gggg"
-      })
+      - var ifRich= "";
+      - var description1= ""
+
+      if(description)
+        - ifRich= "checkbox-label--rich";
+        
+      .checkbox-block
+        input(id= id, type= type, name= name)&attributes(attributes)
+        label(for= id, class= ifRich)= title + description1
+
+        .checkbox-buttons
+          h3.checkbox-buttons__title Checkbox Buttons
+          .checkbox-buttons__item
+            +checkbox("checkbox-smoke", "Можно курить", "На 1 этаже вас встретит специалист и проводит до номера.")
+
+          .checkbox-buttons__item
+            +checkbox("checkbox-pets", "Можно с питомцами")(checked)
+
+          .checkbox-buttons__item
+            +checkbox("checkbox-guests", "Можно пригласить гостей (до 10 человек)")(checked)

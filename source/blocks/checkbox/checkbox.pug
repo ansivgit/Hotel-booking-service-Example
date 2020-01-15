@@ -1,6 +1,15 @@
 //- checkboxes base
 
-mixin checkbox(id, title="someCheckbox", type="checkbox", name="default")
+mixin checkbox(id, title="someCheckbox", description= "", type="checkbox", name="default")
+
+  - var ifRich= ""
+
+  if(description)
+    - ifRich= "checkbox-label--rich"
+
   .checkbox-block
     input(id= id, type= type, name= name)&attributes(attributes)
-    label(for= id)= title
+    label(for= id, class= ifRich)= title
+
+      if(description)
+        p(class= "checkbox-block__description")= description

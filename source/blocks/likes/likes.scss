@@ -6,10 +6,13 @@
   box-sizing: border-box;*/
 
   input[type=checkbox] {
-    display: none;
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 
-  input[type=checkbox] ~ label {
+  label {
     display: inline-block;
     position: relative;
     margin-left: 20px;

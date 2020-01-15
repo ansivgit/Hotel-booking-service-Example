@@ -3,7 +3,10 @@
   margin: 0px;
 
   input[type=checkbox] {
-    display: none;
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 
   input[type=checkbox] ~ label {
@@ -49,12 +52,10 @@
     transition-duration: 200ms;
   }
 
-  input[type=checkbox]:checked ~ label::after {    
+  input[type=checkbox]:checked ~ label::after {
     background-image: $primary-gradient;
     transform: translateX(20px);
     transition-timing-function: ease-in;
     transition-duration: 200ms;
   }
-
-  
 }

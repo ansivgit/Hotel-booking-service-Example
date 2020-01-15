@@ -102,3 +102,50 @@ block main
           placeholderColor: "--light",
           ariaLabel: "email for subscribe"
         })
+
+    .toggles-wrapper
+
+      .checkbox-buttons
+        include ../../blocks/checkbox/checkbox.pug
+
+        h3.checkbox-buttons__title Checkbox Buttons
+        .checkbox-buttons__item
+          +checkbox("checkbox-smoke", "Можно курить")
+
+        .checkbox-buttons__item
+          +checkbox("checkbox-pets", "Можно с питомцами")(checked)
+
+        .checkbox-buttons__item
+          +checkbox("checkbox-guests", "Можно пригласить гостей (до 10 человек)")(checked)
+
+      .radio-buttons
+        h3.radio-buttons__title Radio Buttons
+        include ../../blocks/radiobutton/radiobutton.pug
+
+      .toggles
+        include ../../blocks/toggle/toggle.pug
+
+        h3.toggles__title Toggle
+        .toggle__item
+          +toggles()(checked)
+        .toggle__item
+          +toggles("offers-no-agree")
+
+      .like-buttons
+        include ../../blocks/likes/likes.pug
+
+        h3.like-buttons__title Like button
+        .like-buttons__item
+          +likeButton()
+        .like-buttons__item
+          +likeButton("more-likes", "12")(checked)
+
+      .rate-buttons
+        include ../../blocks/ratebutton/ratebutton.pug
+
+        h3.rate-buttons__title Rate button
+
+        .rate-buttons__item
+          +rating(4)
+        .rate-buttons__item
+          +rating(5)

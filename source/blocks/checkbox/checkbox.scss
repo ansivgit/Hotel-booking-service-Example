@@ -1,12 +1,27 @@
 .checkbox-block {
   input[type=checkbox] {
-    display: none;
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 
-  input[type=checkbox] ~ label {
+  label {
     display: block;
     margin-left: 30px;
     line-height: 18px; /* identical to box height, or 129% */
+    color: $middle-color;
+  }
+
+  .checkbox-label--rich {
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  .checkbox-block__description {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px; /* or 117% */
     color: $middle-color;
   }
 
