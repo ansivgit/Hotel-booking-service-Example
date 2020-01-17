@@ -149,3 +149,60 @@ block main
           +rating(4)
         .rate-buttons__item
           +rating(5)
+
+    .buttons-wrapper
+
+      .range-slider
+        include ../../blocks/range-slider/range-slider.pug
+
+      .buttons
+        include ../../blocks/button/button.pug
+
+        h3.buttons__title Buttons
+        //- title="Click me", color, style="default", name="default", value="value",
+          type="button", action="/some-address/change-me", method="post"
+        .buttons__positioner
+          .button__item
+            +button("Click me", "primary", "default", "default", "value")
+          .button__item
+            +button("Click me", "primary", "hover", "default", "value")
+        .buttons__positioner
+          .button__item
+            +button("Click me", "secondary", "default", "default", "value")
+          .button__item
+            +button("Click me", "secondary", "hover", "default", "value")
+
+        span.button__icon.button__icon--primary Click me
+        span.button__icon.button__icon--secondary Click me
+
+        .button__item--wide
+          +button("Перейти к оплате", "primary", "default", "default", "value", "submit")
+
+      .pagination
+        include ../../blocks/pagination/pagination.pug
+
+        h3.pagination__title Pagination
+        .pagination__positioner
+          +pagination(1, 15)
+
+    section.dropdowns
+
+      .dropdown-room-wrapper
+        .dropdown__item
+          +textField({
+            title: "Dropdown",
+            style: "dropdown",
+            description: "Default",
+            type: "text",
+            name: "rooms",
+            placeholder: "2 спальни, 2 кровати...",
+            ariaLabel: "room convenience"
+          })
+          //+textField("Dropdown", "dropdown", "default", "text", "rooms", "2 спальни, 2 кровати...")(class="input__field input__field--middle input__field--dropdown")
+        .dropdown__item
+          include ../../blocks/dropdowns/dropdown.pug
+
+    section.checkboxes
+
+
+    section.features

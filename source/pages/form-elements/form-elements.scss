@@ -141,8 +141,9 @@ section.inputs {
   @import "../../blocks/ratebutton/ratebutton.scss";
 
   .buttons-wrapper {
-    margin-left: 128px;
+    margin-left: 132px;
     box-sizing: border-box;
+    outline: 2px solid red;
   }
 
   @import "../../blocks/range-slider/range-slider.scss";
@@ -153,11 +154,12 @@ section.inputs {
   }
 
   .buttons {
-    width: 218px;
+
 
     .buttons__positioner {
       display: flex;
       justify-content: space-between;
+      width: 218px;
       margin-bottom: 30px;
 
       .button__item {
@@ -166,10 +168,10 @@ section.inputs {
       }
     }
 
-      @import "../../blocks/buttons/button.scss";
+      @import "../../blocks/button/button.scss";
 
     .button__icon {
-      font-family: Montserrat;
+      font-family: $primary-type;
       font-style: normal;
       font-weight: bold;
       font-size: 12px;

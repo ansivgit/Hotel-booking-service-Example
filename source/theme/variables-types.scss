@@ -19,6 +19,8 @@ $secondary-gradient__half-opacity: linear-gradient(180deg, rgba(111, 207, 151, 0
 
 //- types
 
+$primary-type: Montserrat, Arial, sans-serif;
+
 h1 {
   font-family: Quicksand, Arial, sans-serif;
   font-style: normal;
@@ -40,7 +42,7 @@ h2 {
 }
 
 h3 {
-  font-family: Montserrat, Arial, sans-serif;
+  font-family: $primary-type;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -51,7 +53,7 @@ h3 {
 }
 
 body {
-  font-family: Montserrat, Arial, sans-serif;
+  font-family: $primary-type;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
