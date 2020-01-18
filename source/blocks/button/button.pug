@@ -1,4 +1,39 @@
-mixin button(title="Click me", color, style="default", name="default", value="value", type="button", action="/some-address/change-me", method="post")
+//- кнопки на сайте
+
+//-
+  options.title: надпись на кнопке;
+  options.color: цветовой стиль кнопки - primary (заливка градиентом),
+                                       - secondary (прозрачная с градиентной рамкой),
+                                       - complementary (текст без рамки);
+  options.style: стиль кнопки при наведении - default по умолчанию,
+                                            - hover при наведении;
+  options.icon: наличие иконки на кнопке (по умолчанию отсутствует, при необходимости - здесь код иконки MatherialIcons);
+  options.name: значение обязательного поля name для кнопки;
+  options.value: определяет значение кнопки, которое будет отправлено на сервер;
+  options.type: определяет тип кнопки, который устанавливает ее поведение в форме - button / reset / submit;
+  options.ariaLabel: содержание атрибута aria-label для скринридеров;
+  options.action: обязательное поле action формы "/some-address/change-me",
+  options.method: обязательное поле method формы "post"
+
+mixin button(options)
+
   .button-base
-    form(action= action method= method)
-      button(class= "button-base--" + color + "--" + style, name= name, value= value, type= type)= title
+    form(action = options.action, method = options.method)
+      button(class= "button-base--" + options.color + "--" + options.style, name = options.name, value = options.value, type = options.type)= options.title
+
+      if(options.icon)
+        i(class= "button-base material-icons")= options.icon
+
+
+//-button({
+  //title: "Click me",
+  //color: "primary",
+  //style: "default",
+  //icon: "",
+  //name: "default",
+  //value: "value",
+  //type: "button",
+  //ariaLabel: "button",
+  //action: "/some-address/change-me",
+  //method: "post"
+  //})*/

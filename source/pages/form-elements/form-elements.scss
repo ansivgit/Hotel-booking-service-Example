@@ -155,43 +155,33 @@ section.inputs {
 
 .buttons {
 
+  @import "../../blocks/button/button.scss";
+
   .buttons__positioner {
     display: flex;
     justify-content: space-between;
     width: 218px;
     margin-bottom: 30px;
 
-    .button__item {
-      width: 99px;
-      /*height: 44px;*/
+    &--tight {
+      width: 142px;
+      margin-top: -11px;
+      margin-bottom: -9px;
     }
   }
 
-    @import "../../blocks/button/button.scss";
+  .button__item {
+    width: 99px;
 
-  .button__icon {
-    font-family: $primary-type;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    /* identical to box height */
-    text-transform: uppercase;
-
-    &--primary {
-      margin-right: 20px;
-      color: $primary-theme-color;
+    &--tight {
+      width: 61px;
     }
 
-    &--secondary {
-      color: $middle-color;
+    &--wide {
+      margin-top: 23px;
+      margin-bottom: 40px;
+      width: 320px;
     }
-  }
-
-  .button__item--wide {
-    margin-top: 23px;
-    margin-bottom: 40px;
-    width: 320px;
   }
 }
 

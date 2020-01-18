@@ -1,6 +1,8 @@
 .button-base {
   /*outline: 2px dashed green;*/
 
+  /*общий вид объемных кнопок и кнопок с градиентной заливкой*/
+
   button {
     margin: 0;
     padding: 0;
@@ -8,7 +10,7 @@
     width: 100%;
     height: 44px;
     box-sizing: border-box;
-    font-family: Montserrat;
+    font-family: $primary-type;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
@@ -39,6 +41,7 @@
     background: $primary-gradient-half-opacity;
   }
 
+  /*кнопки с градиентной рамкой*/
 
   &--secondary--default,
   &--secondary--hover {
@@ -68,28 +71,48 @@
   &--secondary--default:hover:before,
   &--secondary--hover:before {
       opacity: 0.5;
+  }
+
+  /*кнопки без рамки*/
+
+  &--complementary--default {
+    padding-top: 12px;
+    padding-bottom: 10px;
+    /*color: $primary-theme-color;*/
+    border: none;
+    background: #ffffff;
+    outline: none;
+
+    &[type= submit] {
+    color: $primary-theme-color;
     }
 
-  button[type=submit] {
+    &[type= reset] {
+      color: $middle-color;
+    }
+  }
+
+  /*стили для иконки на кнопке*/
+
+  form {
     position: relative;
 
-    &:after {
-      content: "\e5c8";
-      display: inline-block;
+    .material-icons {
       position: absolute;
       top: 0px;
       right: 0px;
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 100%;
       padding: auto 0 auto 0;
       text-align: center;
       font-family: "Material Icons";
       font-style: normal;
       font-weight: normal;
       font-size: 24px;
-      line-height: 42px;
+      line-height: 44px;
       color: #ffffff;
-      /*outline: 2px dashed rosybrown;*/
-    }
+      /*box-sizing: border-box;
+      outline: 1px dashed rosybrown;*/
+      }
   }
 }

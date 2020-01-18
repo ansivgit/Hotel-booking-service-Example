@@ -159,24 +159,97 @@ block main
         include ../../blocks/button/button.pug
 
         h3.buttons__title Buttons
-        //- title="Click me", color, style="default", name="default", value="value",
-          type="button", action="/some-address/change-me", method="post"
         .buttons__positioner
           .button__item
-            +button("Click me", "primary", "default", "default", "value")
+            +button({
+              title: "Click me",
+              color: "primary",
+              style: "default",
+              name: "default",
+              value: "value",
+              type: "button",
+              ariaLabel: "button",
+              action: "/some-address/change-me",
+              method: "post"
+              })
           .button__item
-            +button("Click me", "primary", "hover", "default", "value")
-        .buttons__positioner
-          .button__item
-            +button("Click me", "secondary", "default", "default", "value")
-          .button__item
-            +button("Click me", "secondary", "hover", "default", "value")
+            +button({
+              title: "Click me",
+              color: "primary",
+              style: "hover",
+              name: "default",
+              value: "value",
+              type: "button",
+              ariaLabel: "button",
+              action: "/some-address/change-me",
+              method: "post"
+              })
 
-        span.button__icon.button__icon--primary Click me
-        span.button__icon.button__icon--secondary Click me
+        .buttons__positioner
+          .button__item
+            +button({
+                title: "Click me",
+                color: "secondary",
+                style: "default",
+                name: "default",
+                value: "value",
+                type: "button",
+                ariaLabel: "button",
+                action: "/some-address/change-me",
+                method: "post"
+                })
+          .button__item
+            +button({
+              title: "Click me",
+              color: "secondary",
+              style: "hover",
+              name: "default",
+              value: "value",
+              type: "button",
+              ariaLabel: "button",
+              action: "/some-address/change-me",
+              method: "post"
+              })
+
+        .buttons__positioner.buttons__positioner--tight
+          .button__item--tight
+            +button({
+                title: "Click me",
+                color: "complementary",
+                style: "default",
+                name: "default",
+                value: "value",
+                type: "submit",
+                ariaLabel: "submit",
+                action: "/some-address/change-me",
+                method: "post"
+                })
+          .button__item--tight
+            +button({
+              title: "Click me",
+              color: "complementary",
+              style: "default",
+              name: "default",
+              value: "value",
+              type: "reset",
+              ariaLabel: "reset",
+              action: "/some-address/change-me",
+              method: "post"
+              })
 
         .button__item--wide
-          +button("Перейти к оплате", "primary", "default", "default", "value", "submit")
+          +button({
+              title: "Перейти к оплате",
+              color: "primary",
+              style: "default",
+              icon: "arrow_forward",
+              name: "default",
+              value: "value",
+              type: "submit",
+              ariaLabel: "submit",
+              action: "/some-address/change-me",
+              method: "post"
+              })
 
       .pagination
         include ../../blocks/pagination/pagination.pug
