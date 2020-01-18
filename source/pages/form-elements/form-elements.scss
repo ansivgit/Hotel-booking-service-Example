@@ -8,7 +8,7 @@ section.inputs {
   padding: 0;
   margin-left: 141px;
   margin-top: 65px;
-  outline: 2px solid blue;
+  outline: 2px solid rgb(0, 255, 115);
   box-sizing: border-box;
 }
 
@@ -51,177 +51,175 @@ section.inputs {
   }
 }
 
-  .toggles-wrapper {
-    /*width: 265px;*/
-    margin-left: 126px;
-    outline: 2px solid green;
-    box-sizing: border-box;
-  }
+.toggles-wrapper {
+  /*width: 265px;*/
+  margin-left: 126px;
+  outline: 2px solid green;
+  box-sizing: border-box;
+}
 
-  .checkbox-buttons__title,
-  .radio-buttons__title,
-  .toggles__title,
-  .like-buttons__title,
-  .rate-buttons__title,
-  .buttons__title,
-  .pagination__title {
-    margin-bottom: 16px;
-  }
+.checkbox-buttons__title,
+.radio-buttons__title,
+.toggles__title,
+.like-buttons__title,
+.rate-buttons__title,
+.buttons__title,
+.pagination__title {
+  margin-bottom: 16px;
+}
 
-  .checkbox-buttons {
-    max-width: 225px;
-    margin-bottom: 41px;
-    /*outline: 2px solid red;
-    box-sizing: border-box;*/
-  }
+.checkbox-buttons {
+  max-width: 225px;
+  margin-bottom: 41px;
+  /*outline: 2px solid red;
+  box-sizing: border-box;*/
+}
 
-  .checkbox-buttons__item {
-    margin-top: 14px;
-    outline: 2px solid blueviolet;
-    box-sizing: border-box;
-  }
+.checkbox-buttons__item {
+  margin-top: 14px;
+  outline: 2px solid blueviolet;
+  box-sizing: border-box;
+}
 
-  @import "../../blocks/checkbox/checkbox.scss";
+@import "../../blocks/checkbox/checkbox.scss";
 
-  .radio-buttons {
-    /*max-width: 100%;*/
-    margin-bottom: 40px;
-    /*outline: 2px solid red;
-    box-sizing: border-box;*/
-  }
+.radio-buttons {
+  /*max-width: 100%;*/
+  margin-bottom: 40px;
+  /*outline: 2px solid red;
+  box-sizing: border-box;*/
+}
 
-  @import "../../blocks/radiobutton/radiobutton.scss";
+@import "../../blocks/radiobutton/radiobutton.scss";
 
-  .toggles {
-    /*max-width: 100%;*/
-    margin-bottom: 40px;
-    /*outline: 2px solid red;
-    box-sizing: border-box;*/
-  }
+.toggles {
+  /*max-width: 100%;*/
+  margin-bottom: 40px;
+  /*outline: 2px solid red;
+  box-sizing: border-box;*/
+}
 
-  @import "../../blocks/toggle/toggle.scss";
+@import "../../blocks/toggle/toggle.scss";
 
-  .toggle__item {
-    margin-bottom: 10px;
-    /*outline: 2px solid rosybrown;
-    box-sizing: border-box;*/
-  }
+.toggle__item {
+  margin-bottom: 10px;
+  /*outline: 2px solid rosybrown;
+  box-sizing: border-box;*/
+}
 
-  .like-buttons {
-    margin-bottom: 40px;
-    outline: 2px solid red;
-    box-sizing: border-box;
-  }
+.like-buttons {
+  margin-bottom: 40px;
+  outline: 2px solid red;
+  box-sizing: border-box;
+}
 
-  @import "../../blocks/likes/likes.scss";
+@import "../../blocks/likes/likes.scss";
 
-  .like-buttons__item {
+.like-buttons__item {
+  display: inline-block;
+  margin-right: 10px;
+  /*outline: 2px dashed yellow;
+  box-sizing: border-box;*/
+}
+
+.rate-buttons {
+  margin-bottom: 41px;
+  outline: 2px solid red;
+  box-sizing: border-box;
+
+  .rate-buttons__item {
     display: inline-block;
-    margin-right: 10px;
-    /*outline: 2px dashed yellow;
-    box-sizing: border-box;*/
+    margin-right: 20px;
+    max-width: 120px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@import "../../blocks/ratebutton/ratebutton.scss";
+
+.buttons-wrapper {
+  margin-left: 132px;
+  box-sizing: border-box;
+  outline: 2px solid red;
+}
+
+@import "../../blocks/range-slider/range-slider.scss";
+
+.range-slider {
+  width: 266px;
+  margin-bottom: 43px;
+}
+
+.buttons {
+
+  .buttons__positioner {
+    display: flex;
+    justify-content: space-between;
+    width: 218px;
+    margin-bottom: 30px;
+
+    .button__item {
+      width: 99px;
+      /*height: 44px;*/
+    }
   }
 
-  .rate-buttons {
-    margin-bottom: 41px;
-    outline: 2px solid red;
-    box-sizing: border-box;
+    @import "../../blocks/button/button.scss";
 
-    .rate-buttons__item {
-      display: inline-block;
+  .button__icon {
+    font-family: $primary-type;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    text-transform: uppercase;
+
+    &--primary {
       margin-right: 20px;
-      max-width: 120px;
+      color: $primary-theme-color;
+    }
 
-      &:last-child {
-        margin-right: 0;
-      }
+    &--secondary {
+      color: $middle-color;
     }
   }
 
-  @import "../../blocks/ratebutton/ratebutton.scss";
-
-  .buttons-wrapper {
-    margin-left: 132px;
-    box-sizing: border-box;
-    outline: 2px solid red;
+  .button__item--wide {
+    margin-top: 23px;
+    margin-bottom: 40px;
+    width: 320px;
   }
+}
 
-  @import "../../blocks/range-slider/range-slider.scss";
+@import "../../blocks/pagination/pagination.scss";
 
-  .range-slider {
+
+section.dropdowns {
+  /*display: flex;*/
+  width: 100%;
+  padding: 0;
+  margin-left: 140px;
+  margin-top: 100px;
+  outline: 2px solid blue;
+  box-sizing: border-box;
+
+  .dropdown-room-wrapper {
     width: 266px;
-    margin-bottom: 43px;
-  }
-
-  .buttons {
-
-
-    .buttons__positioner {
-      display: flex;
-      justify-content: space-between;
-      width: 218px;
-      margin-bottom: 30px;
-
-      .button__item {
-        width: 99px;
-        /*height: 44px;*/
-      }
-    }
-
-      @import "../../blocks/button/button.scss";
-
-    .button__icon {
-      font-family: $primary-type;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 12px;
-      line-height: 15px;
-      /* identical to box height */
-      text-transform: uppercase;
-
-      &--primary {
-        margin-right: 20px;
-        color: $primary-theme-color;
-      }
-
-      &--secondary {
-        color: $middle-color;
-      }
-    }
-
-    .button__item--wide {
-      margin-top: 23px;
-      margin-bottom: 40px;
-      width: 320px;
-    }
-  }
-
-  @import "../../blocks/pagination/pagination.scss";
-
-
-
-  section.dropdowns {
-    /*display: flex;*/
-    width: 100%;
-    padding: 0;
-    margin-left: 140px;
-    margin-top: 100px;
-    /*outline: 2px solid blue;
+    /*outline: 2px solid green;
     box-sizing: border-box;*/
-
-    .dropdown-room-wrapper {
-      width: 266px;
-      /*outline: 2px solid green;
-      box-sizing: border-box;*/
-    }
-
-  @import "../../blocks/dropdowns/dropdown.scss";
-
-  @import "../../blocks/dropdowns/expand.scss";
-
-    .dropdown__item {
-      margin-bottom: 20px;
-      box-sizing: border-box;
-    }
-
   }
+
+@import "../../blocks/dropdown/dropdown.scss";
+
+@import "../../blocks/dropdown/expand.scss";
+
+  .dropdown__item {
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+}

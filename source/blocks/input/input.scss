@@ -9,9 +9,17 @@
         background: transparent;
     }
   }
+  @keyframes autofill {
+    to {
+      color: $primary-color;
+      background: transparent;
+  }
+  }
   input:-webkit-autofill {
     -webkit-animation-name: autofill;
     -webkit-animation-fill-mode: both;
+    animation-name: autofill;
+    animation-fill-mode: both;
   }
 
   .input__title {
@@ -27,7 +35,7 @@
     margin-top: 0px;
     margin-bottom: 5px;
     max-width: 120px;
-    font-family: Montserrat, Arial, sans-serif;
+    font-family: $primary-type;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -45,7 +53,7 @@
     padding: 13px 0 13px 15px;
     box-sizing: border-box;
     border-radius: 4px;
-    font-family: Montserrat, Arial, sans-serif;
+    font-family: $primary-type;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -58,6 +66,26 @@
       border: 1px solid $middle-color;
       cursor: pointer;
       outline: none;
+    }
+
+    &--expanded {
+      border-top: 1px solid $middle-color;
+      border-right: 1px solid $middle-color;
+      border-bottom: 0;
+      border-left: 1px solid $middle-color;
+      box-sizing: border-box;
+      border-radius: 4px 4px 0 0;
+      font-family: $primary-type;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      /*outline: 2px solid yellow;*/
+
+      &:hover,
+      &:focus {
+        outline: none;
+      }
     }
   }
 

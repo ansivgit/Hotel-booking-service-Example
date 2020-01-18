@@ -185,24 +185,24 @@ block main
         .pagination__positioner
           +pagination(1, 15)
 
-    section.dropdowns
+  section.dropdowns
 
-      .dropdown-room-wrapper
-        .dropdown__item
-          +textField({
-            title: "Dropdown",
-            style: "dropdown",
-            description: "Default",
-            type: "text",
-            name: "rooms",
-            placeholder: "2 спальни, 2 кровати...",
-            ariaLabel: "room convenience"
-          })
-          //+textField("Dropdown", "dropdown", "default", "text", "rooms", "2 спальни, 2 кровати...")(class="input__field input__field--middle input__field--dropdown")
-        .dropdown__item
-          include ../../blocks/dropdowns/dropdown.pug
+    .dropdown-room-wrapper
+      .dropdown__item
+        +textField({
+          title: "Dropdown",
+          style: "dropdown",
+          description: "Default",
+          type: "text",
+          name: "rooms",
+          placeholder: "2 спальни, 2 кровати...",
+          ariaLabel: "room convenience"
+        })
 
-    section.checkboxes
+      .dropdown__item
+        include ../../blocks/dropdown/dropdown.pug
+
+  section.checkboxes
 
 
-    section.features
+  section.features

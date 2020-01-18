@@ -17,8 +17,10 @@
     /*outline: 2px solid yellow;*/
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
       outline: none;
+
     }
   }
 }

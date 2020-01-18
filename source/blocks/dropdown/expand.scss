@@ -1,9 +1,11 @@
 .expand {
-  /*display: none;*/
+  display: block;
   border: 1px solid $middle-color;
   border-radius: 0 0 4px 4px;
   box-sizing: border-box;
   box-shadow: 0px 10px 20px $lightest-color;
+  /*outline: 20px solid yellow;
+  background-color: rgb(230, 32, 32);*/
 
   .select__item {
     display: flex;
@@ -16,7 +18,7 @@
   .select__name {
     width: 133px;
     margin-left: 15px;
-    font-family: Montserrat;
+    font-family: $primary-type;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
@@ -31,7 +33,7 @@
     width: 90px;
     justify-content: space-between;
     align-items: center;
-    outline: 2px solid red;
+    /*outline: 2px solid red;*/
   }
 
   .select__btn {
@@ -49,7 +51,7 @@
 
   .select__value {
     width: 32px;
-    font-family: Montserrat;
+    font-family: $primary-type;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
@@ -60,8 +62,11 @@
     color: $dark-color;
     border: none;
   }
-
-  .visualy-hidden {
+}
+.visually-hidden {
     display: none;
-  }
+    /*position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;*/
 }

@@ -6,6 +6,7 @@
                 "" - без иконки,
                 dropdown - стрелочка вниз (для дропдаунов)
                 subscribe - стрелка вправо (подписка);
+  options.expanded: меняет стиль при разворачивании инпута - true или отсутствует;
   options.description: поля описания назначения инпута
                       (в правой части) - присутствует только в UI-Kit:
                        - Default
@@ -39,6 +40,9 @@ mixin textField(options)
 
     if (options.style== "subscribe")
       - fieldStyle= "subscribe"
+
+    if (options.expanded)
+      - inputStyle= `${inputStyle} ${inputStyle}--expanded`
 
     label(class= fieldStyle)
       h3.input__title= options.title
