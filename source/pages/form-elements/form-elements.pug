@@ -273,7 +273,46 @@ block main
         })
 
       .dropdown__item
-        include ../../blocks/dropdown/dropdown.pug
+        +textField({
+          title: "Dropdown",
+          style: "dropdown",
+          expanded: true,
+          description: "Expanded",
+          type: "text",
+          name: "rooms",
+          placeholder: "2 спальни, 2 кровати...",
+          ariaLabel: "room convenience"
+        })
+
+        include ../../blocks/dropdown/expand.pug
+        .expand
+          +selection("Спальни", "bedrooms", 2)
+          +selection("Кровати", "beds", 2)
+          +selection("Ванные комнаты", "bathrooms", 0)
+
+          script(src='../../blocks/dropdown/dropdown.js')
+
+    .dropdown__item
+      +textField({
+        title: "Dropdown",
+        style: "dropdown",
+        expanded: true,
+        description: "Expanded",
+        type: "text",
+        name: "rooms",
+        placeholder: "2 спальни, 2 кровати...",
+        ariaLabel: "room convenience"
+      })
+
+      include ../../blocks/dropdown/expand.pug
+      .expand
+        +selection("Спальни", "bedrooms", 2)
+        +selection("Кровати", "beds", 2)
+        +selection("Ванные комнаты", "bathrooms", 0)
+
+        script(src='../../blocks/dropdown/dropdown.js')
+
+
 
   section.checkboxes
 

@@ -4,10 +4,9 @@
 
 section.inputs {
   display: flex;
-  width: 100%;
+  /*width: 100%;*/
   padding: 0;
-  margin-left: 141px;
-  margin-top: 65px;
+  margin: 65px 0 0 141px;
   outline: 2px solid rgb(0, 255, 115);
   box-sizing: border-box;
 }
@@ -189,8 +188,8 @@ section.inputs {
 
 
 section.dropdowns {
-  /*display: flex;*/
-  width: 100%;
+  display: flex;
+  /*width: 100%;*/
   padding: 0;
   margin-left: 140px;
   margin-top: 100px;
@@ -199,8 +198,8 @@ section.dropdowns {
 
   .dropdown-room-wrapper {
     width: 266px;
-    /*outline: 2px solid green;
-    box-sizing: border-box;*/
+    outline: 2px solid green;
+    box-sizing: border-box;
   }
 
 @import "../../blocks/dropdown/dropdown.scss";
