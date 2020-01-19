@@ -1,5 +1,4 @@
 .expand {
-  display: block;
   border: 1px solid $middle-color;
   border-radius: 0 0 4px 4px;
   box-sizing: border-box;
@@ -45,12 +44,12 @@
     font-size: 18px;
     line-height: 30px;
     color: $middle-color;
-    align-items: center;
+    /*align-items: center;*/
     text-align: center;
   }
 
   .select__value {
-    width: 32px;
+    width: 30px;
     font-family: $primary-type;
     font-style: normal;
     font-weight: bold;

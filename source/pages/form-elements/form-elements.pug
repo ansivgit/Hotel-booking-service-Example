@@ -11,7 +11,7 @@ block main
 
   include ../../blocks/logo-uiKit/logo-uiKit.pug
 
-  section.inputs
+  section.form-elements
     .inputs-wrapper
       include ../../blocks/input/input.pug
 
@@ -258,7 +258,7 @@ block main
         .pagination__positioner
           +pagination(1, 15)
 
-  section.dropdowns
+    //- раздел дропдаунов
 
     .dropdown-room-wrapper
       .dropdown__item
@@ -292,26 +292,89 @@ block main
 
           script(src='../../blocks/dropdown/dropdown.js')
 
-    .dropdown__item
+    .dropdown__item--guests.dropdown__item--guests--1
       +textField({
         title: "Dropdown",
         style: "dropdown",
         expanded: true,
-        description: "Expanded",
         type: "text",
-        name: "rooms",
-        placeholder: "2 спальни, 2 кровати...",
-        ariaLabel: "room convenience"
+        name: "guests",
+        placeholder: "Сколько гостей",
+        ariaLabel: "quantity guests"
       })
 
-      include ../../blocks/dropdown/expand.pug
       .expand
-        +selection("Спальни", "bedrooms", 2)
-        +selection("Кровати", "beds", 2)
-        +selection("Ванные комнаты", "bathrooms", 0)
+        +selection("Взрослые", "adults", 0)
+        +selection("Дети", "childrens", 0)
+        +selection("Младенцы", "babies", 0)
 
+        .button__form
+          +button({
+                title: "Очистить",
+                color: "complementary",
+                style: "default",
+                name: "default",
+                value: "value",
+                type: "reset",
+                ariaLabel: "submit",
+                action: "/some-address/change-me",
+                method: "post"
+                })
+
+          +button({
+                title: "Применить",
+                color: "complementary",
+                style: "default",
+                name: "default",
+                value: "value",
+                type: "submit",
+                ariaLabel: "submit",
+                action: "/some-address/change-me",
+                method: "post"
+                })
         script(src='../../blocks/dropdown/dropdown.js')
 
+    .dropdown__item--guests.dropdown__item--guests--2
+      +textField({
+        title: "Dropdown",
+        style: "dropdown",
+        expanded: true,
+        type: "text",
+        name: "guests",
+        placeholder: "Сколько гостей",
+        ariaLabel: "quantity guests"
+      })
+
+      .expand
+        +selection("Взрослые", "adults", 2)
+        +selection("Дети", "childrens", 1)
+        +selection("Младенцы", "babies", 0)
+
+        .button__form
+          +button({
+                title: "Очистить",
+                color: "complementary",
+                style: "default",
+                name: "default",
+                value: "value",
+                type: "reset",
+                ariaLabel: "submit",
+                action: "/some-address/change-me",
+                method: "post"
+                })
+
+          +button({
+                title: "Применить",
+                color: "complementary",
+                style: "default",
+                name: "default",
+                value: "value",
+                type: "submit",
+                ariaLabel: "submit",
+                action: "/some-address/change-me",
+                method: "post"
+                })
+        script(src='../../blocks/dropdown/dropdown.js')
 
 
   section.checkboxes

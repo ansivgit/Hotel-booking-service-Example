@@ -2,8 +2,10 @@
 
 @import "../../blocks/logo-uiKit/logo-uiKit.scss";
 
-section.inputs {
-  display: flex;
+section.form-elements {
+  display: grid;
+  grid-template-columns: 447px 392px 320px;
+
   /*width: 100%;*/
   padding: 0;
   margin: 65px 0 0 141px;
@@ -12,6 +14,11 @@ section.inputs {
 }
 
 .inputs-wrapper {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
   width: 320px;
   outline: 2px solid green;
   box-sizing: border-box;
@@ -51,8 +58,12 @@ section.inputs {
 }
 
 .toggles-wrapper {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
   /*width: 265px;*/
-  margin-left: 126px;
+  /*margin-left: 126px;*/
   outline: 2px solid green;
   box-sizing: border-box;
 }
@@ -140,9 +151,12 @@ section.inputs {
 @import "../../blocks/ratebutton/ratebutton.scss";
 
 .buttons-wrapper {
-  margin-left: 132px;
-  box-sizing: border-box;
-  outline: 2px solid red;
+  width: 100%;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  /*margin-left: 132px;*/
 }
 
 @import "../../blocks/range-slider/range-slider.scss";
@@ -152,15 +166,17 @@ section.inputs {
   margin-bottom: 43px;
 }
 
-.buttons {
+@import "../../blocks/button/button.scss";
 
-  @import "../../blocks/button/button.scss";
+.buttons {
 
   .buttons__positioner {
     display: flex;
     justify-content: space-between;
     width: 218px;
     margin-bottom: 30px;
+    box-sizing: border-box;
+    outline: 2px solid red;
 
     &--tight {
       width: 142px;
@@ -186,21 +202,18 @@ section.inputs {
 
 @import "../../blocks/pagination/pagination.scss";
 
+/*секция дропдаунов*/
 
-section.dropdowns {
-  display: flex;
-  /*width: 100%;*/
-  padding: 0;
-  margin-left: 140px;
+.dropdown-room-wrapper {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  width: 266px;
   margin-top: 100px;
-  outline: 2px solid blue;
+  outline: 2px solid green;
   box-sizing: border-box;
-
-  .dropdown-room-wrapper {
-    width: 266px;
-    outline: 2px solid green;
-    box-sizing: border-box;
-  }
+}
 
 @import "../../blocks/dropdown/dropdown.scss";
 
@@ -209,6 +222,37 @@ section.dropdowns {
   .dropdown__item {
     margin-bottom: 20px;
     box-sizing: border-box;
+
+    &--guests {
+      width: 320px;
+      margin-top: 100px;
+
+      &--1 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+      }
+
+      &--2 {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+      }
+    }
   }
 
-}
+  .button__form {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 7px 5px 14px;
+    /*background-color: red;
+    outline: 2px solid green;*/
+    box-sizing: border-box;
+
+    button {
+      height: 25px;
+    }
+  }
+
