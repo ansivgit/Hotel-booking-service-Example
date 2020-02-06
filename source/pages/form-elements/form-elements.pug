@@ -110,13 +110,28 @@ block main
 
         h3.checkbox-buttons__title Checkbox Buttons
         .checkbox-buttons__item
-          +checkbox("checkbox-smoke", "Можно курить")
+          +checkbox({
+            title: "Можно курить",
+            name: "paramsss",
+            value: "smoking"
+            }
+          )
 
         .checkbox-buttons__item
-          +checkbox("checkbox-pets", "Можно с питомцами")(checked)
+          +checkbox({
+            title: "Можно с питомцами",
+            name: "paramsss",
+            value: "pets"
+            }
+          )(checked)
 
         .checkbox-buttons__item
-          +checkbox("checkbox-guests", "Можно пригласить гостей (до 10 человек)")(checked)
+          +checkbox({
+            title: "Можно пригласить гостей (до 10 человек)",
+            name: "paramsss",
+            value: "guests"
+            }
+          )(checked)
 
       .radio-buttons
         h3.radio-buttons__title Radio Buttons
@@ -377,7 +392,53 @@ block main
         script(src='../../blocks/dropdown/dropdown.js')
 
 
-  section.checkboxes
+    //- раздел checkboxes
+
+    include ../../blocks/checkbox-expandable/checkbox-expandable.pug
+
+    .checkbox__expandable
+
+      +checkboxList("Expandable checkbox list", isExpanded = true, options = [
+                    {
+                    title: "Завтрак",
+                    name: "breakfast"
+                    },
+                    {
+                    title: "Письменный стол",
+                    name: "desk",
+                    checked: true
+                    },
+                    {
+                    title: "Стул для кормления",
+                    name: "baby-feeding-chair",
+                    checked: true
+                    },
+                    {
+                    title: "Кроватка",
+                    name: "cot",
+                    checked: true
+                    },
+                    {
+                    title: "Телевизор",
+                    name: "tv"
+                    },
+                    {
+                    title: "Шампунь",
+                    name: "shampoo"
+                    },
+                    {
+                    title: "Телевизор",
+                    name: "tv2"
+                    },
+                    {
+                    title: "Шампунь",
+                    name: "shampoo2"
+                    }
+                  ]
+      )
+
+
+
 
 
   section.features

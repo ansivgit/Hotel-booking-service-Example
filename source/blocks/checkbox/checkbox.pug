@@ -1,15 +1,37 @@
 //- checkboxes base
 
-mixin checkbox(id, title="someCheckbox", description= "", type="checkbox", name="default")
+//-
+  options.title: подпись чекбокса;
+  options.description: описание преимуществ для rich checkbox (по умолчанию отсутствует);
+  options.name: значение обязательного поля name для инпута (разные имена для каждого чекбокса);
+  option.checked: для отмеченных чекбоксов (true), или отсутствует
+
+  //options.ariaLabel: содержание атрибута aria-label для скринридеров;
+  //options.action: обязательное поле action формы "/some-address/change-me",
+  //options.method: обязательное поле method формы "post"
+
+mixin checkbox(options)
 
   - var ifRich= ""
 
-  if(description)
+  if(options.description)
     - ifRich= "checkbox-label--rich"
 
   .checkbox-block
-    input(id= id, type= type, name= name)&attributes(attributes)
-    label(for= id, class= ifRich)= title
+    label(class= ifRich)= options.title
+      if(options.checked)
+        input(name= options.name, type= "checkbox", checked)
 
-      if(description)
-        p(class= "checkbox-block__description")= description
+      else
+        input(name= options.name, type= "checkbox")
+      .checkbox__mark
+
+      if(options.description)
+        p(options.class= "checkbox-block__description")= options.description
+
+//- {
+      title: "Можно курить",
+      description: "",
+      name: "smoking",
+      checked: true
+    }

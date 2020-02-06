@@ -1,6 +1,7 @@
 .checkbox-block {
+  position: relative;
+
   input[type=checkbox] {
-    position: absolute;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -9,7 +10,7 @@
   label {
     display: block;
     margin-left: 30px;
-    line-height: 18px; /* identical to box height, or 129% */
+    line-height: 16px; /* identical to box height, or 129% */
     color: $middle-color;
   }
 
@@ -25,32 +26,24 @@
     color: $middle-color;
   }
 
-  input[type=checkbox] ~ label::before {
-    content: "";
+  .checkbox__mark {
     display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 20px;
     height: 20px;
-    margin-left: -30px;
-    margin-right: 10px;
-    margin-top: -7px;
+    /*margin-left: -30px;
+    margin-right: 10px;*/
+    margin-top: -2px;
     vertical-align: middle;
     border: 1px solid $secondary-color;
     box-sizing: border-box;
     border-radius: 4px;
   }
 
-  input[type=checkbox]:checked ~ label::before {
-    content: "";
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-left: -30px;
-    margin-top: -7px;
-    vertical-align: middle;
+  input[type=checkbox]:checked + .checkbox__mark{
     border: 1px solid $primary-theme-color;
-    box-sizing: border-box;
-    border-radius: 4px;
-    /*background-color: seagreen;*/
     background: url("../../blocks/checkbox/img/checkbox.png") no-repeat 50% 50%;
   }
 }
