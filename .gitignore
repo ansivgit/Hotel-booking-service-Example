@@ -5,9 +5,10 @@ dist/
 0blocks/
 0includes/
 0templates/
-source/pages/test
+source/pages/test/
 *.css
 *.css.map
 *.html
 package-lock.json
 package.json
+source/pages/test/test.pug
