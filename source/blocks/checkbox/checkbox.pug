@@ -11,23 +11,23 @@
   //options.method: обязательное поле method формы "post"
 
 mixin checkbox(options)
+  - const {title, description, name, checked} = options
+  - let ifRich= ""
 
-  - var ifRich= ""
-
-  if(options.description)
+  if(description)
     - ifRich= "checkbox-label--rich"
 
-  .checkbox-block
-    label(class= ifRich)= options.title
-      if(options.checked)
-        input(name= options.name, type= "checkbox", checked)
+  li.checkbox-block
+    label(class= ifRich)= title
+      if(checked)
+        input(name= name, type= "checkbox", checked)
 
       else
-        input(name= options.name, type= "checkbox")
+        input(name= name, type= "checkbox")
       .checkbox__mark
 
-      if(options.description)
-        p(options.class= "checkbox-block__description")= options.description
+      if(description)
+        p(class= "checkbox-block__description")= description
 
 //- {
       title: "Можно курить",

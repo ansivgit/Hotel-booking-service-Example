@@ -1,0 +1,18 @@
+//- checkboxes list expandable
+
+include ../checkbox/checkbox.pug
+
+mixin checkboxList(listName = "", isExpanded = true, options = [])
+
+  - let listStyle= "checkbox-list__title";
+  h3(class= listStyle)= listName
+
+  ul.checkbox-list
+
+
+    if(isExpanded)
+      - listStyle= `${listStyle} ${listStyle}--expanded`
+
+    each item in options
+      +checkbox(item)
+

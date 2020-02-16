@@ -107,31 +107,10 @@ block main
 
       .checkbox-buttons
         include ../../blocks/checkbox/checkbox.pug
+        include ../../blocks/checkbox-list/checkbox-list.pug
+        include ../../blocks/checkbox-list/checkbox-list-date.pug
 
-        h3.checkbox-buttons__title Checkbox Buttons
-        .checkbox-buttons__item
-          +checkbox({
-            title: "Можно курить",
-            name: "paramsss",
-            value: "smoking"
-            }
-          )
-
-        .checkbox-buttons__item
-          +checkbox({
-            title: "Можно с питомцами",
-            name: "paramsss",
-            value: "pets"
-            }
-          )(checked)
-
-        .checkbox-buttons__item
-          +checkbox({
-            title: "Можно пригласить гостей (до 10 человек)",
-            name: "paramsss",
-            value: "guests"
-            }
-          )(checked)
+        +checkboxList("Checkbox Buttons", isExpanded = false, options = checkboxListPermission)
 
       .radio-buttons
         h3.radio-buttons__title Radio Buttons
@@ -394,48 +373,8 @@ block main
 
     //- раздел checkboxes
 
-    include ../../blocks/checkbox-expandable/checkbox-expandable.pug
-
     .checkbox__expandable
-
-      +checkboxList("Expandable checkbox list", isExpanded = true, options = [
-                    {
-                    title: "Завтрак",
-                    name: "breakfast"
-                    },
-                    {
-                    title: "Письменный стол",
-                    name: "desk",
-                    checked: true
-                    },
-                    {
-                    title: "Стул для кормления",
-                    name: "baby-feeding-chair",
-                    checked: true
-                    },
-                    {
-                    title: "Кроватка",
-                    name: "cot",
-                    checked: true
-                    },
-                    {
-                    title: "Телевизор",
-                    name: "tv"
-                    },
-                    {
-                    title: "Шампунь",
-                    name: "shampoo"
-                    },
-                    {
-                    title: "Телевизор",
-                    name: "tv2"
-                    },
-                    {
-                    title: "Шампунь",
-                    name: "shampoo2"
-                    }
-                  ]
-      )
+      +checkboxList("Expandable checkbox list", isExpanded = true, options = checkboxListComfort)
 
 
 

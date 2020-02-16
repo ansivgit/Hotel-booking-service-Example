@@ -1,5 +1,6 @@
 .checkbox-block {
   position: relative;
+  list-style-type: none;
 
   input[type=checkbox] {
     -webkit-appearance: none;
@@ -9,8 +10,10 @@
 
   label {
     display: block;
+
+    margin-top: 4px;
     margin-left: 30px;
-    line-height: 16px; /* identical to box height, or 129% */
+    line-height: 16px; /* не менять из-за многострочных подписей!!!*/ /*  identical to box height, or 129% */
     color: $middle-color;
   }
 
