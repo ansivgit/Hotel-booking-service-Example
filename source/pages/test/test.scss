@@ -9,3 +9,13 @@
 }
 
 @import "../../blocks/input/input.scss";
+
+label::after {
+  content: "11";
+  display: inline-block;
+  position: absolute;
+}
+
+options {
+  font-size: 12px;
+}

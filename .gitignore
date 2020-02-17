@@ -12,3 +12,4 @@ source/pages/test/
 package-lock.json
 package.json
 source/pages/test/test.pug
+source/pages/test/test.scss

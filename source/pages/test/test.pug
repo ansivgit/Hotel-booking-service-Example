@@ -16,7 +16,7 @@ block main
 
       if(description)
         - ifRich= "checkbox-label--rich";
-        
+
       .checkbox-block
         input(id= id, type= type, name= name)&attributes(attributes)
         label(for= id, class= ifRich)= title + description1
@@ -31,3 +31,9 @@ block main
 
           .checkbox-buttons__item
             +checkbox("checkbox-guests", "Можно пригласить гостей (до 10 человек)")(checked)
+
+  label
+    .drop
+      select
+        options 1
+        options 2

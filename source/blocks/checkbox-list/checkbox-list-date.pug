@@ -1,4 +1,14 @@
-//- ------массив параметров для списка чекбоксов checkbox-list__comfort
+//-
+  options.title: подпись чекбокса;
+  options.description: описание преимуществ для rich checkbox (по умолчанию отсутствует);
+  options.name: значение обязательного поля name для инпута (разные имена для каждого чекбокса);
+  option.checked: для отмеченных чекбоксов (true), или отсутствует
+
+  //options.ariaLabel: содержание атрибута aria-label для скринридеров;
+  //options.action: обязательное поле action формы "/some-address/change-me",
+  //options.method: обязательное поле method формы "post"
+
+//- массив параметров для списка чекбоксов checkbox-list__comfort
 
 -
   const checkboxListComfort= [
@@ -39,7 +49,7 @@
     },
   ]
 
-//- ------массив параметров для списка чекбоксов checkbox-list__permission
+//- массив параметров для списка чекбоксов checkbox-list__permission
 -
   const checkboxListPermission= [
     {
@@ -55,5 +65,20 @@
       title: "Можно пригласить гостей (до 10 человек)",
       name: "isGuests",
       checked: true,
+    },
+  ]
+
+//- массив параметров для списка расширенных чекбоксов сheckboxList__rich
+-
+  const checkboxListRich= [
+    {
+      title: "Широкий коридор",
+      description: "Ширина коридоров в номере не\u00A0менее 91 см.",
+      name: "wideCorridor",
+    },
+    {
+      title: "Помощник для инвалидов",
+      description: "На 1 этаже вас встретит специалист и\u00A0проводит до номера.",
+      name: "forDisabled",
     },
   ]
