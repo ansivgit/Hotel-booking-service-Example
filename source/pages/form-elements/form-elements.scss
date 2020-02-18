@@ -74,7 +74,8 @@ section.form-elements {
 .like-buttons__title,
 .rate-buttons__title,
 .buttons__title,
-.pagination__title {
+.pagination__title,
+.bullet-list__title {
   margin-bottom: 16px;
 }
 
@@ -264,6 +265,16 @@ section.form-elements {
 .checkbox__rich {
   grid-column-start: 2;
   grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  margin-top: 34px;
+}
+
+@import "../../blocks/bullet-list/bullet-list.scss";
+
+.bullets {
+  grid-column-start: 3;
+  grid-column-end: 3s;
   grid-row-start: 3;
   grid-row-end: 4;
   margin-top: 34px;
