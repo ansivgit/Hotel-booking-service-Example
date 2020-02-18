@@ -1,0 +1,54 @@
+.checkbox-block {
+  position: relative;
+  list-style-type: none;
+
+  input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  label {
+    display: block;
+    /*margin-top: 0px;*/
+    margin-left: 30px;
+    line-height: 16px; /* не менять из-за многострочных подписей!!!*/ /*  identical to box height, or 129% */
+    color: $middle-color;
+  }
+
+  .checkbox-label--rich {
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  .checkbox-block__description {
+    max-width: 236px;
+    margin-top: 6px;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px; /* or 117% */
+    color: $middle-color;
+
+  }
+
+  .checkbox__mark {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    /*margin-left: -30px;
+    margin-right: 10px;*/
+    margin-top: -2px;
+    vertical-align: middle;
+    border: 1px solid $secondary-color;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+
+  input[type=checkbox]:checked + .checkbox__mark{
+    border: 1px solid $primary-theme-color;
+    background: url("../../blocks/checkbox/img/checkbox.png") no-repeat 50% 50%;
+  }
+}

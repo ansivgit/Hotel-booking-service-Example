@@ -1,0 +1,14 @@
+//- bullet base
+
+//-
+  listName: заголовок списка;
+  title: подпись bullet;
+
+mixin bulletList(listName, arrayTitle = [])
+
+  h3(class= bullet-list__title)= listName
+  ul.bullet-list
+
+    each title in arrayTitle
+      li.bullet-item= title
+        //.bullet__mark
