@@ -1,10 +1,25 @@
 extends ../base/template.pug
 
+include ../../blocks/input/input.pug
+include ../../blocks/checkbox-list/checkbox-list-date.pug
+include ../../blocks/checkbox-list/checkbox-list.pug
+include ../../blocks/radiobutton/radiobutton.pug
+include ../../blocks/toggle/toggle.pug
+include ../../blocks/likes/likes.pug
+include ../../blocks/ratebutton/ratebutton.pug
+include ../../blocks/range-slider/range-slider.pug
+include ../../blocks/button/button.pug
+include ../../blocks/pagination/pagination.pug
+include ../../blocks/dropdown/expand.pug
+include ../../blocks/bullet-list/bullet-list.pug
+include ../../blocks/features-brief/features-brief.pug
+include ../../blocks/comment/comment.pug
+
+
 block title
   title TOXIN Form-Elements
 
 block scripts
-
   script(src='./form-elements.js')
 
 block main
@@ -13,8 +28,6 @@ block main
 
   section.form-elements
     .inputs-wrapper
-      include ../../blocks/input/input.pug
-
       .input__item
         +textField({
           title: "Text field",
@@ -106,19 +119,16 @@ block main
     .toggles-wrapper
 
       .checkbox-buttons
-        include ../../blocks/checkbox/checkbox.pug
-        include ../../blocks/checkbox-list/checkbox-list.pug
-        include ../../blocks/checkbox-list/checkbox-list-date.pug
-
-        +checkboxList("Checkbox Buttons", isExpanded = false, options = checkboxListPermission)
+        +checkboxList("Checkbox Buttons", options = checkboxListPermission)
 
       .radio-buttons
         h3.radio-buttons__title Radio Buttons
-        include ../../blocks/radiobutton/radiobutton.pug
+        +radiobuttons("gender", [
+          {title: "Мужчина", value: "man", checked: true,},
+          {title: "Женщина", value: "woman",},
+        ])
 
       .toggles
-        include ../../blocks/toggle/toggle.pug
-
         h3.toggles__title Toggle
         .toggle__item
           +toggles()(checked)
@@ -126,8 +136,6 @@ block main
           +toggles("offers-no-agree")
 
       .like-buttons
-        include ../../blocks/likes/likes.pug
-
         h3.like-buttons__title Like button
         .like-buttons__item
           +likeButton()
@@ -135,10 +143,7 @@ block main
           +likeButton("more-likes", "12")(checked)
 
       .rate-buttons
-        include ../../blocks/ratebutton/ratebutton.pug
-
         h3.rate-buttons__title Rate button
-
         .rate-buttons__item
           +rating(4)
         .rate-buttons__item
@@ -147,11 +152,9 @@ block main
     .buttons-wrapper
 
       .range-slider
-        include ../../blocks/range-slider/range-slider.pug
+        +range-slider(5000, 10000)
 
       .buttons
-        include ../../blocks/button/button.pug
-
         h3.buttons__title Buttons
         .buttons__positioner
           .button__item
@@ -246,8 +249,6 @@ block main
               })
 
       .pagination
-        include ../../blocks/pagination/pagination.pug
-
         h3.pagination__title Pagination
         .pagination__positioner
           +pagination(1, 15)
@@ -278,7 +279,6 @@ block main
           ariaLabel: "room convenience"
         })
 
-        include ../../blocks/dropdown/expand.pug
         .expand
           +selection("Спальни", "bedrooms", 2)
           +selection("Кровати", "beds", 2)
@@ -370,21 +370,33 @@ block main
                 })
         script(src='../../blocks/dropdown/dropdown.js')
 
-
     //- раздел checkboxes
 
     .checkbox__expandable
-      +checkboxList("Expandable checkbox list", isExpanded = true, options = checkboxListComfort)
+      +checkboxList("Expandable checkbox list", options = [], isExpandable = true, isExpanded = false)
+      +checkboxList("Expandable checkbox list", options = checkboxListComfort, isExpandable = true, isExpanded = true)
 
     .checkbox__rich
-      +checkboxList("Rich checkbox buttons", isExpanded = false, options = checkboxListRich)
+      +checkboxList("Rich checkbox buttons", options = checkboxListRich)
 
     .bullets
-      include ../../blocks/bullet-list/bullet-list.pug
       +bulletList("Bullet list", ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а\u00A0выезд\u00A0до\u00A012:00"])
 
+    //- раздел отзывов и преимуществ
 
+    .features-brief-block
+      +featuresBrief([
+        {icon: "insert_emoticon", title: "Комфорт", description: "Шумопоглощающие стены"},
+        {icon: "location_city", title: "Удобство", description: "Окно в каждой из спален"},
+      ])
 
-
-
-  section.features
+    .comment-block
+      +commentList([
+        {
+          avatar: "../../blocks/comment/img/avatar01.jpg",
+          name: "Мурад Сарафанов",
+          date: "5 дней назад",
+          likeValue: 12,
+          text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+        }
+      ])

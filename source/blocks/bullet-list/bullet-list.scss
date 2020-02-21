@@ -1,14 +1,16 @@
 .bullet-list {
-  /*position: relative;*/
   list-style-type: none;
+}
 
 .bullet-item {
   position: relative;
   margin: 10px 0 10px 20px;
-  /*outline: 1px dotted red;*/
-}
 
-  &:before {
+  &:first-child {
+    margin-top: 14px;
+  }
+
+  &::before {
     position: absolute;
     top: 6px;
     left: -20px;
@@ -16,29 +18,9 @@
     display: inline-block;
     width: 10px;
     height: 10px;
-    /*margin-left: -30px;*/
     margin-right: 10px;
-    /*margin-top: -7px;*/
-    /*vertical-align: middle;*/
-    /*border: 1px solid $secondary-color;*/
     box-sizing: border-box;
     border-radius: 50%;
     background-color: $secondary-color;
-  }
-
-  .checkbox__mark {
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    /*margin-left: -30px;
-    margin-right: 10px;*/
-    margin-top: -2px;
-    vertical-align: middle;
-    border: 1px solid $secondary-color;
-    box-sizing: border-box;
-    border-radius: 4px;
   }
 }

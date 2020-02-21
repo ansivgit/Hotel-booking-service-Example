@@ -1,0 +1,19 @@
+//- comments
+
+  avatar: адрес аватарки;
+  name: имя комментатора;
+  date: сколько дней назад был оставлен комментарий(???);
+  likeValue: текущее количество лайков;
+  text: текст отзыва
+
+mixin commentList(optionsList = [])
+  ul.comment-list
+
+    each item in optionsList
+      li.comment-item
+        img(src= item.avatar, class= "comment-item__avatar")
+        .comment-item__name= item.name
+        .comment-item__date= item.date
+        .comment-item__likes
+          +likeButton("more-likes", likeValue)(checked)
+        .comment-item__text= item.text

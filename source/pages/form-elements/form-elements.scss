@@ -7,9 +7,9 @@ section.form-elements {
   grid-template-columns: 447px 392px 320px;
   /*width: 100%;*/
   padding: 0;
-  margin: 65px 0 0 141px;
-  outline: 2px solid rgb(0, 255, 115);
-  box-sizing: border-box;
+  margin: 66px 0 0 140px;
+  /*outline: 2px solid rgb(0, 255, 115);
+  box-sizing: border-box;*/
 
 }
 
@@ -75,13 +75,14 @@ section.form-elements {
 .rate-buttons__title,
 .buttons__title,
 .pagination__title,
-.bullet-list__title {
+.bullet-list__title,
+.checkbox-list__title--expandable {
   margin-bottom: 16px;
 }
 
 .checkbox-buttons {
   max-width: 225px;
-  margin-bottom: 41px;
+  margin-bottom: 45px;
   /*outline: 2px solid red;
   box-sizing: border-box;*/
 }
@@ -259,7 +260,11 @@ section.form-elements {
   grid-column-end: 2;
   grid-row-start: 3;
   grid-row-end: 4;
-  margin-top: 118px;
+  margin-top: 34px;
+}
+
+.checkbox-list__title--expandable--expanded {
+  margin-top: 49px;
 }
 
 .checkbox__rich {
@@ -274,8 +279,28 @@ section.form-elements {
 
 .bullets {
   grid-column-start: 3;
-  grid-column-end: 3s;
+  grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 4;
   margin-top: 34px;
+}
+
+@import "../../blocks/features-brief/features-brief.scss";
+
+.features-brief-block {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  margin-top: 7px;
+}
+
+@import "../../blocks/comment/comment.scss";
+
+.comment-block {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  margin-top: 7px;
 }

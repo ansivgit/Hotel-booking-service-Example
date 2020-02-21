@@ -1,0 +1,11 @@
+//- features-brief list
+
+mixin featuresBrief(optionsList = [])
+  ul.features-brief
+
+    each item in optionsList
+        //- let [icon, title, description] = item
+        li.features-item
+          i.material-icons= item.icon
+          .features-item__title= item.title
+          .features-item__description= item.description

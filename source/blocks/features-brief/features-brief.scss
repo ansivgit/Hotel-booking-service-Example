@@ -1,0 +1,47 @@
+.features-brief {
+  width: 280px;
+  list-style-type: none;
+
+.features-item {
+  display: grid;
+  grid-template-columns: 48px auto;
+  grid-column-gap: 10px;
+  margin: 21px 0 0 0;
+  padding-bottom: 19px;
+  border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+  i.material-icons {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      font-family: "Material Icons";
+      font-size: 48px;
+      align-items: center;
+      text-align: center;
+      background: $primary-gradient;
+      background-clip: content-box;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+}
+
+.features-item__title {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  font-weight: bold;
+}
+
+.features-item__description {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}

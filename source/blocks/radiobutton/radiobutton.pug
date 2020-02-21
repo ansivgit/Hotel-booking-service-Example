@@ -1,17 +1,10 @@
-.radio-buttons-block
-  .radio-buttons__item
-    input(id="choose-gender-man" type="radio" name="gender" value="man" checked)
-    label(for="choose-gender-man") Мужчина
-  .radio-buttons__item
-    input(id="choose-gender-woman" type="radio" name="gender" value="woman")
-    label(for="choose-gender-woman") Женщина
+//- радиокнопки
+  options = {title, value, checked}
 
-
-
-//- radio-buttons base - сперва думала сделать миксин для генерации большого количества полей
-  $nameOfRadio: gender;
-  mixin radiobuttons(id, title="someCheckbox", type="radio", name=$nameOfRadio)
-    //- надо написать цикл, который будет генерить радиобаттоны и подписи в зависимости от введенного массива
-    .radiobuttons-wrapper
-      input(id= id, type= type, name= name)&attributes(attributes)
-      label(for= id)= title
+mixin radiobuttons(nameOfRadio, options = {})
+  .radio-buttons-block
+    each item in options
+      .radio-buttons__item
+        - unicId= `choose-${nameOfRadio}-${item.value}`
+        input(id= unicId type= "radio" name= nameOfRadio value= item.value checked= item.checked)
+        label(for= unicId)= item.title
