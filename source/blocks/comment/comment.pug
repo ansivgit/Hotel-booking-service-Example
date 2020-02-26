@@ -11,7 +11,7 @@ mixin commentList(optionsList = [])
 
     each item in optionsList
       li.comment-item
-        img(src= item.avatar, class= "comment-item__avatar")
+        .comment-item__userPic(style="background-image: url(../..//blocks/comment/img/avatar01.jpg)")
         .comment-item__name= item.name
         .comment-item__date= item.date
         .comment-item__likes
