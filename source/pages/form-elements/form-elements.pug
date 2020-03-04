@@ -1,5 +1,6 @@
 extends ../base/template.pug
 
+include ../../blocks/logo-uiKit/logo-uiKit.pug
 include ../../blocks/input/input.pug
 include ../../blocks/checkbox-list/checkbox-list-date.pug
 include ../../blocks/checkbox-list/checkbox-list.pug
@@ -15,7 +16,6 @@ include ../../blocks/bullet-list/bullet-list.pug
 include ../../blocks/features-brief/features-brief.pug
 include ../../blocks/comment/comment.pug
 
-
 block title
   title TOXIN Form-Elements
 
@@ -23,8 +23,7 @@ block scripts
   script(src='./form-elements.js')
 
 block main
-
-  include ../../blocks/logo-uiKit/logo-uiKit.pug
+  +logo()
 
   section.form-elements
     .inputs-wrapper

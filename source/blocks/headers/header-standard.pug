@@ -1,0 +1,39 @@
+include ../../blocks/navigation/navigation.pug
+
+mixin header()
+  header.standard
+    .logo
+    nav.main-nav
+      +navigation("horizontal", [
+        {
+          title: "Home",
+          link: "/some-address/change-me",
+          style: "",
+          isDifferent: true,
+        },
+        {
+          title: "About Us",
+          link: "/some-address/change-me",
+          style: "",
+        },
+        {
+          title: "Services",
+          link: "/some-address/change-me",
+          style: "dropdown",
+        },
+        {
+          title: "Careers",
+          link: "/some-address/change-me",
+          style: "",
+        },
+        {
+          title: "News",
+          link: "/some-address/change-me",
+          style: "",
+        },
+        {
+          title: "Documentation",
+          link: "/some-address/change-me",
+          style: "",
+        },
+      ])

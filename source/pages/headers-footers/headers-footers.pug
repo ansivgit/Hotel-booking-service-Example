@@ -1,0 +1,16 @@
+extends ../base/template.pug
+
+include ../../blocks/logo-uiKit/logo-uiKit.pug
+include ../../blocks/headers/header-standard.pug
+
+block title
+  title TOXIN Headers-Footers
+
+block scripts
+  script(src='./headers-footers.js')
+
+block main
+  +logo()
+
+  section.standard-nav-bar
+    +header()
