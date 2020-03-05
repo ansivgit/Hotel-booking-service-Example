@@ -1,5 +1,7 @@
 extends ../base/template.pug
 
+include ../../blocks/logo/logo.pug
+
 block title
   title TOXIN Colors-Type
 
@@ -13,7 +15,8 @@ block main
     //- не забыть поменять на scss!!!//
     link(rel="stylesheet" href="colors-type.css")
 
-  include ../../blocks/logo-uiKit/logo-uiKit.pug
+  .logo-block
+    +logo("gray")
 
   .colors-type-wrapper
     .colors-wrapper

@@ -2,7 +2,9 @@ include ../../blocks/navigation/navigation.pug
 
 mixin header()
   header.standard
-    .logo
+    .header__logo
+      +logo("color")
+
     nav.main-nav
       +navigation("horizontal", [
         {

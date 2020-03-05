@@ -1,6 +1,6 @@
 extends ../base/template.pug
 
-include ../../blocks/logo-uiKit/logo-uiKit.pug
+include ../../blocks/logo/logo.pug
 include ../../blocks/input/input.pug
 include ../../blocks/checkbox-list/checkbox-list-date.pug
 include ../../blocks/checkbox-list/checkbox-list.pug
@@ -23,7 +23,8 @@ block scripts
   script(src='./form-elements.js')
 
 block main
-  +logo()
+  .logo-block
+    +logo("gray")
 
   section.form-elements
     .inputs-wrapper

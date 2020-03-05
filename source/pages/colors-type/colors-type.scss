@@ -1,6 +1,10 @@
 @import "../../theme/global.scss";
 
-@import "../../blocks/logo-uiKit/logo-uiKit.scss";
+@import "../../blocks/logo/logo.scss";
+
+.logo-block {
+  margin: 30px 0 0 30px;
+}
 
 .colors-type-wrapper {
   display: flex;
