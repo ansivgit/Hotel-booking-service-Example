@@ -8,19 +8,18 @@
 
 .menu-item {
   list-style-type: none;
-  padding-left: 14px;
-  padding-right: 14px;
-  outline: 2px solid red;
+  padding-left: 14.5px;
+  padding-right: 14.5px;
+  //outline: 2px solid red;
 }
 
 .menu-item--horizontal i.material-icons {
-  margin-right: -6px;
+  margin-right: -9px;
 }
 
 .menu-item__link {
   display: flex;
   line-height: 24px;
-  color: $middle-color;
   text-decoration: none;
   color: $middle-color;
 

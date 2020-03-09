@@ -15,7 +15,7 @@
   options.action: обязательное поле action формы "/some-address/change-me",
   options.method: обязательное поле method формы "post"
 
-mixin button(options)
+mixin button(isButton = true, options = {})
 
   .button-base
     form(action = options.action, method = options.method)
@@ -36,4 +36,4 @@ mixin button(options)
   //ariaLabel: "button",
   //action: "/some-address/change-me",
   //method: "post"
-  //})*/
+  //})

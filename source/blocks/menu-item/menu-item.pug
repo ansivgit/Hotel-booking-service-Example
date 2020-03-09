@@ -18,7 +18,7 @@ mixin menuItem(options, layout)
 
   li(class = `menu-item--${layout}`)
 
-    .menu-item__title= title
+    a(href = link class = menu-item__title)= title
 
     if (style== "dropdown")
       span.menu-item__dropdown

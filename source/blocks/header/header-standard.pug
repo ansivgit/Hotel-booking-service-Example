@@ -1,41 +1,60 @@
 include ../../blocks/navigation/navigation.pug
+include ../../blocks/button/button.pug
 
-mixin header()
+mixin header(isRegistered)
   header.standard
-    .header__logo
-      +logo("color")
+    .header__container
+      .header__logo
+        +logo("color")
 
-    nav.main-nav
-      +navigation("horizontal", [
-        {
-          title: "Home",
-          link: "/some-address/change-me",
-          style: "",
-          isDifferent: true,
-        },
-        {
-          title: "About Us",
-          link: "/some-address/change-me",
-          style: "",
-        },
-        {
-          title: "Services",
-          link: "/some-address/change-me",
-          style: "dropdown",
-        },
-        {
-          title: "Careers",
-          link: "/some-address/change-me",
-          style: "",
-        },
-        {
-          title: "News",
-          link: "/some-address/change-me",
-          style: "",
-        },
-        {
-          title: "Documentation",
-          link: "/some-address/change-me",
-          style: "",
-        },
-      ])
+      .menu-container
+        nav.main-nav
+          +navigation("horizontal", [
+            {
+              title: "Home",
+              link: "/some-address/change-me",
+              style: "",
+              isDifferent: true,
+            },
+            {
+              title: "About Us",
+              link: "/some-address/change-me",
+              style: "",
+            },
+            {
+              title: "Services",
+              link: "/some-address/change-me",
+              style: "dropdown",
+            },
+            {
+              title: "Careers",
+              link: "/some-address/change-me",
+              style: "",
+            },
+            {
+              title: "News",
+              link: "/some-address/change-me",
+              style: "",
+            },
+            {
+              title: "Documentation",
+              link: "/some-address/change-me",
+              style: "",
+            },
+          ])
+
+        if (isRegistered == "registered")
+          - let userName = "Cosmin Negoita"
+          a(href = "/some-address/change-me" class = "header__userName")= userName
+        else
+          .header__signIn-button
+            +button(false, {
+                title: "Login",
+                color: "secondary",
+                style: "default",
+                ariaLabel: "button",
+                action: "/some-address/change-me",
+                method: "post"
+                })
+          .header__registration-button
+
