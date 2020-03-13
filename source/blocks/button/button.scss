@@ -1,33 +1,24 @@
 .button-base {
-  /*height: 44px;*/
-  /*outline: 2px dashed green;*/
-
   /*общий вид объемных кнопок и кнопок с градиентной заливкой*/
 
-  button {
-    height: 44px;
-    margin: 0;
-    padding: 0;
-    border-radius: 22px;
-    width: 100%;
-    box-sizing: border-box;
-    font-family: $primary-type;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    /* identical to box height */
-    text-transform: uppercase;
-    /*outline: 2px dashed green;*/
-  }
+  height: 100%;
+  width: 100%;
+  border-radius: 22px;
+  box-sizing: border-box;
+  font-family: $primary-type;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
 
 &--primary--default,
 &--primary--hover {
-  padding-top: 15px;
-  padding-bottom: 12px;
+  padding: 0 20px 0 20px;
   border: none;
   color: #ffffff;
-  outline: none;
 }
 
 &--primary--default {
@@ -46,44 +37,32 @@
 
 &--secondary--default,
 &--secondary--hover {
-  position: relative;
-  padding-top: 12px;
-  padding-bottom: 10px;
+  height: 100%;
+  padding: 0 18px 0 18px;
   color: $primary-theme-color;
   border: 2px solid transparent;
-  background: #ffffff;
-  background-clip: padding-box;
-  outline: none;
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      margin: -2px;
-      background: $primary-gradient;
-      border-radius: inherit;
-    }
+  background-image:
+    linear-gradient(white, white),
+    $primary-gradient;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  -webkit-background-clip: padding-box, border-box;
 }
 
-&--secondary--default:hover:before,
-&--secondary--hover:before {
-    opacity: 0.5;
+&--secondary--default:hover,
+&--secondary--hover {
+  background-image:
+    linear-gradient(white, white),
+    $primary-gradient-half-opacity;
 }
 
 /*кнопки без рамки*/
 
 &--complementary--default {
   height: 25px;
-  padding-top: 10px;
-  padding-bottom: 13px;
-  /*color: $primary-theme-color;*/
+  padding: 10px 0 13px 0;
   border: none;
   background: #ffffff;
-  outline: none;
 
   &[type= submit] {
   color: $primary-theme-color;

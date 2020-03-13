@@ -18,11 +18,18 @@
 mixin button(isButton = true, options = {})
 
   .button-base
-    form(action = options.action, method = options.method)
-      button(class= "button-base--" + options.color + "--" + options.style, name = options.name, value = options.value, type = options.type)= options.title
+    if(isButton == true)
+      form(action = options.action, method = options.method)
+        button(class= "button-base button-base--" + options.color + "--" + options.style, name = options.name, value = options.value, type = options.type)= options.title
 
-      if(options.icon)
-        i(class= "button-base material-icons")= options.icon
+        if(options.icon)
+          i(class= "button-base button-base material-icons")= options.icon
+
+    else
+      button(class= "button-base button-base--" + options.color + "--" + options.style, name = options.name, value = options.value, type = options.type)= options.title
+
+        if(options.icon)
+          i(class= "button-base button-base material-icons")= options.icon
 
 
 //-button({
