@@ -16,18 +16,29 @@ header.standard {
 }
 
 nav.main-nav {
-  margin-right: 17px;
+  margin-right: 15.5px;
+}
+
+.header-button {
+  display: flex;
+  height: 34px;
+
+  &--signIn {
+    width: 79px;
+    margin-right: 20px;
+  }
+
+  &--registration {
+    width: 101px;
+  }
 }
 
 .header__userName {
   padding-left: 30px;
-  //align-self: center;
-  //line-height: 24px;
   border-left: 1px solid rgba(31, 32, 65, 0.1);
   text-decoration: none;
   color: $middle-color;
   //outline: 2px solid blue;
 }
 
-//разобраться, почему при подключении кнопок ползут стили хедера
-//@import "../../blocks/button/button.scss";
+@import "../../blocks/button/button.scss";

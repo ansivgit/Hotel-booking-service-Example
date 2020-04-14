@@ -186,9 +186,12 @@ section.form-elements {
   }
 
   .button__item {
-    width: 99px;
+    display: flex;
+    height: 44px;
+    min-width: 99px;
 
     &--tight {
+      height: 44px;
       width: 61px;
     }
 

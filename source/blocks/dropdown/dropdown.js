@@ -5,8 +5,8 @@
 
 const expandField = document.querySelector('.input__field--expanded');
 
-expandField.addEventListener('click', function () {
-  console.log('Клик по кнопке');
+expandField.addEventListener('click', () => {
+  // console.log('Клик по кнопке');
   expandField.classList.toggle('input__field--expanded');
 
   const expand = document.querySelector('.expand');

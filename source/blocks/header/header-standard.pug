@@ -46,15 +46,22 @@ mixin header(isRegistered)
         if (isRegistered == "registered")
           - let userName = "Cosmin Negoita"
           a(href = "/some-address/change-me" class = "header__userName")= userName
+
         else
-          .header__signIn-button
+          .header-button.header-button--signIn
             +button(false, {
                 title: "Login",
                 color: "secondary",
                 style: "default",
                 ariaLabel: "button",
-                action: "/some-address/change-me",
-                method: "post"
+                link: "/some-address/change-me",
                 })
-          .header__registration-button
+          .header-button.header-button--registration
+            +button(false, {
+                title: "Register",
+                color: "primary",
+                style: "default",
+                ariaLabel: "button",
+                link: "/some-address/change-me",
+                })
 
