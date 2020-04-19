@@ -1,8 +1,19 @@
 {
+<<<<<<< HEAD
   "cSpell.logLevel": "Warning",
   "cSpell.allowCompoundWords": true,
   "cSpell.language": "en,ru",
   "cSpell.words": [
     "Negoita"
   ],
+=======
+  "cSpell.logLevel": "Warning",
+  "cSpell.allowCompoundWords": true,
+  "cSpell.language": "en,ru",
+  "cSpell.words": [
+    "Negoita",
+    "air",
+    "datepicker"
+  ]
+>>>>>>> a8798ae8997933d351ae5b95b52ead5bf68e836c
 }

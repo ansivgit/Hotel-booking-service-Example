@@ -1,6 +1,7 @@
 .button-base {
   /*общий вид объемных кнопок и кнопок с градиентной заливкой*/
 
+  display: flex;
   height: 100%;
   width: 100%;
   border-radius: 22px;
@@ -59,8 +60,8 @@
 /*кнопки без рамки*/
 
 &--complementary--default {
-  height: 25px;
-  padding: 10px 0 13px 0;
+  //height: 25px;
+  padding: 10px 0 10px 0;
   border: none;
   background: #ffffff;
 
@@ -77,6 +78,7 @@
 
   form {
     position: relative;
+    height: 100%;
 
     .material-icons {
       position: absolute;
@@ -94,6 +96,6 @@
       color: #ffffff;
       /*box-sizing: border-box;
       outline: 1px dashed rosybrown;*/
-      }
+    }
   }
 }

@@ -10,7 +10,7 @@
   options.description: поля описания назначения инпута
                       (в правой части) - присутствует только в UI-Kit:
                        - Default
-                       - Hover / Fokus для обозначения наведенного состояния,
+                       - Hover / Focus для обозначения наведенного состояния,
                        - Expanded для развернутого дропдауна;
   options.type: тип текстового поля - text, email или date (?????);
   options.name: значение обязательного поля name для инпута;
@@ -22,11 +22,7 @@
   options.method: обязательное поле method формы "post"
 
 mixin textField(options)
-
   .input-block
-    //- здесь, наверное, форма не нужна??????, т.к. она будет единая для блока
-    //- form(action= options.action, method= options.method)
-
     - var fieldStyle= "";
     - var inputStyle= "input__field"
 
