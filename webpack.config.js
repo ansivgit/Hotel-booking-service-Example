@@ -70,19 +70,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: isDev, // налету перегружает модули. Должно работать только для девелопмента
-              reloadAll: true,
-            },
-          },
-          'css-loader',
-        ],
-      },
-      {
         test: /\.scss$/i,
         use: [
           {
@@ -93,7 +80,7 @@ module.exports = {
             },
           },
           'css-loader',
-          'sass-loader',
+          'sass-loader', // вебпак обрабатывает лоадеры с конца или справо налево
         ],
       },
       {
@@ -102,10 +89,11 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpe?g|gif)$/i,
+        exclude: /\.\/source\/fonts/,
         use: ['file-loader'],
       },
       {
-        test: /\.(ttf|woff|woff2|eot|eot\?)$/i, // возможно, надо убрать вопросы
+        test: /\.(ttf|woff|woff2|eot|svg)$/i, // возможно, надо убрать вопросы
         use: ['file-loader'],
       },
       {

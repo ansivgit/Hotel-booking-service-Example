@@ -28,5 +28,5 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: normal;
 }
 
-// @import "fonts.scss"; // подключаем шрифты
+@import "fonts.scss"; // подключаем шрифты
 @import "variables-types.scss"; // подключаем базовые текстовые стили и цвета
