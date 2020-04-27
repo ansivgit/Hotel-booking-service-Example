@@ -25,7 +25,24 @@ const optimization = () => {
   return config;
 };
 
-const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`); // в режиме разработки имена файлов будут обычными, а в продакшн - с хэшами
+const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`; // в режиме разработки имена файлов будут обычными, а в продакшн - с хэшами
+
+const jsLoaders = () => {
+  const loaders = [{
+    loader: 'babel-loader',
+    options: {
+      presets: [
+        '@babel/preset-env', // для указания Babel, под какие браузеры транспилировать код, в packaje.json вносится строка --"browserslist": "> 0.25%, not dead",--
+      ],
+    },
+  }];
+
+  if (isDev) {
+    loaders.push('eslint-loader');
+  }
+
+  return loaders;
+};
 
 module.exports = {
   context: path.resolve(__dirname, 'source'), // определяет "рабочую среду", относительно которой будем писать пути
@@ -111,14 +128,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              '@babel/preset-env', // для указания Babel, под какие браузеры транспилировать код, в packaje.json вносится строка --"browserslist": "> 0.25%, not dead",--
-            ],
-          },
-        },
+        use: jsLoaders(),
       },
     ],
   },

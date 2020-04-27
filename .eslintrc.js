@@ -14,6 +14,12 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
+  ignorePatterns: [
+    'webpack.config.js',
+    '00trash/',
+    'dist/',
+    'node_modules/',
+  ],
   rules: {
     //"no-console": off,
     "indent": ["error", 2],
