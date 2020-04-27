@@ -1,7 +1,12 @@
 .cache/
 node_modules/
+0node_modules/
+1node_modules/
+00trash/
+0dist/
 Pages in .jpg/
 dist/
+0fonts/
 0blocks/
 0includes/
 0templates/
@@ -13,3 +18,5 @@ package-lock.json
 package.json
 source/pages/test/test.pug
 source/pages/test/test.scss
+0package-lock.json
+0package.json
