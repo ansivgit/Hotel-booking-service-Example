@@ -20,7 +20,6 @@ block title
   title TOXIN Form-Elements
 
 block scripts
-  script(src='./form-elements.js')
 
 block main
   .logo-block
@@ -67,6 +66,7 @@ block main
           title: "Masked text field",
           style: "",
           withDatepicker: true,
+          data: 'data-inline="true"',
           description: "Default",
           type: "text",
           name: "datePicker",

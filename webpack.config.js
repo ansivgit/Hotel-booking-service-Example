@@ -1,4 +1,5 @@
 const path = require('path'); // для корректной записи путей
+const webpack = require('webpack'); // для подключения ProvidePlagin (без него не работал jQuery)
 const HTMLWebpackPlugin = require('html-webpack-plugin'); // для формирования html файлов
 const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // для очистки папки dist после пересборки
 const CopyWebpackPlugin = require('copy-webpack-plugin'); // для копирования сторонних файлов или целых папок в папку сборки
@@ -18,20 +19,22 @@ const optimization = () => {
 
   if (isProd) {
     config.minimizer = [
-      new OptimizeCssAssetWebpackPlugin(),
       new TerserWebpackPlugin(),
+      new OptimizeCssAssetWebpackPlugin(),
     ];
   }
   return config;
 };
 
-const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`); // в режиме разработки имена файлов будут обычными, а в продакшн - с хэшами
+const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash:8].${ext}`); // в режиме разработки имена файлов будут обычными, а в продакшн - с хэшами
 
 module.exports = {
   context: path.resolve(__dirname, 'source'), // определяет "рабочую среду", относительно которой будем писать пути
   mode: 'development', // режим сборки по умолчанию
   entry: {
     'colors-type': ['@babel/polyfill', './pages/colors-type/colors-type.js'], // точка входа, первым(!!) обязательно д.б. добавлен полифилл, т.к он должен грузиться раньше основного js файла
+    'form-elements': ['@babel/polyfill', './pages/form-elements/form-elements.js'],
+    'cards': ['@babel/polyfill', './pages/cards/cards.js'],
   },
   output: {
     filename: filename(ext = 'js'),
@@ -40,7 +43,9 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json', '.pug', '.scss', 'css'], // определяет расширения по умолчанию, если они опущены
     alias: {
-      '@': path.resolve(__dirname, 'source'), // для упрощения указания путей
+      '@': path.resolve(__dirname, 'source'),  // для упрощения указания путей
+      '@blocks': path.resolve(__dirname, 'source/blocks'),
+      '@pages': path.resolve(__dirname, 'source/pages'),
     },
   },
   optimization: optimization(),
@@ -51,9 +56,27 @@ module.exports = {
   devtool: isDev ? 'source-map' : '', // добавляет source maps при разработке. Какую именно добавлять - можно выбрать на сайте.
   plugins: [
     new HTMLWebpackPlugin({
+      filename: 'colors-type.html',
       template: './pages/colors-type/colors-type.pug',
+      chunks: ['colors-type'],
       minify: {
         collapseWhitespace: isProd, // минификация html, должно работать только для продакшена
+      },
+    }),
+    new HTMLWebpackPlugin({
+      filename: 'form-elements.html',
+      template: './pages/form-elements/form-elements.pug',
+      chunks: ['form-elements'],
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      //filename: 'cards.html',
+      template: './pages/cards/cards.pug',
+      chunks: ['cards'],
+      minify: {
+        collapseWhitespace: isProd,
       },
     }),
     new CleanWebpackPlugin(),
@@ -65,6 +88,11 @@ module.exports = {
     ]),
     new MiniCssExtractPlugin({
       filename: filename(ext = 'css'),
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.$': 'jquery',
     }),
   ],
   module: {
@@ -88,13 +116,27 @@ module.exports = {
         use: ['pug-loader'],
       },
       {
-        test: /\.(png|svg|jpe?g|gif)$/i,
-        exclude: /\.\/source\/fonts/,
-        use: ['file-loader'],
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        exclude: /font/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            outputPath: 'img',
+            //publicPath: 'fonts',
+            name: '[name].[ext]',
+          },
+        }],
       },
       {
-        test: /\.(ttf|woff|woff2|eot|svg)$/i, // возможно, надо убрать вопросы
-        use: ['file-loader'],
+        test: /\.(ttf|woff|woff2|eot|svg)$/i,
+        use: [{
+          loader: 'file-loader',
+          options: {
+              outputPath: 'fonts',
+              //publicPath: 'fonts',
+              name: '[name].[ext]',
+          }
+        }],
       },
       {
         test: /\.js$/,

@@ -1,0 +1,16 @@
+extends ../base/template.pug
+
+include ../../blocks/logo/logo.pug
+
+block title
+  title TOXIN Cards
+
+block scripts
+
+block main
+  .logo-block
+    +logo("gray")
+
+  section.cards
+    .cards-wrapper
+      .datapicker.datepicker-here(data-range="true" data-multiple-dates-separator=" - ")
