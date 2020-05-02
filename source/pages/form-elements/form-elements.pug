@@ -66,7 +66,6 @@ block main
           title: "Masked text field",
           style: "",
           withDatepicker: true,
-          data: 'data-inline="true"',
           description: "Default",
           type: "text",
           name: "datePicker",
@@ -162,7 +161,7 @@ block main
         h3.buttons__title Buttons
         .buttons__positioner
           .button__item
-            +button(true, {
+            +button({
               title: "Click me",
               color: "primary",
               style: "default",
@@ -170,11 +169,9 @@ block main
               value: "value",
               type: "button",
               ariaLabel: "button",
-              action: "/some-address/change-me",
-              method: "post"
-              })
+              }, true)
           .button__item
-            +button(true, {
+            +button({
               title: "Click me",
               color: "primary",
               style: "hover",
@@ -182,13 +179,11 @@ block main
               value: "value",
               type: "button",
               ariaLabel: "button",
-              action: "/some-address/change-me",
-              method: "post"
-              })
+              }, true)
 
         .buttons__positioner
           .button__item
-            +button(true, {
+            +button({
                 title: "Click me",
                 color: "secondary",
                 style: "default",
@@ -196,11 +191,9 @@ block main
                 value: "value",
                 type: "button",
                 ariaLabel: "button",
-                action: "/some-address/change-me",
-                method: "post"
-                })
+                }, true)
           .button__item
-            +button(true, {
+            +button({
               title: "Click me",
               color: "secondary",
               style: "hover",
@@ -208,13 +201,11 @@ block main
               value: "value",
               type: "button",
               ariaLabel: "button",
-              action: "/some-address/change-me",
-              method: "post"
-              })
+              }, true)
 
         .buttons__positioner.buttons__positioner--tight
           .button__item.button__item--tight
-            +button(true, {
+            +button({
                 title: "Click me",
                 color: "complementary",
                 style: "default",
@@ -222,11 +213,9 @@ block main
                 value: "value",
                 type: "submit",
                 ariaLabel: "submit",
-                action: "/some-address/change-me",
-                method: "post"
-                })
+              }, true)
           .button__item.button__item--tight
-            +button(true, {
+            +button({
               title: "Click me",
               color: "complementary",
               style: "default",
@@ -234,12 +223,10 @@ block main
               value: "value",
               type: "reset",
               ariaLabel: "reset",
-              action: "/some-address/change-me",
-              method: "post"
-              })
+              }, true)
 
         .button__item.button__item--wide
-          +button(true, {
+          +button({
               title: "Перейти к оплате",
               color: "primary",
               style: "default",
@@ -248,9 +235,7 @@ block main
               value: "value",
               type: "submit",
               ariaLabel: "submit",
-              action: "/some-address/change-me",
-              method: "post"
-              })
+              }, true)
 
       .pagination
         h3.pagination__title Pagination
