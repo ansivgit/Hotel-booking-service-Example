@@ -19,6 +19,7 @@ module.exports = {
     '00trash/',
     'dist/',
     'node_modules/',
+    'source/blocks/calendar/datepicker.js'
   ],
   rules: {
     //"no-console": off,

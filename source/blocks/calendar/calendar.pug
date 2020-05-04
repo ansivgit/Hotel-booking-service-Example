@@ -1,0 +1,38 @@
+include ../input/input.pug
+
+mixin calendar(type = "")
+  //- type = "datesRange/arrivalDeparture/dateOfBirth"
+  .calendar-container
+
+    if (type == "arrivalDeparture")
+      .inputs-wrapper--smaller
+        +textField({
+          title: "Прибытие",
+          style: "dropdown",
+          withDatepicker: true,
+          type: "text",
+          name: "arrivalDeparture",
+          placeholder: "ДД.ММ.ГГГГ",
+          ariaLabel: "arrival date"
+        })
+        +textField({
+          title: "Выезд",
+          style: "dropdown",
+          withDatepicker: true,
+          type: "text",
+          name: "departureDate",
+          placeholder: "ДД.ММ.ГГГГ",
+          ariaLabel: "departure date"
+        })
+
+    if (type == "datesRange")
+      +textField({
+        title: "Даты пребывания в отеле",
+        style: "dropdown",
+        withDatepicker: true,
+        rangeAttributes: {"data-range": "true"},
+        type: "text",
+        name: "arrivalDatesInterval",
+        placeholder: "ДД.ММ.ГГГГ",
+        ariaLabel: "arrival dates interval"
+      })

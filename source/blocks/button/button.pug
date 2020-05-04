@@ -12,28 +12,23 @@
   options.value: определяет значение кнопки, которое будет отправлено на сервер;
   options.type: определяет тип кнопки, который устанавливает ее поведение в форме - button / reset / submit;
   options.ariaLabel: содержание атрибута aria-label для скринридеров;
-  options.action: обязательное поле action формы "/some-address/change-me",
-  options.method: обязательное поле method формы "post"
 
-mixin button(isButton = true, options = {})
+mixin button(options = {}, isButton = true)
 
+  if(isButton == true)
+    .button-base
 
-    if(isButton == true)
-      .button-base
-        form(action = options.action, method = options.method)
+      button(class= "button-base button-base--" + options.color + "--" + options.style, name = options.name, value = options.value, type = options.type)= options.title
 
+      if(options.icon)
+        i(class= "button-base material-icons")= options.icon
 
-          button(class= "button-base button-base--" + options.color + "--" + options.style, name = options.name, value = options.value, type = options.type)= options.title
+  else
+    .button-base
+      button(class= "button-base button-base--" + options.color + "--" + options.style, name = options.name, value = options.value, type = options.type)= options.title
 
-          if(options.icon)
-            i(class= "button-base material-icons")= options.icon
-
-    else
-      .button-base
-        button(class= "button-base button-base--" + options.color + "--" + options.style, name = options.name, value = options.value, type = options.type)= options.title
-
-        if(options.icon)
-          i(class= "button-base material-icons")= options.icon
+      if(options.icon)
+        i(class= "button-base material-icons")= options.icon
 
 
 //-button({
@@ -45,6 +40,4 @@ mixin button(isButton = true, options = {})
   //value: "value",
   //type: "button",
   //ariaLabel: "button",
-  //action: "/some-address/change-me",
-  //method: "post"
   //})

@@ -1,0 +1,14 @@
+@import "./datepicker-customize.scss";
+
+.calendar-container {
+  display: flex;
+  justify-content: space-between;
+  width: 320px;
+}
+
+.inputs-wrapper--smaller {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 20px;
+  width: 100%;
+}

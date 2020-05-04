@@ -1,0 +1,16 @@
+// - mixin for form
+
+mixin form(options)
+  - const {name = "dates_range", withSubmit = true, action = "/some-address/change-me", method = "post", ...rest} = options;
+
+  form(name= name, action= action, method= method, rest.split(", "))
+    if(withSubmit)
+      +button({
+                title: "Click me",
+                color: "complementary",
+                style: "default",
+                name: "default",
+                value: "value",
+                type: "submit",
+                ariaLabel: "submit",
+              }, true)
