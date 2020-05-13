@@ -8,8 +8,10 @@ mixin calendar(type = "")
       .inputs-wrapper--smaller
         +textField({
           title: "Прибытие",
+          id: "start",
           style: "dropdown",
           withDatepicker: true,
+          rangeAttributes: {"data-range": "true"},
           type: "text",
           name: "arrivalDeparture",
           placeholder: "ДД.ММ.ГГГГ",
@@ -17,8 +19,9 @@ mixin calendar(type = "")
         })
         +textField({
           title: "Выезд",
+          id: "end",
           style: "dropdown",
-          withDatepicker: true,
+          withDatepicker: false,
           type: "text",
           name: "departureDate",
           placeholder: "ДД.ММ.ГГГГ",

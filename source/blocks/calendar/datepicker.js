@@ -24,7 +24,7 @@
             keyboardNav: true,
 
             position: 'bottom left',
-            offset: 6, //ASI cange from 12
+            offset: 12,
 
             view: 'days',
             minView: 'days',
@@ -37,7 +37,7 @@
             selectOtherYears: true,
             moveToOtherYearsOnSelect: true,
 
-            minDate: new Date(), // ASI added
+            minDate: '',
             maxDate: '',
             disableNavWhenOutOfRange: true,
 
@@ -46,18 +46,17 @@
             range: false,
 
             todayButton: false,
-            clearButton: true,
-            confirmButton: true,
+            clearButton: false,
 
             showEvent: 'focus',
-            autoClose: false, // ASI added
+            autoClose: false,
 
             // navigation
             monthsField: 'monthsShort',
-            prevHtml: '<svg><path d="M16.1755 8.01562V9.98438H3.98801L9.56613 15.6094L8.15988 17.0156L0.144258 9L8.15988 0.984375L9.56613 2.39062L3.98801 8.01562H16.1755Z"/></svg>', // ASI added
-            nextHtml: '<svg><path d="M8.36301 0.984375L16.3786 9L8.36301 17.0156L6.95676 15.6094L12.5349 9.98438H0.347383V8.01562H12.5349L6.95676 2.39062L8.36301 0.984375Z"/></svg>', // ASI added
+            prevHtml: '<svg><path d="M 17,12 l -5,5 l 5,5"></path></svg>',
+            nextHtml: '<svg><path d="M 14,12 l 5,5 l -5,5"></path></svg>',
             navTitles: {
-                days: 'MM yyyy', // ASI added
+                days: 'MM, <i>yyyy</i>',
                 months: 'yyyy',
                 years: 'yyyy1 - yyyy2'
             },
@@ -511,7 +510,6 @@
                     _this.maxRange = '';
                 } else if (len == 1) {
                     _this.selectedDates.push(date);
-                    // eslint-disable-next-line space-before-blocks
                     if (!_this.maxRange){
                         _this.maxRange = date;
                     } else {
@@ -603,7 +601,7 @@
 
         confirm: function () {
             this.hide();
-        },
+        }, // ASI added
 
         /**
          * Updates datepicker options
@@ -1486,7 +1484,7 @@
             monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
             today: 'Сегодня',
             clear: 'Очистить',
-            confirm: 'Применить',
+            confirm: 'Применить', // ASI added;
             dateFormat: 'dd.mm.yyyy',
             timeFormat: 'hh:ii',
             firstDay: 1
@@ -1622,9 +1620,7 @@
                         classes += ' -range-to-'
                     }
 
-                }
-
-                if (parent.selectedDates.length == 2) {
+                } else if (parent.selectedDates.length == 2) {
                     if (dp.bigger(minRange, date) && dp.less(maxRange, date)) {
                         classes += ' -in-range-'
                     }
@@ -1819,7 +1815,7 @@
         '<div class="datepicker--nav-title">#{title}</div>' +
         '<div class="datepicker--nav-action" data-action="next">#{nextHtml}</div>',
         buttonsContainerTemplate = '<div class="datepicker--buttons"></div>',
-        button = '<span class="datepicker--button button-base button-base--complementary--default" data-action="#{action}">#{label}</span>',
+        button = '<span class="datepicker--button button-base button-base--complementary--default" data-action="#{action}">#{label}</span>', // ASI added style for buttons
         datepicker = $.fn.datepicker,
         dp = datepicker.Constructor;
 
@@ -1858,7 +1854,7 @@
             if (this.opts.clearButton) {
                 this._addButton('clear')
             }
-            if (this.opts.confirmButton) {
+            if (this.opts.confirmButton) { // ASI added
                 this._addButton('confirm')
             }
         },

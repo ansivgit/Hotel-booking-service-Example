@@ -1,5 +1,5 @@
 .input-block {
-  width: 100%;
+  width: auto;
   margin: 0px;
 
 /*сброс стилей для автозаполнения инпутов*/
@@ -47,7 +47,7 @@
   }
 
   .input__field {
-    width: 100%;
+    width: auto;
     height: 44px;
     border: 1px solid $secondary-color;
     padding: 13px 0 13px 15px;

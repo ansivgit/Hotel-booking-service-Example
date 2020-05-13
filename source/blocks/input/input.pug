@@ -1,7 +1,7 @@
 //- текстовое поле - общее
 
 mixin textField(options)
-  - const {title = "", style = "", expanded = "", withDatepicker = "", rangeAttributes= {}, type = "text", name = "", placeholder = "", placeholderColor = "", ariaLabel = "", description = "",} = options;
+  - const {title = "", id = "", style = "", expanded = "", withDatepicker = "", rangeAttributes= {}, type = "text", name = "", placeholder = "", placeholderColor = "", ariaLabel = "", description = "",} = options;
 
   .input-block
     - const isDatepicker= "datepicker-here"; // служебный класс для инициализации плагина datepicker;
@@ -21,7 +21,7 @@ mixin textField(options)
       - inputStyle= `${inputStyle} ${inputStyle}--expanded`
 
     if (withDatepicker)
-      - inputStyle= `${inputStyle} ${inputStyle} ${isDatepicker}`
+      - inputStyle= `${inputStyle} ${isDatepicker}`
 
     label(class= fieldStyle)
       h3.input__title= title
@@ -29,9 +29,9 @@ mixin textField(options)
       if (description)
         .input__description= description
 
-      input(class= inputStyle, type= type, name= name, data-multiple-dates-separator= " - ", placeholder= placeholder, aria-label= ariaLabel)&attributes(rangeAttributes)
+      input(class= inputStyle, id= id, type= type, name= name, placeholder= placeholder, aria-label= ariaLabel)&attributes(rangeAttributes)
 
-//-
+//- data-multiple-dates-separator= " - ",
   options.title: заголовок поля ввода "Text field";
   options.style: определяет наличие иконки в правой части:
                 "" - без иконки,
