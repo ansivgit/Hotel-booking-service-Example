@@ -1,0 +1,255 @@
+
+mixin card(type = '')
+  //-type = search/registration/entry/booking
+  .card-wrapper
+
+    if (type == 'search')
+      .card__title
+        .head1 Найдём номера под ваши пожелания
+
+      form(action = "/some-address/change-me", method = "POST", name = "searchRoom")
+        .card__content.card__content--search
+          +calendar("arrivalDeparture")
+          +textField({
+            title: "Гости",
+            style: "dropdown",
+            type: "text",
+            name: "guests",
+            placeholder: "Сколько гостей",
+            ariaLabel: "quantity guests"
+        })
+
+        .card__button
+          +button({
+            title: "Подобрать номер",
+            color: "primary",
+            style: "default",
+            icon: "arrow_forward",
+            name: "searchBtn",
+            value: "search",
+            type: "submit",
+            ariaLabel: "search",
+          }, true)
+
+
+    if (type == 'registration')
+      .card__title
+        .head1 Регистрация аккаунта
+
+      form(action = "/some-address/change-me", method = "POST", name = "registration")
+        .card__content.card__content--registration
+          .card__content--registration--block1
+            .card__content--item
+              +textField({
+                title: "",
+                style: "",
+                description: "",
+                type: "text",
+                name: "userFirstName",
+                placeholder: "Имя",
+                placeholderColor: "--light",
+                ariaLabel: "user First Name"
+              })
+            .card__content--item
+              +textField({
+                title: "",
+                style: "",
+                description: "",
+                type: "text",
+                name: "userLastName",
+                placeholder: "Фамилия",
+                placeholderColor: "--light",
+                ariaLabel: "user Last Name"
+              })
+            .card__content--item
+              +radiobuttons("gender", [
+                {title: "Мужчина", value: "man", checked: true,},
+                {title: "Женщина", value: "woman",},
+            ])
+
+
+        .card__content--registration--block2
+          .card__content--item
+            +textField({
+              title: "Дата рождения",
+              style: "",
+              description: "",
+              type: "text",
+              name: "dateOfBirth",
+              placeholder: "ДД.ММ.ГГГГ",
+              placeholderColor: "--light",
+              ariaLabel: "date Of Birth"
+            })
+
+
+        .card__content--registration--block3
+          .card__content--item
+            +textField({
+              title: "Данные для входа в сервис",
+              style: "",
+              description: "",
+              type: "text",
+              name: "email",
+              placeholder: "Email",
+              placeholderColor: "--light",
+              ariaLabel: "user email"
+            })
+          .card__content--item
+            +textField({
+              title: "",
+              style: "",
+              description: "",
+              type: "text",
+              name: "userPassword",
+              placeholder: "Пароль",
+              placeholderColor: "--light",
+              ariaLabel: "user password"
+            })
+          .card__content--item
+            +toggles("offers-no-agree")
+
+
+        .card__button
+          +button({
+            title: "Перейти к оплате",
+            color: "primary",
+            style: "default",
+            icon: "arrow_forward",
+            name: "registration",
+            value: "submit",
+            type: "submit",
+            ariaLabel: "registration",
+          }, true)
+        .card__footer
+          .card__footer--title Уже есть аккаунт на Toxin
+          .card__footer--button
+            +button({
+              title: "Войти",
+              color: "secondary",
+              style: "default",
+              name: "entry",
+              value: "entryPage",
+              type: "button",
+              ariaLabel: "go to entry page",
+            }, false)
+
+
+    if (type == 'entry')
+      .card__title
+        .head1 Войти
+
+      form(action = "/some-address/change-me", method = "POST", name = "entry")
+        .card__content.card__content--entry
+          .card__content--item
+            +textField({
+              title: "",
+              style: "",
+              description: "",
+              type: "text",
+              name: "email",
+              placeholder: "Email",
+              placeholderColor: "--light",
+              ariaLabel: "user email"
+            })
+          .card__content--item
+            +textField({
+              title: "",
+              style: "",
+              description: "",
+              type: "text",
+              name: "userPassword",
+              placeholder: "Пароль",
+              placeholderColor: "--light",
+              ariaLabel: "user password"
+            })
+
+        .card__button
+          +button({
+            title: "Войти",
+            color: "primary",
+            style: "default",
+            icon: "arrow_forward",
+            name: "entry",
+            value: "submit",
+            type: "submit",
+            ariaLabel: "entry",
+          }, true)
+
+        .card__footer
+          .card__footer--title Нет аккаунта на Toxin?
+          .card__footer--button
+            +button({
+              title: "Создать",
+              color: "secondary",
+              style: "default",
+              name: "registration",
+              value: "registrationPage",
+              type: "button",
+              ariaLabel: "go to registration page",
+            }, false)
+
+
+    if (type == 'booking')
+
+      form(action = "/some-address/change-me", method = "POST", name = "booking")
+        .card__content.card__content--booking
+          -
+            let roomParams = {
+              'roomNumber': 888,
+              'roomType': 'luxe',
+              'costPerDay': 9990,
+              'currency': '&#8381;',
+              'amountOfdays': 4,
+              'servCost': 2179,
+              'discount': 2179,
+              'additionalServCost': 300,
+            }
+          .card__content--booking--block1
+            .roomID
+              span.roomNumber= `№ ${roomParams.roomNumber} `
+              span.roomType= roomParams.roomType
+            .costPerDay
+              span.cost= roomParams.costPerDay
+              span.unicode!= roomParams.currency
+              span.costComment= ' в сутки'
+
+          .card__content--booking--block2
+            +calendar("arrivalDeparture")
+            +textField({
+              title: "Гости",
+              style: "dropdown",
+              type: "text",
+              name: "guests",
+              placeholder: "Сколько гостей",
+              ariaLabel: "quantity guests"
+            })
+
+          .card__content--booking--block3
+            .costsCalc
+              .costsCalc--title= `${roomParams.costPerDay}₽ х ${roomParams.amountOfdays} суток`
+              .costsCalc--value= `${roomParams.costPerDay * roomParams.amountOfdays}₽`
+            .discount
+              .discount--title= `Сбор за услуги: скидка ${roomParams.discount}₽`
+              .discount--info i
+              .discount--value= `${roomParams.servCost - roomParams.discount}₽`
+            .servicesCost
+              .servicesCost--title Сбор за дополнительные услуги
+              .servicesCost--info i
+              .servicesCost--value= `${roomParams.additionalServCost}₽`
+            .totalCost
+              .totalCost--title Итого
+              .totalCost--value= `${(roomParams.costPerDay * roomParams.amountOfdays) - roomParams.discount + roomParams.additionalServCost}₽`
+
+
+        .card__button
+          +button({
+            title: "Забронировать",
+            color: "primary",
+            style: "default",
+            icon: "arrow_forward",
+            name: "booking",
+            value: "submit",
+            type: "submit",
+            ariaLabel: "booking",
+          }, true)
+

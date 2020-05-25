@@ -21,14 +21,14 @@ mixin button(options = {}, isButton = true)
       button(class= "button-base button-base--" + options.color + "--" + options.style, name = options.name, value = options.value, type = options.type)= options.title
 
       if(options.icon)
-        i(class= "button-base material-icons")= options.icon
+        i(class= "material-icons")= options.icon
 
   else
     .button-base
       button(class= "button-base button-base--" + options.color + "--" + options.style, name = options.name, value = options.value, type = options.type)= options.title
 
       if(options.icon)
-        i(class= "button-base material-icons")= options.icon
+        i(class= "material-icons")= options.icon
 
 
 //-button({

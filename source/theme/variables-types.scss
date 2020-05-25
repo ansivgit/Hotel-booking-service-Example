@@ -26,12 +26,12 @@ $primary-type: Montserrat, Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
-  //line-height: 30px;
+  line-height: 30px;
   color: $dark-color;
-  letter-spacing: -0.015em;
+  //letter-spacing: -0.015em;
 }
 
-h1 {
+h1, .head1 {
   @include head1;
 }
 
@@ -45,7 +45,7 @@ h1 {
   letter-spacing: -0.015em;
 }
 
-h2 {
+h2, .head2 {
   @include head2;
 }
 
@@ -60,7 +60,7 @@ h2 {
   color: $dark-color;
 }
 
-h3 {
+h3, .head3 {
   @include head3;
 }
 

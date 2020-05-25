@@ -1,5 +1,13 @@
 extends ../base/template.pug
+
+include ../../blocks/card/card.pug
+include ../../blocks/button/button.pug
+include ../../blocks/input/input.pug
 include ../../blocks/calendar/calendar.pug
+include ../../blocks/radiobutton/radiobutton.pug
+include ../../blocks/toggle/toggle.pug
+include ../../blocks/costs-calculate/costs-calculate.pug
+
 
 include ../../blocks/logo/logo.pug
 
@@ -13,7 +21,19 @@ block main
     +logo("gray")
 
   section.cards
-    .cards-wrapper
-      .datapicker.datepicker-here(data-range="true",)
-      +calendar("arrivalDeparture")
-      +calendar("arrivalDeparture")
+    .cards-container
+      +card('search')
+      +card('registration')
+
+    .cards-container
+      +costsCalculate({roomNumber: '', roomType: '', costPerDay: 4, discount: 0, servicesCost: ''})
+      +card('booking')
+      +card('entry')
+
+    .cards-container
+      div(class= "datepicker-here" id= "#start")
+
+      //+card({title: , content: contentSearch, buttonContent: 'Подобрать номер'})
+      //.datapicker.datepicker-here(data-range="true",)
+      //+calendar("arrivalDeparture")
+      //+calendar("arrivalDeparture")
