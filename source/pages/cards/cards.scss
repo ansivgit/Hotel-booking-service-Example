@@ -22,15 +22,11 @@ section.cards {
   grid-gap: 40px;
   max-height: 1100px;
   margin: 72px 0 100px 140px;
-  outline: 2px solid rgb(0, 255, 115);
+  //outline: 2px solid rgb(0, 255, 115);
 
   /*.cards-container {
 
   }*/
-}
-
-.card-wrapper form[name = "booking"] {
-  height: 441px; /* после того, как карточку сделаю, убрать стиль*/
 }
 
 .cards-wrapper {

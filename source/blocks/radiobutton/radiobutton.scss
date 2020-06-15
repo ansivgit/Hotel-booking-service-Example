@@ -6,7 +6,7 @@
 .radio-buttons__item {
   max-width: 105px;
   margin-right: 20px;
-  line-height: 18px;
+  line-height: 20px;
 
   input[type=radio] {
     position: absolute;
@@ -27,7 +27,7 @@
     height: 20px;
     /*margin-left: -30px;*/
     margin-right: 10px;
-    margin-top: -7px;
+    //margin-top: -7px;
     vertical-align: middle;
     border: 1px solid $secondary-color;
     box-sizing: border-box;
@@ -40,7 +40,7 @@
     width: 20px;
     height: 20px;
     margin-right: 10px;
-    margin-top: -7px;
+    //margin-top: -7px;
     vertical-align: middle;
     border: 1px solid $primary-theme-color;
     box-sizing: border-box;

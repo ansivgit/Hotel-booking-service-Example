@@ -196,7 +196,7 @@ mixin card(type = '')
           -
             let roomParams = {
               'roomNumber': 888,
-              'roomType': 'luxe',
+              'roomType': 'Люкс',
               'costPerDay': 9990,
               'currency': '&#8381;',
               'amountOfdays': 4,
@@ -206,7 +206,7 @@ mixin card(type = '')
             }
           .card__content--booking--block1
             .roomID
-              span.roomNumber= `№ ${roomParams.roomNumber} `
+              span.roomNumber= roomParams.roomNumber
               span.roomType= roomParams.roomType
             .costPerDay
               span.cost= roomParams.costPerDay
@@ -225,20 +225,16 @@ mixin card(type = '')
             })
 
           .card__content--booking--block3
-            .costsCalc
-              .costsCalc--title= `${roomParams.costPerDay}₽ х ${roomParams.amountOfdays} суток`
-              .costsCalc--value= `${roomParams.costPerDay * roomParams.amountOfdays}₽`
-            .discount
-              .discount--title= `Сбор за услуги: скидка ${roomParams.discount}₽`
-              .discount--info i
-              .discount--value= `${roomParams.servCost - roomParams.discount}₽`
-            .servicesCost
-              .servicesCost--title Сбор за дополнительные услуги
-              .servicesCost--info i
-              .servicesCost--value= `${roomParams.additionalServCost}₽`
-            .totalCost
-              .totalCost--title Итого
-              .totalCost--value= `${(roomParams.costPerDay * roomParams.amountOfdays) - roomParams.discount + roomParams.additionalServCost}₽`
+            .costsCalc.costsCalc--title= `${roomParams.costPerDay}₽ х ${roomParams.amountOfdays} суток`
+            .costsCalc.costsCalc--value= `${roomParams.costPerDay * roomParams.amountOfdays}₽`
+            .discount.discount--title= `Сбор за услуги: скидка ${roomParams.discount}₽`
+            .discount.card--info i
+            .discount.discount--value= `${roomParams.servCost - roomParams.discount}₽`
+            .servicesCost.servicesCost--title Сбор за дополнительные услуги
+            .servicesCost.card--info i
+            .servicesCost.servicesCost--value= `${roomParams.additionalServCost}₽`
+            .totalCost.totalCost--title Итого
+            .totalCost.totalCost--value= `${(roomParams.costPerDay * roomParams.amountOfdays) - roomParams.discount + roomParams.additionalServCost}₽`
 
 
         .card__button

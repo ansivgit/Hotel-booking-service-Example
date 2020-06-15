@@ -1,7 +1,7 @@
 .card-wrapper {
   width: 380px;
   //height: 374px;
-  padding: 39px 29px 29px 29px;
+  padding: 41px 29px 29px 29px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -13,7 +13,7 @@
 }
 
 .card__title {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .card__content {
@@ -25,13 +25,13 @@
   &--registration {
 
     &--block1 {
-      margin-bottom: 27px;
+      margin-bottom: 23px;
     }
     &--block2 {
-      margin-bottom: 19px;
+      margin-bottom: 20px;
     }
     &--block3 {
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
   }
 
@@ -67,27 +67,117 @@
 .card__content--booking--block1 {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+
+  .roomID {
+    @include head2;
+    margin-top: 3px;
+
+    span.roomNumber {
+      font-size: 24px;
+
+      &::before {
+        content: "№ ";
+        margin-right: 2px;
+        font-size: 14px;
+      }
+    }
+
+    span.roomType {
+      @include head3;
+      color: $primary-theme-color;
+      margin-left: 6px;
+    }
+  }
+
+  .costPerDay {
+    padding-top: 5px;
+    font-weight: bold;
+
+    span.costComment {
+      margin-left: 4px;
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
 }
 
 .card__content--booking--block3 {
   display: grid;
   grid-template-columns: auto 20px 80px;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  row-gap: 10px;
-  margin-top: 20px;
+  //grid-template-rows: 1fr 1fr 1fr 1fr;
+  row-gap: 16px;
+  margin-top: 21px;
+  line-height: 18px;
+  //grid-auto-flow: column;
 }
 
-.costsCalc--title {}
-.costsCalc--value {}
-.discount--title {}
-.discount--info, .servicesCost--info {
-
+.costsCalc--title {
+  grid-column: 1/2;
+  grid-row: 1/2;
 }
-.discount--value {}
-.servicesCost {}
-.servicesCost--title {}
+.costsCalc--value {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  text-align: right;
+}
+.discount--title {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
 
-.servicesCost--value {}
-.totalCost--title {}
-.totalCost--value {}
+.discount.card--info {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.discount--value {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  text-align: right;
+}
+
+.servicesCost--title {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+.servicesCost.card--info {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  text-align: center;
+}
+
+.servicesCost--value {
+  grid-column: 3/4;
+  grid-row: 3/4;
+  text-align: right;
+}
+.totalCost--title {
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+.totalCost--value {
+  grid-column: 3/4;
+  grid-row: 4/5;
+  text-align: right;
+}
+
+.card--info {
+  @include head3;
+  height: 20px;
+  width: 20px;
+  line-height: 18px;
+  margin-top: -2px;
+  text-align: center;
+  color: $secondary-color;
+  text-transform: none;
+  border: 1px solid $secondary-color;
+  border-radius: 50%;
+}
+
+.totalCost {
+  @include head2;
+  margin-top: 17px;
+  margin-bottom: 22px;
+}
