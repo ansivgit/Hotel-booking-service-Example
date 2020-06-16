@@ -1,0 +1,133 @@
+.card-wrapper {
+  @include cardWrapper;
+}
+
+.card__button {
+  height: 44px;
+}
+
+.card__content--booking--block1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+
+  .roomID {
+    @include head2;
+    margin-top: 3px;
+
+    span.roomNumber {
+      font-size: 24px;
+
+      &::before {
+        content: "№ ";
+        margin-right: 2px;
+        font-size: 14px;
+      }
+    }
+
+    span.roomType {
+      @include head3;
+      color: $primary-theme-color;
+      margin-left: 6px;
+    }
+  }
+
+  .costPerDay {
+    padding-top: 5px;
+    font-weight: bold;
+
+    span.costComment {
+      margin-left: 1px;
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
+}
+
+.card__content--booking--block3 {
+  display: grid;
+  grid-template-columns: auto 20px 80px;
+  //grid-template-rows: 1fr 1fr 1fr 1fr;
+  row-gap: 16px;
+  margin-top: 21px;
+  line-height: 18px;
+  //grid-auto-flow: column;
+}
+
+.costsCalc--title {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.costsCalc--value {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  text-align: right;
+}
+.discount--title {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.discount.card--info {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.discount--value {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  text-align: right;
+}
+
+.servicesCost--title {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+.servicesCost.card--info {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  text-align: center;
+}
+
+.servicesCost--value {
+  grid-column: 3/4;
+  grid-row: 3/4;
+  text-align: right;
+}
+
+.card--info {
+  @include head3;
+  height: 20px;
+  width: 20px;
+  line-height: 18px;
+  margin-top: -2px;
+  text-align: center;
+  color: $secondary-color;
+  text-transform: none;
+  border: 1px solid $secondary-color;
+  border-radius: 50%;
+}
+
+.totalCost {
+  grid-column: 1/4;
+  grid-row: 4/5;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  margin-top: 17px;
+  margin-bottom: 22px;
+  @include head2;
+
+  &--title {
+    padding-right: 5px;
+  }
+  &--filling {
+    position: relative;
+    top: -3px;
+    border-bottom: 1px dotted $secondary-color;
+  }
+  &--value {
+    text-align: right;
+    padding-left: 5px;
+  }
+}

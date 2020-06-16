@@ -77,3 +77,19 @@ h3, .head3 {
 body {
   @include regular;
 }
+
+//* рамка для карточек (обертка карточек)
+
+@mixin cardWrapper {
+  width: 380px;
+  //height: 374px;
+  padding: 41px 29px 29px 29px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  background: #ffffff;
+
+  &:not(:only-child) {
+    margin-bottom: 40px;
+  }
+}

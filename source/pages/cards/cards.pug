@@ -6,7 +6,7 @@ include ../../blocks/input/input.pug
 include ../../blocks/calendar/calendar.pug
 include ../../blocks/radiobutton/radiobutton.pug
 include ../../blocks/toggle/toggle.pug
-include ../../blocks/costs-calculate/costs-calculate.pug
+include ../../blocks/cardRoomCosts/cardRoomCosts.pug
 
 
 include ../../blocks/logo/logo.pug
@@ -26,8 +26,16 @@ block main
       +card('registration')
 
     .cards-container
-      +costsCalculate({roomNumber: '', roomType: '', costPerDay: 4, discount: 0, servicesCost: ''})
-      +card('booking')
+      +cardRoomCosts({
+          roomNumber: 888,
+          roomType: 'Люкс',
+          costPerDay: 9990,
+          currency: '₽',
+          amountOfdays: 4,
+          servCost: 2179,
+          discount: 2179,
+          additionalServCost: 300,
+        })
       +card('entry')
 
     .cards-container

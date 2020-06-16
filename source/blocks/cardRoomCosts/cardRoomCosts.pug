@@ -1,0 +1,65 @@
+mixin cardRoomCosts(roomParams = {})
+
+  - const {roomNumber, roomType, costPerDay, currency= '₽', amountOfdays, servCost, discount, additionalServCost,} = roomParams
+
+  mixin numFormatted(number)
+    span!= number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '&#160;') + currency
+
+  .card-wrapper
+    form(action = "/some-address/change-me", method = "POST", name = "booking")
+      .card__content.card__content--booking
+
+        .card__content--booking--block1
+          .roomID
+            span.roomNumber= roomNumber
+            span.roomType= roomType
+          .costPerDay
+            span.cost
+              +numFormatted(costPerDay)
+            span.costComment= ' в сутки'
+
+        .card__content--booking--block2
+          +calendar("arrivalDeparture", "start", "end")
+          +textField({
+            title: "Гости",
+            style: "dropdown",
+            type: "text",
+            name: "guests",
+            placeholder: "Сколько гостей",
+            ariaLabel: "quantity guests"
+          })
+
+        .card__content--booking--block3
+          .costsCalc.costsCalc--title
+            +numFormatted(costPerDay)
+            span= ` х ${amountOfdays} суток`
+          .costsCalc.costsCalc--value
+            +numFormatted(costPerDay * amountOfdays)
+          .discount.discount--title
+            span= "Сбор за услуги: скидка "
+            +numFormatted(discount)
+          .discount.card--info i
+          .discount.discount--value
+            +numFormatted(servCost - discount)
+          .servicesCost.servicesCost--title Сбор за дополнительные услуги
+          .servicesCost.card--info i
+          .servicesCost.servicesCost--value
+            +numFormatted(additionalServCost)
+          .totalCost
+            .totalCost--title Итого
+            .totalCost--filling
+            .totalCost--value
+              +numFormatted((costPerDay * amountOfdays) - discount + additionalServCost)
+
+
+      .card__button
+        +button({
+          title: "Забронировать",
+          color: "primary",
+          style: "default",
+          icon: "arrow_forward",
+          name: "booking",
+          value: "submit",
+          type: "submit",
+          ariaLabel: "booking",
+        }, true)
