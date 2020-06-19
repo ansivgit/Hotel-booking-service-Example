@@ -20,9 +20,10 @@ $secondary-gradient__half-opacity: linear-gradient(180deg, rgba(111, 207, 151, 0
 //- types
 
 $primary-type: Montserrat, Arial, sans-serif;
+$secondary-type: QuicksandPro, Quicksand, Opensans, Arial, sans-serif;
 
 @mixin head1 {
-  font-family: QuicksandPro, Quicksand, Opensans, Arial, sans-serif;
+  font-family: $secondary-type;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
@@ -36,7 +37,7 @@ h1, .head1 {
 }
 
 @mixin head2 {
-  font-family: QuicksandPro, Quicksand, Opensans, Arial, sans-serif;;
+  font-family: $secondary-type;
   font-style: normal;
   font-weight: bold;
   font-size: 19px;

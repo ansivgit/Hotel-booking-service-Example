@@ -1,15 +1,10 @@
 extends ../base/template.pug
 
-include ../../blocks/card/card.pug
-include ../../blocks/button/button.pug
-include ../../blocks/input/input.pug
-include ../../blocks/calendar/calendar.pug
-include ../../blocks/radiobutton/radiobutton.pug
-include ../../blocks/toggle/toggle.pug
-include ../../blocks/cardRoomCosts/cardRoomCosts.pug
-
-
 include ../../blocks/logo/logo.pug
+
+include ../../blocks/card/card.pug
+include ../../blocks/cardRoomCosts/cardRoomCosts.pug
+include ../../blocks/cardRoomSearch/cardRoomSearch.pug
 
 block title
   title TOXIN Cards
@@ -39,9 +34,24 @@ block main
       +card('entry')
 
     .cards-container
-      div(class= "datepicker-here" id= "#start")
-
-      //+card({title: , content: contentSearch, buttonContent: 'Подобрать номер'})
-      //.datapicker.datepicker-here(data-range="true",)
-      //+calendar("arrivalDeparture")
-      //+calendar("arrivalDeparture")
+      div(class= "datepicker-here start")
+      +cardRoomSearch([
+        {
+          roomNumber: 888,
+          roomPhoto: ["room01.png", "room02.png"],
+          roomType: 'Люкс',
+          costPerDay: 9990,
+          currency: '₽',
+          vote: 5,
+          votesNumber: 145,
+        },
+        {
+          roomNumber: 840,
+          roomPhoto: ["room02.png","room01.png"],
+          roomType: '',
+          costPerDay: 9900,
+          currency: '₽',
+          vote: 4,
+          votesNumber: 65,
+        },
+      ])

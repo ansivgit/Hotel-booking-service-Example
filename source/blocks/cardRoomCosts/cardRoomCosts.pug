@@ -1,5 +1,8 @@
-mixin cardRoomCosts(roomParams = {})
+include ../../blocks/button/button.pug
+include ../../blocks/input/input.pug
+include ../../blocks/calendar/calendar.pug
 
+mixin cardRoomCosts(roomParams = {})
   - const {roomNumber, roomType, costPerDay, currency= '₽', amountOfdays, servCost, discount, additionalServCost,} = roomParams
 
   mixin numFormatted(number)

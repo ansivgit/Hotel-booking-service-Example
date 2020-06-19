@@ -1,3 +1,9 @@
+@import "../../blocks/input/input.scss";
+@import "../../blocks/calendar/calendar.scss";
+@import "../../blocks/button/button.scss";
+@import "../../blocks/radiobutton/radiobutton.scss";
+@import "../../blocks/toggle/toggle.scss";
+
 .card-wrapper {
   @include cardWrapper;
 }

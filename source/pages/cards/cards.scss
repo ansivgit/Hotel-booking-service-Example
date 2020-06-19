@@ -3,11 +3,7 @@
 @import "../../blocks/logo/logo.scss";
 @import "../../blocks/card/card.scss";
 @import "../../blocks/cardRoomCosts/cardRoomCosts.scss";
-@import "../../blocks/input/input.scss";
-@import "../../blocks/calendar/calendar.scss";
-@import "../../blocks/button/button.scss";
-@import "../../blocks/radiobutton/radiobutton.scss";
-@import "../../blocks/toggle/toggle.scss";
+@import "../../blocks/cardRoomSearch/cardRoomSearch.scss";
 
 html {
   background: #E5E5E5;
@@ -24,24 +20,6 @@ section.cards {
   max-height: 1100px;
   margin: 72px 0 100px 140px;
   //outline: 2px solid rgb(0, 255, 115);
-
-  /*.cards-container {
-
-  }*/
-}
-
-.cards-wrapper {
-  position: relative; /*несуществующий в разметке класс*/
-}
-
-.datapicker {
-  position: absolute;
-  width: 320px;
-  //height: 369px;
-  left: 930px;
-  top: 50px;
-  //outline: 2px solid red;
-  //box-sizing: border-box;
 }
 
 
