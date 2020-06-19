@@ -1,0 +1,34 @@
+include ../../blocks/ratebutton/ratebutton.pug
+
+mixin cardRoomSearch(roomParams = [{}])
+  each item in roomParams
+    - const {roomNumber, roomPhoto=[], roomType, costPerDay, currency= '₽', vote, votesNumber,} = item
+
+    mixin numFormatted(number)
+      span!= number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '&#160;') + currency
+
+    .card-room
+      each item, index in roomPhoto
+        - let baseClass = "card-room__img img--base"
+        if (index == 0)
+          - baseClass = `${baseClass}--active`
+        div(class= `${baseClass}`, style=`background-image: url(${require('../../blocks/cardRoomSearch/img/' + item)}`)
+          .card-room__btn.card-room__btn--prev.material-icons expand_more
+          .card-room__btn.card-room__btn--next.material-icons expand_more
+      .card-room__dotes
+      .card-room__content
+        .card-room__info
+          .card-room__roomID
+            span.card-room__roomNumber= roomNumber
+            span.card-room__roomType= roomType
+          .card-room__costPerDay
+            span.card-room__cost
+              +numFormatted(costPerDay)
+            span.card-room__costComment= ' в сутки'
+        .card-room__vote
+          +rating(vote)
+          .card-room__votes
+            span.card-room__votesNumber= votesNumber
+            span.card-room__votesComment= ' Отзывов'
+
+

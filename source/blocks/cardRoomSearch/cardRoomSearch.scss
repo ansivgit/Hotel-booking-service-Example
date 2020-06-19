@@ -1,0 +1,114 @@
+@import "../../blocks/ratebutton/ratebutton.scss";
+
+.card-room {
+  --hoverGradient: linear-gradient(90deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0) 15.55%,
+        rgba(255, 255, 255, 0) 15.56%,
+        rgba(255, 255, 255, 0) 84.44%,
+        rgba(0, 0, 0, 0) 84.45%,
+        rgba(0, 0, 0, 0.5) 100%);
+
+  --background: url('../../blocks/cardRoomSearch/img/room01.png')
+}
+
+.card-room {
+  width: 270px;
+  box-shadow: 0px 10px 20px $lightest-color;
+  border-radius: 4px;
+  background: #ffffff;
+
+  &:not(:only-child) {
+    margin-top: 40px;
+  }
+
+  &__content {
+    padding: 19px 20px 18px 20px;
+  }
+
+  &__img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 151px;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 4px 4px 0 0;
+    background-image: var(--background);
+  }
+
+  &__img.img--base {
+      display: none;
+  }
+
+  &__img:hover {
+    background-image: var(--hoverGradient), var(--background);
+  }
+
+  &__img:hover .card-room__btn {
+    display: block;
+  }
+
+  &__btn {
+    display: none;
+    padding: 10px;
+    color: #ffffff;
+    cursor: pointer;
+
+    &--prev {
+      transform: rotate(90deg);
+    }
+    &--next {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 7px;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+  }
+
+  &__roomID {
+    @include head2;
+    margin-top: 3px;
+  }
+
+  &__roomNumber {
+    font-size: 20px;
+
+    &::before {
+      @include head2;
+      content: "№ ";
+      margin-right: 2px;
+      font-size: 14px;
+    }
+  }
+
+  &__roomType {
+    @include head3;
+    color: $primary-theme-color;
+    margin-left: 6px;
+  }
+
+  &__costPerDay {
+    padding-top: 3px;
+    font-weight: bold;
+  }
+
+  &__costComment {
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+  &__vote {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 9px;
+  }
+
+  &__votesNumber {
+    font-weight: bold;
+  }
+}
