@@ -7,6 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // обрабо
 const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin'); // минификация css
 const TerserWebpackPlugin = require('terser-webpack-plugin'); // минификация html
 
+
 const isDev = process.env.NODE_ENV === 'development'; // устанавливает значение разработка/продакшн
 const isProd = !isDev;
 
@@ -122,7 +123,8 @@ module.exports = {
           loader: 'file-loader',
           options: {
             outputPath: 'img',
-            //publicPath: 'fonts',
+            esModule: false,
+            //publicPath: 'img',
             name: '[name].[ext]',
           },
         }],
