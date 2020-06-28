@@ -65,7 +65,7 @@ module.exports = {
       },
     }),
     new HTMLWebpackPlugin({
-      filename: 'form-elements.html',
+      // filename: 'form-elements.html',
       template: './pages/form-elements/form-elements.pug',
       chunks: ['form-elements'],
       minify: {
@@ -73,7 +73,7 @@ module.exports = {
       },
     }),
     new HTMLWebpackPlugin({
-      //filename: 'cards.html',
+      filename: 'cards.html',
       template: './pages/cards/cards.pug',
       chunks: ['cards'],
       minify: {

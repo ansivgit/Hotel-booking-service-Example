@@ -1,3 +1,5 @@
+@import './ion-slider_customize.scss';
+
 .range-slider-block {
   max-width: 100%;
 
@@ -28,7 +30,7 @@
     font-family: Montserrat;
   }
 
-  .range-slider__scale {
+  /*.range-slider__scale {
     height: 6px;
     border: 1px solid $secondary-color;
     box-sizing: border-box;
@@ -58,5 +60,5 @@
     &::after {
       right: -6px;
     }
-  }
+  }*/
 }

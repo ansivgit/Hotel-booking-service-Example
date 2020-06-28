@@ -8,10 +8,11 @@ mixin range-slider(min= 0, max= 999999, currency= "&#8381;")
   .range-slider-block
     h3.range-slider__title Range slider
     .range-slider__value
-      span.range-slider__value--min= `${min / 1000} ${zeroMin}`
+      span.range-slider__value--from= ""
       span.unicode!= currency
-      span.range-slider__value--max= ` - ${max / 1000} ${zeroMax}`
+      span.range-slider__value--to= ` - ${max / 1000} ${zeroMax}`
       span.unicode!= currency
-    .range-slider__slider
+    input(type="text" class="js-range-slider" name="my_range")
+    //.range-slider__slider
       .range-slider__scale
         .range-slider__range
