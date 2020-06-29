@@ -1,18 +1,18 @@
 mixin range-slider(min= 0, max= 999999, currency= "&#8381;")
-  - let zeroMin= "000", zeroMax= "000"
-  if(min % 1000 !== 0)
-    zeroMin= (min % 1000) * 1000
-  if(max % 1000 !== 0)
-    zeroMax= (max % 1000) * 1000
+  //- let zeroMin= "000", zeroMax= "000"
+    if(min % 1000 !== 0)
+      zeroMin= (min % 1000) * 1000
+    if(max % 1000 !== 0)
+      zeroMax= (max % 1000) * 1000
 
-  .range-slider-block
-    h3.range-slider__title Range slider
-    .range-slider__value
-      span.range-slider__value--from= ""
-      span.unicode!= currency
-      span.range-slider__value--to= ` - ${max / 1000} ${zeroMax}`
-      span.unicode!= currency
-    input(type="text" class="js-range-slider" name="my_range")
-    //.range-slider__slider
-      .range-slider__scale
-        .range-slider__range
+  .range-slider
+    .range-slider__header
+      h3.range-slider__title Range slider
+      .range-slider__value
+        input(type = "text" class = "range-slider__value range-slider__value--from" value = "5000")
+        span.range-slider__value.unicode!= currency
+        span.range-slider__value--separator= '-'
+        input(type = "text" class = "range-slider__value range-slider__value--to" value = "10000")
+        span.range-slider__value.unicode!= currency
+    .range-slider__inputs
+      input(type="text" class="js-range-slider" name="my_range")
