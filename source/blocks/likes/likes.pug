@@ -2,5 +2,5 @@
 
 mixin likeButton(id="like", value="2", name="likes", type="checkbox")
   .like-button-block
-    input(id= id, name= name, type= type)&attributes(attributes)
-    label(for= id)= value
+    input(class= "like-button__input" id= id, name= name, type= type 'data-value'= value)&attributes(attributes)
+    label(class= "like-button__label" for= id)= value

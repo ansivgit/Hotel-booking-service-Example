@@ -160,9 +160,10 @@ section.form-elements {
 
 @import "../../blocks/range-slider/range-slider.scss";
 
-.range-slider {
+.range-slider__wrapper {
   width: 266px;
-  margin-bottom: 43px;
+  margin-bottom: 33px;
+  outline: 1px solid red;
 }
 
 @import "../../blocks/button/button.scss";

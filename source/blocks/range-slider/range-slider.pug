@@ -1,10 +1,4 @@
 mixin range-slider(min= 0, max= 999999, currency= "&#8381;")
-  //- let zeroMin= "000", zeroMax= "000"
-    if(min % 1000 !== 0)
-      zeroMin= (min % 1000) * 1000
-    if(max % 1000 !== 0)
-      zeroMax= (max % 1000) * 1000
-
   .range-slider
     .range-slider__header
       h3.range-slider__title Range slider
