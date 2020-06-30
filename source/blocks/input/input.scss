@@ -96,6 +96,7 @@
 
   label.dropdown::after,
   label.subscribe::after {
+    @include materialIcons;
     display: inline-block;
     position: absolute;
     top: 22px;
@@ -103,9 +104,6 @@
     width: 42px;
     height: 42px;
     padding: auto 0 auto 0;
-    text-align: center;
-    font-family: "Material Icons";
-    font-size: 24px;
     line-height: 42px;
     cursor: pointer;
     /*outline: 2px dashed rosybrown;*/

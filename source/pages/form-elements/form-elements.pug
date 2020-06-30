@@ -361,9 +361,11 @@ block main
 
     //- раздел checkboxes
 
-    .checkbox__expandable
-      +checkboxList("Expandable checkbox list", options = [], isExpandable = true, isExpanded = false)
-      +checkboxList("Expandable checkbox list", options = checkboxListComfort, isExpandable = true, isExpanded = true)
+    .checkbox__expandables__wrapper
+      .checkbox__expandable__item
+        +checkboxList("Expandable checkbox list", options = checkboxListComfort, isExpandable = true, isExpanded = false)
+      .checkbox__expandable__item
+        +checkboxList("Expandable checkbox list", options = checkboxListComfort, isExpandable = true, isExpanded = true)
 
     .checkbox__rich
       +checkboxList("Rich checkbox buttons", options = checkboxListRich)

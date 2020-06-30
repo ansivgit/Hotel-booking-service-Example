@@ -79,6 +79,13 @@ body {
   @include regular;
 }
 
+@mixin materialIcons {
+  font-family: "Material Icons";
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+}
+
 //* рамка для карточек (обертка карточек)
 
 @mixin cardWrapper {

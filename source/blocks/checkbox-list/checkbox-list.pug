@@ -4,16 +4,20 @@ include ../checkbox/checkbox.pug
 
 mixin checkboxList(listName = "", options = [], isExpandable = false, isExpanded = false)
   - let listStyle= "checkbox-list__title";
+  - let expandList= "checkbox-list__content"
 
   if(isExpandable)
     - listStyle= `${listStyle}--expandable`
+    - expandList= `${expandList}--expandable`
 
   if(isExpanded)
-    - listStyle= `${listStyle} ${listStyle}--expanded`
+    - listStyle= `${listStyle} ${listStyle}--open`
+    - expandList= `${expandList} checkbox-list--open`
 
-  h3(class= listStyle)= listName
+  .checkbox-list
+    h3(class= listStyle)= listName
 
-  ul.checkbox-list
-    each item in options
-      +checkbox(item)
+    ul(class= expandList)
+      each item in options
+        +checkbox(item)
 

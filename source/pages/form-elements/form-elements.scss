@@ -11,7 +11,7 @@ section.form-elements {
   grid-template-columns: 447px 392px 320px;
   /*width: 100%;*/
   padding: 0;
-  margin: 66px 0 0 140px;
+  margin: 66px 0 146px 140px;
   /*outline: 2px solid rgb(0, 255, 115);
   box-sizing: border-box;*/
 }
@@ -79,7 +79,7 @@ section.form-elements {
 .buttons__title,
 .pagination__title,
 .bullet-list__title,
-.checkbox-list__title--expandable {
+.checkbox-list__title {
   margin-bottom: 16px;
 }
 
@@ -262,7 +262,7 @@ section.form-elements {
 
 @import "../../blocks/checkbox-list/checkbox-list.scss";
 
-.checkbox__expandable {
+.checkbox__expandables__wrapper {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 3;
@@ -270,7 +270,7 @@ section.form-elements {
   margin-top: 34px;
 }
 
-.checkbox-list__title--expandable--expanded {
+.checkbox__expandable__item:last-child {
   margin-top: 49px;
 }
 
@@ -279,6 +279,7 @@ section.form-elements {
   grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 4;
+  height: 339px;
   margin-top: 34px;
 }
 
