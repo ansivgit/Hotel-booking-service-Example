@@ -9,7 +9,7 @@ mixin header(isRegistered)
 
       .menu-container
         nav.main-nav
-          +navigation("horizontal", [
+          +navigation([
             {
               title: "О нас",
               link: "/some-address/change-me",
@@ -20,6 +20,28 @@ mixin header(isRegistered)
               title: "Услуги",
               link: "/some-address/change-me",
               style: "dropdown",
+              submenuArr: [
+                {
+                  title: "Исследования",
+                  link: "/some-address/change-me",
+                  style: "",
+                },
+                {
+                  title: "Повседневная практика",
+                  link: "/some-address/change-me",
+                  style: "",
+                },
+                {
+                  title: "Методология",
+                  link: "/some-address/change-me",
+                  style: "",
+                },
+                {
+                  title: "Рациональное мышление",
+                  link: "/some-address/change-me",
+                  style: "",
+                },
+              ],
             },
             {
               title: "Вакансии",
@@ -35,8 +57,30 @@ mixin header(isRegistered)
               title: "Соглашения",
               link: "/some-address/change-me",
               style: "dropdown",
+              submenuArr: [
+                {
+                  title: "Частотность поисковых запросов",
+                  link: "/some-address/change-me",
+                  style: "",
+                },
+                {
+                  title: "Стремления",
+                  link: "/some-address/change-me",
+                  style: "",
+                },
+                {
+                  title: "Случайный текст",
+                  link: "/some-address/change-me",
+                  style: "",
+                },
+                {
+                  title: "Духовных скрепы",
+                  link: "/some-address/change-me",
+                  style: "",
+                },
+              ],
             },
-          ])
+          ], "horizontal")
 
         if (isRegistered == "registered")
           - let userName = "Юлий Цезарь"

@@ -1,8 +1,8 @@
-//- блок навигации (горизонтальный или вертикальный) include ../../blocks/menu-item/menu-item.pug
+//- блок навигации (горизонтальный или вертикальный)
 
-mixin navigation(layout, options)
+mixin navigation(options, layout)
 
-  ul(class = `menu-list menu-list--${layout}`)
+  ul(class = `menu__layout menu__layout--${layout}`)
     each item in options
       +menuItem(item, layout)
 
@@ -20,17 +20,35 @@ mixin navigation(layout, options)
   ????options.ariaLabel: содержание атрибута aria-label для скринридеров;
 
 mixin menuItem(options, layout)
-  - const {title, link, style, isDifferent} = options
-  - let linkStyle = "menu-item__link";
+  - const {title, link, style, isDifferent, submenuArr = [],} = options
+  - let linkStyle = 'menu-item__link';
 
   if (isDifferent)
-    - linkStyle= `${linkStyle} menu-item__link--different`;
+    - linkStyle= `${linkStyle} ${linkStyle}--different`;
 
   li(class = `menu-item menu-item--${layout}`)
-    a(class = linkStyle href = link)= title
-
-      if (style== "dropdown")
+    if (style!== 'dropdown')
+      a(class = linkStyle href = link)= title
+    else
+      - linkStyle = 'menu-item__btn';
+      button(class = linkStyle type = "button" ariaLabel = "submenu")= title
         i.material-icons expand_more
+      ul(class = `menu__layout--vertical submenu`)
+        each item in submenuArr
+          +submenu(item)
 
-    //-if (options.expanded)
-      - inputStyle= `${inputStyle} ${inputStyle}--expanded`
+
+  mixin submenu(options = [], level = '1')
+    - const {title, link, style, isDifferent} = options
+    - let linkStyle = 'menu-item__link menu-item__link--submenu';
+
+    if (isDifferent)
+      - linkStyle= `${linkStyle}--different`;
+
+    li(class = `menu-item menu-item--vertical`)
+      if (style!== 'dropdown')
+        a(class = linkStyle href = link)= title
+      else
+        - linkStyle = 'menu-item__btn menu-item__btn--submenu';
+        button(class = linkStyle type = "button" ariaLabel = "submenu")= title
+          i.material-icons chevron_right
