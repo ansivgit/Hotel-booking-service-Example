@@ -36,6 +36,7 @@ module.exports = {
     'colors-type': ['@babel/polyfill', './pages/colors-type/colors-type.js'], // точка входа, первым(!!) обязательно д.б. добавлен полифилл, т.к он должен грузиться раньше основного js файла
     'form-elements': ['@babel/polyfill', './pages/form-elements/form-elements.js'],
     'cards': ['@babel/polyfill', './pages/cards/cards.js'],
+    'headers-footers': ['@babel/polyfill', './pages/headers-footers/headers-footers.js'],
   },
   output: {
     filename: filename(ext = 'js'),
@@ -65,7 +66,7 @@ module.exports = {
       },
     }),
     new HTMLWebpackPlugin({
-      // filename: 'form-elements.html',
+      filename: 'form-elements.html',
       template: './pages/form-elements/form-elements.pug',
       chunks: ['form-elements'],
       minify: {
@@ -76,6 +77,14 @@ module.exports = {
       filename: 'cards.html',
       template: './pages/cards/cards.pug',
       chunks: ['cards'],
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      // filename: 'headers-footers.html',
+      template: './pages/headers-footers/headers-footers.pug',
+      chunks: ['headers-footers'],
       minify: {
         collapseWhitespace: isProd,
       },

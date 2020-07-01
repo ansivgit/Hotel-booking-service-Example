@@ -1,15 +1,15 @@
-@import "../../theme/global.scss";
+@import '../../theme/global.scss';
 
-@import "../../blocks/logo/logo.scss";
-@import "../../blocks/navigation/navigation.scss";
-@import "../../blocks/header/header-standard.scss";
+@import '../../blocks/logo/logo.scss';
+@import '../../blocks/navigation/navigation.scss';
+@import '../../blocks/header/header-standard.scss';
 
 html {
-  background-color: #e5e5e5;
+  background-color: #f4f4f6;
 }
 
 .logo-block {
-  margin: 30px 0 72px 30px;
+  margin: 30px 0 62px 30px;
 }
 
 .headers__item {

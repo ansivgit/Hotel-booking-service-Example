@@ -8,13 +8,12 @@
 
 .menu-item {
   list-style-type: none;
-  padding-left: 14.5px;
-  padding-right: 14.5px;
+  margin: 0 10px 0 10px;
   //outline: 2px solid red;
 }
 
 .menu-item--horizontal i.material-icons {
-  margin-right: -9px;
+  //margin-right: -9px;
 }
 
 .menu-item__link {

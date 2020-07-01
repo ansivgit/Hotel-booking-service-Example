@@ -11,57 +11,52 @@ mixin header(isRegistered)
         nav.main-nav
           +navigation("horizontal", [
             {
-              title: "Home",
+              title: "О нас",
               link: "/some-address/change-me",
               style: "",
               isDifferent: true,
             },
             {
-              title: "About Us",
-              link: "/some-address/change-me",
-              style: "",
-            },
-            {
-              title: "Services",
+              title: "Услуги",
               link: "/some-address/change-me",
               style: "dropdown",
             },
             {
-              title: "Careers",
+              title: "Вакансии",
               link: "/some-address/change-me",
               style: "",
             },
             {
-              title: "News",
+              title: "Новости",
               link: "/some-address/change-me",
               style: "",
             },
             {
-              title: "Documentation",
+              title: "Соглашения",
               link: "/some-address/change-me",
-              style: "",
+              style: "dropdown",
             },
           ])
 
         if (isRegistered == "registered")
-          - let userName = "Cosmin Negoita"
+          - let userName = "Юлий Цезарь"
           a(href = "/some-address/change-me" class = "header__userName")= userName
 
         else
           .header-button.header-button--signIn
-            +button(false, {
-                title: "Login",
+            +button({
+                title: "Войти",
                 color: "secondary",
                 style: "default",
                 ariaLabel: "button",
                 link: "/some-address/change-me",
-                })
+                }, false)
           .header-button.header-button--registration
-            +button(false, {
-                title: "Register",
+            +button({
+                title: "Зарегистрироваться",
                 color: "primary",
                 style: "default",
                 ariaLabel: "button",
                 link: "/some-address/change-me",
-                })
+                }, false)
 
