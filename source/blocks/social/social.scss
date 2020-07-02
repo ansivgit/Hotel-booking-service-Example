@@ -1,0 +1,25 @@
+.social-icons {
+  &__item {
+    margin-right: 22px;
+
+    &:last-child {
+      margin-right: 1px;
+    }
+
+    &--twitter:before {
+      @include fontAwesomeIcons;
+      content: '\f099';
+      font-size: 27px;
+    }
+
+    &--fb:before {
+      @include fontAwesomeIcons;
+      content: '\f308';
+    }
+
+    &--instagram:before {
+      @include fontAwesomeIcons;
+      content: '\f16d';
+    }
+  }
+}

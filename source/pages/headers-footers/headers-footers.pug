@@ -2,7 +2,8 @@ extends ../base/template.pug
 
 include ../../blocks/logo/logo.pug
 
-include ../../blocks/header/header-standard.pug
+include ../../blocks/header/header.pug
+include ../../blocks/footer/footer.pug
 
 block title
   title TOXIN Headers-Footers
@@ -18,3 +19,9 @@ block main
       +header()
     .headers__item
       +header("registered")
+
+  section.footers
+    .footer__item
+      +footer()
+    .footer__item--mobile
+      +footer('mobile')

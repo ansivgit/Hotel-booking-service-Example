@@ -1,3 +1,4 @@
+@import '../../blocks/navigation/navigation.scss';
 @import '../../blocks/button/button.scss';
 
 header.standard {
@@ -7,7 +8,7 @@ header.standard {
 
 .header__container {
   display: flex;
-  padding: 15px 140px 15px 140px;
+  padding: 0 140px 0 140px;
   align-items: center;
   justify-content: space-between;
 }
@@ -26,12 +27,7 @@ nav.main-nav {
   height: 34px;
 
   &--signIn {
-    //width: 79px;
     margin-right: 20px;
-  }
-
-  &--registration {
-    //width: 101px;
   }
 }
 
@@ -40,5 +36,4 @@ nav.main-nav {
   border-left: 1px solid rgba(31, 32, 65, 0.1);
   text-decoration: none;
   color: $middle-color;
-  //outline: 2px solid blue;
 }

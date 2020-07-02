@@ -33,7 +33,7 @@ mixin menuItem(options, layout)
       - linkStyle = 'menu-item__btn';
       button(class = linkStyle type = "button" ariaLabel = "submenu")= title
         i.material-icons expand_more
-      ul(class = `menu__layout--vertical submenu`)
+      ul(class = `menu__layout--vertical submenu submenu--close`)
         each item in submenuArr
           +submenu(item)
 
@@ -45,7 +45,7 @@ mixin menuItem(options, layout)
     if (isDifferent)
       - linkStyle= `${linkStyle}--different`;
 
-    li(class = `menu-item menu-item--vertical`)
+    li(class = `menu-item menu-item--submenu`)
       if (style!== 'dropdown')
         a(class = linkStyle href = link)= title
       else

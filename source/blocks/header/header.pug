@@ -1,0 +1,106 @@
+include ../../blocks/navigation/navigation.pug
+include ../../blocks/button/button.pug
+
+mixin header(isRegistered)
+  header.standard
+    .header__container
+      .header__logo
+        +logo('color')
+
+      .menu-container
+        nav.main-nav
+          +navigation([
+            {
+              title: 'О нас',
+              link: '/some-address/change-me',
+              style: '',
+              isDifferent: true,
+            },
+            {
+              title: 'Услуги',
+              link: '/some-address/change-me',
+              style: 'dropdown',
+              submenuArr: [
+                {
+                  title: 'Исследования',
+                  link: '/some-address/change-me',
+                  style: '',
+                },
+                {
+                  title: 'Повседневная практика',
+                  link: '/some-address/change-me',
+                  style: '',
+                },
+                {
+                  title: 'Методология',
+                  link: '/some-address/change-me',
+                  style: '',
+                },
+                {
+                  title: 'Рациональное мышление',
+                  link: '/some-address/change-me',
+                  style: '',
+                },
+              ],
+            },
+            {
+              title: 'Вакансии',
+              link: '/some-address/change-me',
+              style: '',
+            },
+            {
+              title: 'Новости',
+              link: '/some-address/change-me',
+              style: '',
+            },
+            {
+              title: 'Соглашения',
+              link: '/some-address/change-me',
+              style: 'dropdown',
+              submenuArr: [
+                {
+                  title: 'Частотность поисковых запросов',
+                  link: '/some-address/change-me',
+                  style: '',
+                },
+                {
+                  title: 'Стремления',
+                  link: '/some-address/change-me',
+                  style: '',
+                },
+                {
+                  title: 'Случайный текст',
+                  link: '/some-address/change-me',
+                  style: '',
+                },
+                {
+                  title: 'Духовных скрепы',
+                  link: '/some-address/change-me',
+                  style: '',
+                },
+              ],
+            },
+          ], 'horizontal')
+
+        if (isRegistered == 'registered')
+          - let userName = 'Юлий Цезарь'
+          a(href = "/some-address/change-me" class = "header__userName")= userName
+
+        else
+          .header-button.header-button--signIn
+            +button({
+                title: 'Войти',
+                color: 'secondary',
+                style: 'default',
+                ariaLabel: 'button',
+                link: '/some-address/change-me',
+                }, false)
+          .header-button.header-button--registration
+            +button({
+                title: 'Зарегистрироваться',
+                color: 'primary',
+                style: 'default',
+                ariaLabel: 'button',
+                link: '/some-address/change-me',
+                }, false)
+
