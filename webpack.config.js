@@ -66,7 +66,7 @@ module.exports = {
       },
     }),
     new HTMLWebpackPlugin({
-      filename: 'form-elements.html',
+      // filename: 'form-elements.html',
       template: './pages/form-elements/form-elements.pug',
       chunks: ['form-elements'],
       minify: {
@@ -82,7 +82,7 @@ module.exports = {
       },
     }),
     new HTMLWebpackPlugin({
-      // filename: 'headers-footers.html',
+      filename: 'headers-footers.html',
       template: './pages/headers-footers/headers-footers.pug',
       chunks: ['headers-footers'],
       minify: {

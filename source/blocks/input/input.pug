@@ -1,12 +1,12 @@
 //- текстовое поле - общее
 
 mixin textField(options)
-  - const {title = "", style = "", expanded = "", withDatepicker = "", startOrEndDatepicker = "", rangeAttributes= {}, type = "text", name = "", placeholder = "", placeholderColor = "", ariaLabel = "", description = "", } = options;
+  - const {title = "", style = "", expanded = "", withDatepicker = "", startOrEndDatepicker = "", rangeAttributes= {}, type = "text", name = "", value = "", placeholder = "", placeholderColor = "", ariaLabel = "", description = "", } = options;
 
   .input-block
     - const isDatepicker= "datepicker-here"; // служебный класс для инициализации плагина datepicker;
     - let fieldStyle= ""; // определяет базу для сборки класса;
-    - let inputStyle= `input__field ${startOrEndDatepicker}`; // определяет базовую иконка в правой части (отсутствует);
+    - let inputStyle= "input__field"; // определяет базовую иконка в правой части (отсутствует);
 
     if (style== "dropdown")
       - fieldStyle= "dropdown"
@@ -21,7 +21,7 @@ mixin textField(options)
       - inputStyle= `${inputStyle} ${inputStyle}--expanded`
 
     if (withDatepicker)
-      - inputStyle= `${inputStyle} ${isDatepicker}`
+      - inputStyle= `${inputStyle} ${isDatepicker} ${startOrEndDatepicker}`
 
     label(class= fieldStyle)
       h3.input__title= title
@@ -29,7 +29,7 @@ mixin textField(options)
       if (description)
         .input__description= description
 
-      input(class= inputStyle, type= type, name= name, placeholder= placeholder, aria-label= ariaLabel)&attributes(rangeAttributes)
+      input(class= inputStyle, type= type, name= name, value= value, placeholder= placeholder, aria-label= ariaLabel)&attributes(rangeAttributes)
 
 //- data-multiple-dates-separator= " - ",
   options.title: заголовок поля ввода "Text field";

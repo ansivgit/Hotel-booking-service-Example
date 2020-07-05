@@ -15,5 +15,5 @@ mixin commentList(optionsList = [])
         .comment-item__name= item.name
         .comment-item__date= item.date
         .comment-item__likes
-          +likeButton("more-likes", likeValue)(checked)
+          +likeButton("more-likes", item.value)(checked)
         .comment-item__text= item.text

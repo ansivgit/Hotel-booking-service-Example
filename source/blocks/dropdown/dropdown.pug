@@ -1,20 +1,50 @@
-//script(src='../../blocks/dropdown/dropdown.js')
+include ../../blocks/input/input.pug
+include ../../blocks/button/button.pug
 
-+textField({
-          title: "Dropdown",
-          style: "dropdown",
-          expanded: true,
-          description: "Expanded",
-          type: "text",
-          name: "rooms",
-          placeholder: "2 спальни, 2 кровати...",
-          ariaLabel: "room convenience"
-})
+mixin counter(title, name, valueDefault="0")
+  .counter__item
+    .counter__name= title
+    .counter__buttons
+      .counter__btn.counter__btn--minus.btn--disabled -
+      input(class="counter__value" name= name value= valueDefault type="text")
+      .counter__btn.counter__btn--plus +
 
-include expand.pug
-.expand
-  +selection("Спальни", "bedrooms", 2)
-  +selection("Кровати", "beds", 2)
-  +selection("Ванные комнаты", "bathrooms", 0)
+mixin dropdown(options = {}, counters = [], buttons = true)
+  - const {title= "", style= "dropdown", expanded= false, description= "", type= "text", name= "", value= "", ariaLabel= "",} = options
+  .dropdown__item
+    +textField({title, style, expanded, description, type, name, value, ariaLabel,}, [])
 
-  script(src='../../blocks/dropdown/dropdown.js')
+    - let sumValue = 0
+    - let hidden = "visually-hidden"
+    if(expanded)
+      - hidden = ""
+    div(class= `dropdown__expand ${hidden}`)
+      each item in counters
+        - const {title, name, valueDefault} = item
+        +counter(title, name, valueDefault)
+        - sumValue += valueDefault
+
+      if(buttons)
+        .dropdown__buttons
+          .dropdown__buttons__item
+            if(sumValue)
+              +button({
+                  title: "Очистить",
+                  color: "complementary",
+                  style: "default",
+                  name: "default",
+                  value: "value",
+                  type: "reset",
+                  ariaLabel: "reset",
+                  })
+
+          .dropdown__buttons__item
+            +button({
+                title: "Применить",
+                color: "complementary",
+                style: "default",
+                name: "default",
+                value: "value",
+                type: "submit",
+                ariaLabel: "submit",
+                })

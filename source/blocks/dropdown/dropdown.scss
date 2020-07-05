@@ -5,7 +5,7 @@
   .input__field--expanded {
     border-top: 1px solid $middle-color;
     border-right: 1px solid $middle-color;
-    border-bottom: 0;
+    border-bottom: none;
     border-left: 1px solid $middle-color;
     box-sizing: border-box;
     border-radius: 4px 4px 0 0;
@@ -20,7 +20,88 @@
     &:focus,
     &:active {
       outline: none;
-
+      border-bottom: none;
     }
   }
+}
+
+.dropdown__expand {
+  padding: 0 7px 0 15px;
+  border: 1px solid $middle-color;
+  border-radius: 0 0 4px 4px;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px $lightest-color;
+  /*outline: 20px solid yellow;
+  background-color: rgb(230, 32, 32);*/
+
+  .counter__item {
+    display: flex;
+    margin: 5px 0 7px 0;
+    justify-content: space-between;
+    align-items: center;
+    /*outline: 2px solid yellow;*/
+  }
+
+  .counter__name {
+    width: 133px;
+    font-family: $primary-type;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    text-transform: uppercase;
+    color: $dark-color;
+  }
+
+  .counter__buttons {
+    display: flex;
+    width: 90px;
+    justify-content: space-between;
+    align-items: center;
+    /*outline: 2px solid red;*/
+  }
+
+  .counter__btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid $secondary-color;
+    border-radius: 50%;
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 30px;
+    color: $middle-color;
+    /*align-items: center;*/
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .counter__value {
+    width: 30px;
+    font-family: $primary-type;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    text-align: center;
+    text-transform: uppercase;
+    color: $dark-color;
+    border: none;
+  }
+}
+.visually-hidden {
+    display: none;
+    /*position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;*/
+}
+
+.dropdown__buttons {
+    display: flex;
+    //width: 90px;
+    justify-content: space-between;
+    //align-items: center;
+    /*outline: 2px solid red;*/
 }

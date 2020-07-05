@@ -11,7 +11,7 @@ include ../../blocks/ratebutton/ratebutton.pug
 include ../../blocks/range-slider/range-slider.pug
 include ../../blocks/button/button.pug
 include ../../blocks/pagination/pagination.pug
-include ../../blocks/dropdown/expand.pug
+include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/bullet-list/bullet-list.pug
 include ../../blocks/features-brief/features-brief.pug
 include ../../blocks/comment/comment.pug
@@ -244,120 +244,66 @@ block main
 
     //- раздел дропдаунов
 
-    .dropdown-room-wrapper
-      .dropdown__item
-        +textField({
-          title: "Dropdown",
-          style: "dropdown",
-          description: "Default",
-          type: "text",
-          name: "rooms",
-          placeholder: "2 спальни, 2 кровати...",
-          ariaLabel: "room convenience"
-        })
+    .dropdown-room-wrapper.formRoomSearch
+      +dropdown({
+        title: "Dropdown",
+        description: "Default",
+        name: "rooms",
+        value: "2 спальни, 2 кровати...",
+        ariaLabel: "room convenience"
+      },
+      [
+        {title: "Спальни", name: "bedrooms", valueDefault: 0},
+        {title: "Кровати", name: "beds", valueDefault: 0},
+        {title: "Ванные комнаты", name: "bathrooms", valueDefault: 0},
+      ], buttons = false)
 
-      .dropdown__item
-        +textField({
-          title: "Dropdown",
-          style: "dropdown",
-          expanded: true,
-          description: "Expanded",
-          type: "text",
-          name: "rooms",
-          placeholder: "2 спальни, 2 кровати...",
-          ariaLabel: "room convenience"
-        })
-
-        .expand
-          +selection("Спальни", "bedrooms", 2)
-          +selection("Кровати", "beds", 2)
-          +selection("Ванные комнаты", "bathrooms", 0)
-
-          script(src='../../blocks/dropdown/dropdown.js')
+      +dropdown({
+        title: "Dropdown",
+        expanded: true,
+        description: "Default",
+        name: "rooms",
+        value: "2 спальни, 2 кровати...",
+        ariaLabel: "room convenience"
+      },
+      [
+        {title: "Спальни", name: "bedrooms", valueDefault: 2},
+        {title: "Кровати", name: "beds", valueDefault: 2},
+        {title: "Ванные комнаты", name: "bathrooms", valueDefault: 0},
+      ],
+      buttons = false)
 
     .dropdown__item--guests.dropdown__item--guests--1
-      +textField({
+      +dropdown({
         title: "Dropdown",
         style: "dropdown",
         expanded: true,
         type: "text",
         name: "guests",
-        placeholder: "Сколько гостей",
+        value: "Сколько гостей",
         ariaLabel: "quantity guests"
-      })
-
-      .expand
-        +selection("Взрослые", "adults", 0)
-        +selection("Дети", "childrens", 0)
-        +selection("Младенцы", "babies", 0)
-
-        .button__form
-          +button({
-                title: "Очистить",
-                color: "complementary",
-                style: "default",
-                name: "default",
-                value: "value",
-                type: "reset",
-                ariaLabel: "submit",
-                action: "/some-address/change-me",
-                method: "post"
-                })
-
-          +button({
-                title: "Применить",
-                color: "complementary",
-                style: "default",
-                name: "default",
-                value: "value",
-                type: "submit",
-                ariaLabel: "submit",
-                action: "/some-address/change-me",
-                method: "post"
-                })
-        script(src='../../blocks/dropdown/dropdown.js')
+      },
+      [
+        {title: "Взрослые", name: "adults", valueDefault: 0},
+        {title: "Дети", name: "childrens", valueDefault: 0},
+        {title: "Младенцы", name: "babies", valueDefault: 0},
+      ])
 
     .dropdown__item--guests.dropdown__item--guests--2
-      +textField({
+      +dropdown({
         title: "Dropdown",
         style: "dropdown",
         expanded: true,
         type: "text",
         name: "guests",
-        placeholder: "Сколько гостей",
+        value: "3 гостя",
         ariaLabel: "quantity guests"
-      })
-
-      .expand
-        +selection("Взрослые", "adults", 2)
-        +selection("Дети", "childrens", 1)
-        +selection("Младенцы", "babies", 0)
-
-        .button__form
-          +button({
-                title: "Очистить",
-                color: "complementary",
-                style: "default",
-                name: "default",
-                value: "value",
-                type: "reset",
-                ariaLabel: "submit",
-                action: "/some-address/change-me",
-                method: "post"
-                })
-
-          +button({
-                title: "Применить",
-                color: "complementary",
-                style: "default",
-                name: "default",
-                value: "value",
-                type: "submit",
-                ariaLabel: "submit",
-                action: "/some-address/change-me",
-                method: "post"
-                })
-        script(src='../../blocks/dropdown/dropdown.js')
+      },
+      [
+        {title: "Взрослые", name: "adults", valueDefault: 2},
+        {title: "Дети", name: "childrens", valueDefault: 1},
+        {title: "Младенцы", name: "babies", valueDefault: 0},
+      ])
 
     //- раздел checkboxes
 
