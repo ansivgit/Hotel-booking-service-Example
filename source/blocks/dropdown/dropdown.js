@@ -1,13 +1,13 @@
 const dropdownOpen = ((event) => {
   const { target } = event;
   const dropdownItem = target.closest('.dropdown__item');
-  const submitBtn = dropdownItem.querySelector('button[type = "submit"]');
   const inputFieldsArr = document.querySelectorAll('.input__field');
   const dropdownExpandsArr = document.querySelectorAll('.dropdown__expand');
 
   if (dropdownItem) {
     const inputField = dropdownItem.querySelector('.input__field');
     const dropdownExpand = dropdownItem.querySelector('.dropdown__expand');
+    const submitBtn = dropdownItem.querySelector('button[type = "submit"]');
 
     if (target === inputField) {
       dropdownExpand.classList.toggle('visually-hidden');
@@ -33,62 +33,119 @@ const dropdownOpen = ((event) => {
 const changeover = ((event) => {
   const { target } = event;
   const dropdownItem = target.closest('.dropdown__item');
-  const counterValueArr = dropdownItem.querySelectorAll('.counter__value');
-  const counterButtons = target.closest('.counter__buttons');
-  const resetBtn = dropdownItem.querySelector('button[type = "reset"]');
 
-  if (counterButtons) {
-    const counterValue = counterButtons.querySelector('.counter__value');
-    const counterBtnMinus = counterButtons.querySelector('.counter__btn--minus');
-    const counterBtnPlus = counterButtons.querySelector('.counter__btn--plus');
+  if (dropdownItem) {
+    const inputField = dropdownItem.querySelector('.input__field');
+    const counterValueArr = dropdownItem.querySelectorAll('.counter__value');
+    const counterButtons = target.closest('.counter__buttons');
+    const amountBabies = dropdownItem.querySelector('input[name = "babies"]');
+    const amountChildren = dropdownItem.querySelector('input[name = "children"]');
+    const amountAdults = dropdownItem.querySelector('input[name = "adults"]');
+    const resetBtn = dropdownItem.querySelector('button[type = "reset"]');
 
-    if ((target === counterBtnMinus) && counterValue.value !== '0') {
-      let counter = Number(counterValue.value);
-      counter -= 1;
-      counterValue.value = counter;
+    let totalGuests = 0;
 
-      if (counter === 0) {
-        counterBtnMinus.disabled = true;
+    if (counterButtons) {
+      const counterValue = counterButtons.querySelector('.counter__value');
+      const counterBtnMinus = counterButtons.querySelector('.counter__btn--minus');
+      const counterBtnPlus = counterButtons.querySelector('.counter__btn--plus');
+
+      if ((target === counterBtnMinus) && counterValue.value !== '0') {
+        let counter = Number(counterValue.value);
+        counter -= 1;
+        counterValue.value = counter;
+
+        if (counter === 0) {
+          counterBtnMinus.disabled = true;
+        }
+      }
+
+      if (target === counterBtnPlus) {
+        let counter = Number(counterValue.value);
+        counter += 1;
+        counterValue.value = counter;
+        counterBtnMinus.disabled = false;
+
+        if (resetBtn) {
+          resetBtn.classList.remove('visually-hidden');
+        }
+      }
+
+      counterValueArr.forEach((item) => {
+        const counter = Number(item.value);
+        totalGuests += counter;
+      });
+
+      if (resetBtn && totalGuests === 0) {
+        resetBtn.classList.add('visually-hidden');
       }
     }
 
-    if (target === counterBtnPlus) {
-      let counter = Number(counterValue.value);
-      counter += 1;
-      counterValue.value = counter;
-      counterBtnMinus.disabled = false;
+    const reset = () => {
+      const counterButtonsArr = dropdownItem.querySelectorAll('.counter__buttons');
 
-      if (resetBtn) {
-        resetBtn.classList.remove('visually-hidden');
-      }
-    }
+      counterButtonsArr.forEach((item) => {
+        const counter = item.querySelector('.counter__value');
+        const btnMinus = item.querySelector('.counter__btn--minus');
 
-    let counterSum = 0;
-
-    counterValueArr.forEach((item) => {
-      const counter = Number(item.value);
-      counterSum += counter;
-    });
-
-    if (resetBtn && counterSum === 0) {
+        counter.value = 0;
+        btnMinus.disabled = true;
+      });
       resetBtn.classList.add('visually-hidden');
+    };
+    if (resetBtn) {
+      resetBtn.addEventListener('click', reset);
     }
-  }
 
-  const reset = () => {
-    const counterButtonsArr = dropdownItem.querySelectorAll('.counter__buttons');
+    const numericCases = (name) => {
+      if (name === 'guests') {
+        const babies = Number(amountBabies.value);
+        const children = Number(amountChildren.value);
+        const adults = Number(amountAdults.value);
+        const otherGuests = children + adults;
 
-    counterButtonsArr.forEach((item) => {
-      const counter = item.querySelector('.counter__value');
-      const btnMinus = item.querySelector('.counter__btn--minus');
+        let caption = '';
+        let babiesCaption = '';
+        let isBabies = '';
 
-      counter.value = 0;
-      btnMinus.disabled = true;
-    });
-    resetBtn.classList.add('visually-hidden');
-  };
-  if (resetBtn) {
-    resetBtn.addEventListener('click', reset);
+        switch (otherGuests) {
+        case 0:
+          caption = '';
+          break;
+        case 1:
+          caption = 'гость';
+          break;
+        case 2:
+        case 3:
+        case 4:
+          caption = 'гостя';
+          break;
+        default:
+          caption = 'гостей';
+        }
+
+        switch (babies) {
+        case 0:
+          babiesCaption = '';
+          break;
+        case 1:
+          babiesCaption = 'младенец';
+          break;
+        case 2:
+        case 3:
+        case 4:
+          babiesCaption = 'младенца';
+          break;
+        default:
+          babiesCaption = 'младенцев';
+        }
+
+        isBabies = babies ? `, ${babies} ${babiesCaption}` : '';
+        inputField.value = otherGuests ? `${otherGuests} ${caption}${isBabies}` : 'Сколько гостей';
+      }
+    };
+
+    numericCases('guests');
   }
 });
 
