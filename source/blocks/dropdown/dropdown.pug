@@ -2,15 +2,18 @@ include ../../blocks/input/input.pug
 include ../../blocks/button/button.pug
 
 mixin counter(title, name, valueDefault="0")
+  - let disabled = true
   .counter__item
     .counter__name= title
     .counter__buttons
-      .counter__btn.counter__btn--minus.btn--disabled -
-      input(class="counter__value" name= name value= valueDefault type="text")
-      .counter__btn.counter__btn--plus +
+      if (valueDefault != "0")
+        - disabled = false
+      button(class = "counter__btn counter__btn--minus" disabled = disabled) -
+      input(class="counter__value" name= name value= valueDefault type="text" readonly)
+      button(class = "counter__btn counter__btn--plus") +
 
 mixin dropdown(options = {}, counters = [], buttons = true)
-  - const {title= "", style= "dropdown", expanded= false, description= "", type= "text", name= "", value= "", ariaLabel= "",} = options
+  - const {title= "", style= "dropdown", expanded= false, description= "", type= "text", name= "", value= "", ariaLabel= ""} = options
   .dropdown__item
     +textField({title, style, expanded, description, type, name, value, ariaLabel,}, [])
 
@@ -22,21 +25,20 @@ mixin dropdown(options = {}, counters = [], buttons = true)
       each item in counters
         - const {title, name, valueDefault} = item
         +counter(title, name, valueDefault)
-        - sumValue += valueDefault
 
       if(buttons)
         .dropdown__buttons
           .dropdown__buttons__item
-            if(sumValue)
-              +button({
-                  title: "Очистить",
-                  color: "complementary",
-                  style: "default",
-                  name: "default",
-                  value: "value",
-                  type: "reset",
-                  ariaLabel: "reset",
-                  })
+            +button({
+                title: "Очистить",
+                color: "complementary",
+                style: "default",
+                name: "default",
+                value: "value",
+                type: "reset",
+                isVisible: false,
+                ariaLabel: "reset",
+                })
 
           .dropdown__buttons__item
             +button({

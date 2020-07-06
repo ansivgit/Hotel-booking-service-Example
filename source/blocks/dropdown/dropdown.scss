@@ -69,11 +69,23 @@
     border-radius: 50%;
     box-sizing: border-box;
     font-size: 18px;
-    line-height: 30px;
+    //line-height: 30px;
     color: $middle-color;
     /*align-items: center;*/
     text-align: center;
     cursor: pointer;
+    background-color: inherit;
+    //user-select: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      outline: none;
+    }
+
+    &:disabled {
+      color: red;
+    }
   }
 
   .counter__value {
@@ -88,6 +100,13 @@
     text-transform: uppercase;
     color: $dark-color;
     border: none;
+    user-select: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      outline: none;
+    }
   }
 }
 .visually-hidden {

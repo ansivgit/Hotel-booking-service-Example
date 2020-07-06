@@ -11,24 +11,28 @@
   options.name: значение обязательного поля name для кнопки;
   options.value: определяет значение кнопки, которое будет отправлено на сервер;
   options.type: определяет тип кнопки, который устанавливает ее поведение в форме - button / reset / submit;
+  options.isVisible: скрывает кнопку при необходимости, по умолчанию true;
   options.ariaLabel: содержание атрибута aria-label для скринридеров;
 
 mixin button(options = {}, isButton = true)
+  - const { title, color, style = 'default', icon, name, value, type, ariaLabel, isVisible = true} = options
+  - const baseClass = "button-base"
+  - let hidden = ""
+    if (!isVisible)
+      - hidden = " visually-hidden"
 
   if(isButton == true)
     .button-base
+      button(class= `${baseClass} ${baseClass}--${color}--${style}${hidden}`, name = name, value = value, type = type)= title
 
-      button(class= "button-base button-base--" + options.color + "--" + options.style, name = options.name, value = options.value, type = options.type)= options.title
-
-      if(options.icon)
-        i(class= "material-icons")= options.icon
+      if(icon)
+        i(class= "material-icons")= icon
 
   else
     .button-base
-      button(class= "button-base button-base--" + options.color + "--" + options.style, name = options.name, value = options.value, type = options.type)= options.title
-
-      if(options.icon)
-        i(class= "material-icons")= options.icon
+      button(class= `${baseClass} ${baseClass}--${color}--${style}${hidden}`, name = name, value = value, type = type)= title
+      if(icon)
+        i(class= "material-icons")= icon
 
 
 //-button({

@@ -1,9 +1,9 @@
 mixin pagination(startPage, maxPageNumber)
   .pagination-block
-    span.back.visualy-hidden
+    span.back.visually-hidden
       i.material-icons arrow_back
-    a.startPage.visualy-hidden(href="/some-address/change-me_page1")= "1"
-    span.prevPages.visualy-hidden= "..."
+    a.startPage.visually-hidden(href="/some-address/change-me_page1")= "1"
+    span.prevPages.visually-hidden= "..."
     a.page1.currentPage(href="/some-address/change-me_pageN1")= startPage
     a.page2(href="/some-address/change-me_pageN2")= startPage + 1
     a.page3(href="/some-address/change-me_pageN3")= startPage + 2

@@ -1,7 +1,7 @@
 //- текстовое поле - общее
 
 mixin textField(options)
-  - const {title = "", style = "", expanded = "", withDatepicker = "", startOrEndDatepicker = "", rangeAttributes= {}, type = "text", name = "", value = "", placeholder = "", placeholderColor = "", ariaLabel = "", description = "", } = options;
+  - const {title = "", style = "", expanded = "", withDatepicker = "", startOrEndDatepicker = "", rangeAttributes= {}, type = "text", name = "", value = "", placeholder = "", placeholderColor = "", ariaLabel = "", description = "", readonly = true, } = options;
 
   .input-block
     - const isDatepicker= "datepicker-here"; // служебный класс для инициализации плагина datepicker;
@@ -29,7 +29,7 @@ mixin textField(options)
       if (description)
         .input__description= description
 
-      input(class= inputStyle, type= type, name= name, value= value, placeholder= placeholder, aria-label= ariaLabel)&attributes(rangeAttributes)
+      input(class= inputStyle, type= type, name= name, value= value, placeholder= placeholder, aria-label= ariaLabel, readonly= readonly)&attributes(rangeAttributes)
 
 //- data-multiple-dates-separator= " - ",
   options.title: заголовок поля ввода "Text field";
