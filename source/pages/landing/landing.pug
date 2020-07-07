@@ -1,0 +1,15 @@
+extends ../base/template-page.pug
+
+include ../../blocks/card/card.pug
+
+block title
+  title TOXIN
+
+block scripts
+
+block main
+  section.landing
+    .landing.landing__container
+      .landing.landing__card
+        +card('search')
+      .landing.landing__brief Лучшие номера для вашей работы, отдыха и просто вдохновения

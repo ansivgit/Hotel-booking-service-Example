@@ -37,6 +37,7 @@ module.exports = {
     'form-elements': ['@babel/polyfill', './pages/form-elements/form-elements.js'],
     'cards': ['@babel/polyfill', './pages/cards/cards.js'],
     'headers-footers': ['@babel/polyfill', './pages/headers-footers/headers-footers.js'],
+    'landing': ['@babel/polyfill', './pages/landing/landing.js'],
   },
   output: {
     filename: filename(ext = 'js'),
@@ -66,7 +67,7 @@ module.exports = {
       },
     }),
     new HTMLWebpackPlugin({
-      // filename: 'form-elements.html',
+      filename: 'form-elements.html',
       template: './pages/form-elements/form-elements.pug',
       chunks: ['form-elements'],
       minify: {
@@ -85,6 +86,14 @@ module.exports = {
       filename: 'headers-footers.html',
       template: './pages/headers-footers/headers-footers.pug',
       chunks: ['headers-footers'],
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      // filename: 'landing.html',
+      template: './pages/landing/landing.pug',
+      chunks: ['landing'],
       minify: {
         collapseWhitespace: isProd,
       },

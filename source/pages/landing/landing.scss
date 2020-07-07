@@ -1,0 +1,46 @@
+@import '../../theme/global.scss';
+
+@import '../../blocks/header/header.scss';
+@import '../../blocks/card/card.scss';
+@import '../../blocks/footer/footer.scss';
+
+@keyframes backgroundSlide {
+  from { background-image: url('../../pages/landing/img/image1.png'); }
+  33%  { background-image: url('../../pages/landing/img/image2.png'); }
+  66%  { background-image: url('../../pages/landing/img/image3.png'); }
+  to { background-image: url('../../pages/landing/img/image1.png'); }
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.landing {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    height: 830px;
+    padding: 70px 133px 21px 140px;
+    animation-name: backgroundSlide;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    background-position: bottom;
+    background-clip: padding-box;
+    //background-image: url('../../pages/landing/img/image1.png');
+    //outline: 2px solid rgb(0, 255, 115);
+  }
+
+  &__brief {
+    width: 297px;
+    align-self: flex-end;
+    text-align: right;
+  }
+
+  &__card {
+    /*position: absolute;
+    top: 70px;
+    left: 140px;*/
+  }
+}
+
+

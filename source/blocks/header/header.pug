@@ -1,3 +1,4 @@
+include ../../blocks/logo/logo.pug
 include ../../blocks/navigation/navigation.pug
 include ../../blocks/button/button.pug
 
@@ -82,7 +83,7 @@ mixin header(isRegistered)
             },
           ], 'horizontal')
 
-        if (isRegistered == 'registered')
+        if (isRegistered === 'registered')
           - let userName = 'Юлий Цезарь'
           a(href = "/some-address/change-me" class = "header__userName")= userName
 

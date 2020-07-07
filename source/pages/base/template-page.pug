@@ -1,0 +1,28 @@
+include ../../blocks/header/header.pug
+include ../../blocks/footer/footer.pug
+
+doctype html
+html(lang="en, ru")
+  head
+    meta(charset="utf-8")
+
+    meta(name="description" content= "Краткое описание")
+    meta(name="keywords" content= "самый, лучший, сайт")
+
+    meta(name="viewport" content="initial-scale=1.0, width=device-width")
+
+    block title
+
+    link(rel="shortcut icon" href="favicon.png" type="image/x-icon")
+
+  body
+    block variables
+    block header
+      +header()
+
+    block main
+
+    block footer
+      +footer()
+
+    block scripts
