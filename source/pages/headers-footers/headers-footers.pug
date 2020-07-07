@@ -1,6 +1,4 @@
-extends ../base/template.pug
-
-include ../../blocks/logo/logo.pug
+extends ../base/template-uiKit.pug
 
 include ../../blocks/header/header.pug
 include ../../blocks/footer/footer.pug
@@ -11,9 +9,6 @@ block title
 block scripts
 
 block main
-  .logo-block
-    +logo("gray")
-
   section.headers
     .headers__item
       +header()

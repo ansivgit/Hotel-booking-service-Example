@@ -1,6 +1,7 @@
-@import "../../blocks/input/input.scss";
-@import "../../blocks/calendar/calendar.scss";
-@import "../../blocks/button/button.scss";
+@import '../../blocks/input/input.scss';
+@import '../../blocks/dropdown/dropdown.scss';
+@import '../../blocks/calendar/calendar.scss';
+@import '../../blocks/button/button.scss';
 
 .card-wrapper {
   @include cardWrapper;

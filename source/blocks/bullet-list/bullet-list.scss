@@ -1,26 +1,26 @@
 .bullet-list {
   list-style-type: none;
-}
 
-.bullet-item {
-  position: relative;
-  margin: 10px 0 10px 20px;
+  &__item {
+    position: relative;
+    margin: 10px 0 10px 20px;
 
-  &:first-child {
-    margin-top: 14px;
-  }
+    &:first-child {
+      margin-top: 14px;
+    }
 
-  &::before {
-    position: absolute;
-    top: 6px;
-    left: -20px;
-    content: "";
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin-right: 10px;
-    box-sizing: border-box;
-    border-radius: 50%;
-    background-color: $secondary-color;
+    &::before {
+      position: absolute;
+      top: 6px;
+      left: -20px;
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: 10px;
+      box-sizing: border-box;
+      border-radius: 50%;
+      background-color: $secondary-color;
+    }
   }
 }

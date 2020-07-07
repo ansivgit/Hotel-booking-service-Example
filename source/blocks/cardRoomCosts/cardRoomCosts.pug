@@ -1,5 +1,6 @@
 include ../../blocks/button/button.pug
 include ../../blocks/input/input.pug
+include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/calendar/calendar.pug
 
 mixin cardRoomCosts(roomParams = {})
@@ -23,14 +24,20 @@ mixin cardRoomCosts(roomParams = {})
 
         .card__content--booking--block2
           +calendar("arrivalDeparture", "start", "end")
-          +textField({
-            title: "Гости",
-            style: "dropdown",
-            type: "text",
-            name: "guests",
-            placeholder: "Сколько гостей",
-            ariaLabel: "quantity guests"
-          })
+          +dropdown({
+              title: "Гости",
+              style: "dropdown",
+              expanded: false,
+              type: "text",
+              name: "guests",
+              value: "Сколько гостей",
+              ariaLabel: "quantity guests"
+            },
+            [
+              {title: "Взрослые", name: "adults", valueDefault: 2},
+              {title: "Дети", name: "children", valueDefault: 1},
+              {title: "Младенцы", name: "babies", valueDefault: 0},
+            ])
 
         .card__content--booking--block3
           .costsCalc.costsCalc--title

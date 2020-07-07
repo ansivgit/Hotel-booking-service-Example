@@ -1,9 +1,10 @@
+include ../../blocks/logo/logo.pug
+
 doctype html
 html(lang="en, ru")
   head
     meta(charset="utf-8")
 
-    //-block meta-dates
     meta(name="description" content= "Краткое описание")
     meta(name="keywords" content= "самый, лучший, сайт")
 
@@ -11,14 +12,13 @@ html(lang="en, ru")
 
     block title
 
-    //-block style
-    //- !!!!!!не забыть подключить scss для сборки
-      link(rel="stylesheet" href="../../../templates/common-template.css")
-
     link(rel="shortcut icon" href="favicon.png" type="image/x-icon")
 
   body
     block variables
+
+    .logo-block
+      +logo('gray')
     block main
 
     block scripts

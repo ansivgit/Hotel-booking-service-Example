@@ -1,16 +1,11 @@
 @import '../../theme/global.scss';
 
-@import '../../blocks/logo/logo.scss';
 @import '../../blocks/card/card.scss';
 @import '../../blocks/cardRoomCosts/cardRoomCosts.scss';
 @import '../../blocks/cardRoomSearch/cardRoomSearch.scss';
 
 html {
   background: #f4f4f6;
-}
-
-.logo-block {
-  margin: 30px 0 0 30px;
 }
 
 section.cards {

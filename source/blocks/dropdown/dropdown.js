@@ -41,6 +41,9 @@ const changeover = ((event) => {
     const amountBabies = dropdownItem.querySelector('input[name = "babies"]');
     const amountChildren = dropdownItem.querySelector('input[name = "children"]');
     const amountAdults = dropdownItem.querySelector('input[name = "adults"]');
+    const amountBedrooms = dropdownItem.querySelector('input[name = "bedrooms"]');
+    const amountBeds = dropdownItem.querySelector('input[name = "beds"]');
+    const amountBathrooms = dropdownItem.querySelector('input[name = "bathrooms"]');
     const resetBtn = dropdownItem.querySelector('button[type = "reset"]');
 
     let totalGuests = 0;
@@ -143,9 +146,88 @@ const changeover = ((event) => {
         isBabies = babies ? `, ${babies} ${babiesCaption}` : '';
         inputField.value = otherGuests ? `${otherGuests} ${caption}${isBabies}` : 'Сколько гостей';
       }
+
+      if (name === 'rooms') {
+        const bedrooms = Number(amountBedrooms.value);
+        const beds = Number(amountBeds.value);
+        const bathrooms = Number(amountBathrooms.value);
+
+        let bedroomsCaption = '';
+        let bedsCaption = '';
+        let bathroomsCaption = '';
+
+        switch (bedrooms) {
+        case 0:
+          bedroomsCaption = '';
+          break;
+        case 1:
+          bedroomsCaption = 'спальня';
+          break;
+        case 2:
+        case 3:
+        case 4:
+          bedroomsCaption = 'спальни';
+          break;
+        default:
+          bedroomsCaption = 'спален';
+        }
+
+        switch (beds) {
+        case 0:
+          bedsCaption = '';
+          break;
+        case 1:
+          bedsCaption = 'кровать';
+          break;
+        case 2:
+        case 3:
+        case 4:
+          bedsCaption = 'кровати';
+          break;
+        default:
+          bedsCaption = 'кроватей';
+        }
+
+        switch (bathrooms) {
+        case 0:
+          bathroomsCaption = '';
+          break;
+        case 1:
+          bathroomsCaption = 'ванная комната';
+          break;
+        case 2:
+        case 3:
+        case 4:
+          bathroomsCaption = 'ванных комнаты';
+          break;
+        default:
+          bathroomsCaption = 'ванных комнат';
+        }
+
+        const inputBedrooms = bedrooms ? `${bedrooms} ${bedroomsCaption}` : '';
+        const inputBeds = beds ? `${beds} ${bedsCaption}` : '';
+        const inputBathrooms = bathrooms ? `${bathrooms} ${bathroomsCaption}` : '';
+        let inputValue = 'Выберите удобства';
+
+        const valuesArray = [inputBedrooms, inputBeds, inputBathrooms].filter((item) => item.length > 0);
+
+        if (valuesArray.length > 1) {
+          inputValue = valuesArray.join(', ');
+        }
+        if (valuesArray.length === 1) {
+          inputValue = valuesArray[0];
+        }
+
+        inputField.value = (inputValue.length > 20) ? `${inputValue.slice(0, 20)}...` : inputValue;
+      }
     };
 
-    numericCases('guests');
+
+    if (inputField.name === 'guests') {
+      numericCases('guests');
+    } else {
+      numericCases('rooms');
+    }
   }
 });
 

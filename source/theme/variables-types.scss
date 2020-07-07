@@ -86,6 +86,11 @@ body {
   text-align: center;
 }
 
+//* отступы для логотипа в ui-kit
+.logo-block {
+  margin: 30px 0 0 30px;
+}
+
 //* миксин для трех иконок соцсетей в футере
 @mixin fontAwesomeIcons {
   font-family: "fontello";

@@ -1,6 +1,4 @@
-extends ../base/template.pug
-
-include ../../blocks/logo/logo.pug
+extends ../base/template-uiKit.pug
 
 include ../../blocks/card/card.pug
 include ../../blocks/cardRoomCosts/cardRoomCosts.pug
@@ -12,9 +10,6 @@ block title
 block scripts
 
 block main
-  .logo-block
-    +logo("gray")
-
   section.cards
     .cards-container
       +card('search')

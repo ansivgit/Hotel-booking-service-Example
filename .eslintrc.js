@@ -31,5 +31,6 @@ module.exports = {
     "eol-last": ["error", "never"],
     "func-names": ["off", "as-needed"],*/
     "func-style": ["off", "declaration"],
+    "no-unused-expressions": ["error", { "allowTernary": true }],
   },
 };
