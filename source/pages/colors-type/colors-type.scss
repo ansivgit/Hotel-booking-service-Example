@@ -1,5 +1,9 @@
 @import "../../theme/global.scss";
 
+html {
+  width: 1440px;
+}
+
 .colors-type-wrapper {
   display: flex;
   /*width: 100%;*/

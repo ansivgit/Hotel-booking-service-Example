@@ -22,6 +22,12 @@ $secondary-gradient__half-opacity: linear-gradient(180deg, rgba(111, 207, 151, 0
 $primary-type: Montserrat, Arial, sans-serif;
 $secondary-type: QuicksandPro, Quicksand, Opensans, Arial, sans-serif;
 
+//* брейкпоинты
+$mediaMax: 1224px; // уменьшается только второстепенный шрифт и высота строки в футере
+$mediaMid: 1024px; // уменьшается весь шрифт
+$mediaMin: 768px; // переход на мобильную версию
+
+
 @mixin head1 {
   font-family: $secondary-type;
   font-style: normal;
@@ -86,11 +92,6 @@ body {
   text-align: center;
 }
 
-//* отступы для логотипа в ui-kit
-.logo-block {
-  margin: 30px 0 0 30px;
-}
-
 //* миксин для трех иконок соцсетей в футере
 @mixin fontAwesomeIcons {
   font-family: "fontello";
@@ -117,4 +118,26 @@ body {
   &:not(:only-child) {
     margin-bottom: 40px;
   }
+}
+
+//* миксины для медиазапросов
+
+@mixin widthMax {
+  @media (max-width: $mediaMax) {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+//! общие стили макета
+
+//* отступы для логотипа в ui-kit
+.logo-block {
+  margin: 30px 0 0 30px;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
 }

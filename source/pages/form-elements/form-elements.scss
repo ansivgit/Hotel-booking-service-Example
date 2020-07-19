@@ -16,6 +16,10 @@
 @import "../../blocks/comment/comment.scss";
 
 
+html {
+  width: 1440px;
+}
+
 section.form-elements {
   display: grid;
   grid-template-columns: 447px 392px 320px;
