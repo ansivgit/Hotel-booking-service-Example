@@ -22,6 +22,14 @@ $secondary-gradient__half-opacity: linear-gradient(180deg, rgba(111, 207, 151, 0
 $primary-type: Montserrat, Arial, sans-serif;
 $secondary-type: QuicksandPro, Quicksand, Opensans, Arial, sans-serif;
 
+// - базовые размеры шрифтов
+
+$fontBody: 14rem;
+$fontH1: 24rem;
+$fontH2: 19rem;
+$fontH3: 12rem;
+
+
 //* брейкпоинты
 $mediaMax: 1224px; // уменьшается только второстепенный шрифт и высота строки в футере
 $mediaMid: 1024px; // уменьшается весь шрифт
@@ -32,10 +40,10 @@ $mediaMin: 768px; // переход на мобильную версию
   font-family: $secondary-type;
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
-  line-height: 30px;
+  font-size: #{$fontH1/$fontBody}rem;
+  line-height: 1.26em;
   color: $dark-color;
-  //letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
 }
 
 h1, .head1 {
@@ -46,10 +54,10 @@ h1, .head1 {
   font-family: $secondary-type;
   font-style: normal;
   font-weight: bold;
-  font-size: 19px;
+  font-size: #{$fontH2/$fontBody}rem;
   //line-height: 24px;
   color: $dark-color;
-  //letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
 }
 
 h2, .head2 {
@@ -60,8 +68,8 @@ h2, .head2 {
   font-family: $primary-type;
   font-style: normal;
   font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: #{$fontH3/$fontBody}rem;
+  line-height: 1.25em;
   /* identical to box height */
   text-transform: uppercase;
   color: $dark-color;
@@ -75,9 +83,8 @@ h3, .head3 {
   font-family: $primary-type;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 24px;
-  /* or 171% */
+  font-size: 1rem;
+  line-height: 1.71em; // 24px;
   color: $primary-color;
 }
 
@@ -87,7 +94,7 @@ body {
 
 @mixin materialIcons {
   font-family: "Material Icons";
-  font-size: 24px;
+  font-size: #{$fontH1/$fontBody}rem;
   font-weight: normal;
   text-align: center;
 }
@@ -108,7 +115,6 @@ body {
 
 @mixin cardWrapper {
   width: 380px;
-  //height: 374px;
   padding: 41px 29px 29px 29px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
@@ -124,8 +130,7 @@ body {
 
 @mixin widthMax {
   @media (max-width: $mediaMax) {
-    font-size: 12px;
-    line-height: 20px;
+    font-size: #{$fontH3/$fontBody}rem;
   }
 }
 

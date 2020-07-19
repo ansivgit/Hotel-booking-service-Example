@@ -11,6 +11,12 @@
   to { background-image: url('../../pages/landing/img/image1.png'); }
 }
 
+html {
+  @media (max-width: $mediaMid) {
+    font-size: 12px;
+  }
+}
+
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;

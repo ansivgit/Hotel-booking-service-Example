@@ -32,7 +32,7 @@ footer.mobile {
   margin-right: 40px;
 
   &__description {
-    @include widthMax;
+    @include widthMax; // уменьшает шрифт конкретного текста до 12рх
     margin-top: 17px;
   }
 }

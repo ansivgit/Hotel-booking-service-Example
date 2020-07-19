@@ -30,12 +30,12 @@ html {
 
 .colors-item__name {
   margin-left: 40px;
-  font-family: Quicksand, Arial, sans-serif;
+  font-family: $secondary-type;
   font-style: normal;
   font-weight: normal;
   font-size: 19px;
   line-height: 29px;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.01rem;
 }
 
 .colors-item__sample {
