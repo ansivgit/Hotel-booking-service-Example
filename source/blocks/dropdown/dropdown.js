@@ -7,7 +7,7 @@ const dropdownOpen = ((event) => {
   if (dropdownItem) {
     const inputField = dropdownItem.querySelector('.input__field');
     const dropdownExpand = dropdownItem.querySelector('.dropdown__expand');
-    const submitBtn = dropdownItem.querySelector('button[type = "submit"]');
+    const submitBtn = dropdownItem.querySelector('button[value = "submit"]');
 
     if (target === inputField) {
       dropdownExpand.classList.toggle('visually-hidden');
@@ -44,7 +44,7 @@ const changeover = ((event) => {
     const amountBedrooms = dropdownItem.querySelector('input[name = "bedrooms"]');
     const amountBeds = dropdownItem.querySelector('input[name = "beds"]');
     const amountBathrooms = dropdownItem.querySelector('input[name = "bathrooms"]');
-    const resetBtn = dropdownItem.querySelector('button[type = "reset"]');
+    const resetBtn = dropdownItem.querySelector('button[value = "reset"]');
 
     let totalGuests = 0;
 
