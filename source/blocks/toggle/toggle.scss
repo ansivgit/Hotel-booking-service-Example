@@ -1,7 +1,7 @@
 .toggles-block {
   max-width: 260px;
   margin: 0px;
-  line-height: 22px;
+  //line-height: 1.57142rem;
 
   input[type=checkbox] {
     position: absolute;
@@ -26,16 +26,16 @@
     left: -50px;
     width: 40px;
     height: 20px;
-    box-sizing: border-box;
     border-radius: 10px;
+    box-sizing: border-box;
   }
 
   input[type=checkbox] ~ label::before {
-    border: 1px solid $secondary-color;
+    border: $border-base;
   }
 
   input[type=checkbox]:checked ~ label::before {
-    border: 1px solid $primary-theme-color;
+    border: $border-depth $border-style $primary-theme-color;
   }
 
   input[type=checkbox] ~ label::after {

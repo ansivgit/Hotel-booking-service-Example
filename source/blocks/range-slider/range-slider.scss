@@ -9,17 +9,14 @@
   }
 
   &__title {
-    //flex-grow: 2;
     margin-right: 5px;
     max-width: 100px;
   }
 
   &__value {
-    @include regular;
-    font-size: 12px;
-    line-height: 15px;
+    @include head3;
+    font-weight: normal;
     text-align: right;
-    text-transform: uppercase;
     color: $middle-color;
 
     &--separator {
@@ -37,7 +34,6 @@
 }
 
 input.range-slider__value {
-  //flex-basis: fit-content;
   width: 43px;
   margin: 0 0px 0 3px;
   background-color: inherit;

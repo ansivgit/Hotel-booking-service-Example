@@ -1,7 +1,7 @@
 @import '../../blocks/input/input.scss';
-@import '../../blocks/dropdown/dropdown.scss';
-@import '../../blocks/calendar/calendar.scss';
 @import '../../blocks/button/button.scss';
+@import '../../blocks/calendar/calendar.scss';
+@import '../../blocks/dropdown/dropdown.scss';
 
 .card-wrapper {
   @include cardWrapper;
@@ -21,12 +21,12 @@
     margin-top: 3px;
 
     span.roomNumber {
-      font-size: 24px;
+      font-size: #{$font-h1/$font-body}rem;
 
       &::before {
         content: "№ ";
         margin-right: 2px;
-        font-size: 14px;
+        font-size: 1rem;
       }
     }
 
@@ -43,7 +43,7 @@
 
     span.costComment {
       margin-left: 1px;
-      font-size: 12px;
+      font-size: #{$font-h3/$font-body}rem;
       font-weight: normal;
     }
   }
@@ -102,16 +102,16 @@
 }
 
 .card--info {
-  @include head3;
   height: 20px;
   width: 20px;
-  line-height: 18px;
   margin-top: -2px;
+  border: $border-base;
+  border-radius: 50%;
+  @include head3;
+  line-height: 18px;
   text-align: center;
   color: $secondary-color;
   text-transform: none;
-  border: 1px solid $secondary-color;
-  border-radius: 50%;
 }
 
 .totalCost {
@@ -129,7 +129,7 @@
   &--filling {
     position: relative;
     top: -3px;
-    border-bottom: 1px dotted $secondary-color;
+    border-bottom: $border-depth dotted $secondary-color;
   }
   &--value {
     text-align: right;

@@ -1,13 +1,13 @@
 //- colors
 
-//- text, borders, etc
+//* text, borders, etc
 $primary-color: rgba(31, 32, 65, 0.75);
 $secondary-color: rgba(31, 32, 65, 0.25);
 $middle-color: rgba(31, 32, 65, 0.5);
 $lightest-color: rgba(31, 32, 65, 0.05);
 $dark-color: #1F2041;
 
-//- theme colors
+//* theme colors
 $primary-theme-color: rgb(188, 156, 255);
 $secondary-theme-color: rgb(111, 207, 151);
 
@@ -17,33 +17,41 @@ $secondary-gradient: linear-gradient(180deg, rgb(111, 207, 151) 0%, rgb(102, 210
 $primary-gradient-half-opacity: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
 $secondary-gradient__half-opacity: linear-gradient(180deg, rgba(111, 207, 151, 0.5) 0%, rgba(102, 210, 234, 0.5) 100%);
 
-//- types
-
+//* types
 $primary-type: Montserrat, Arial, sans-serif;
 $secondary-type: QuicksandPro, Quicksand, Opensans, Arial, sans-serif;
 
-// - базовые размеры шрифтов
+//* borders
+$border-depth: 1px;
+$border-style: solid;
+$border-radius: 4px;
 
-$fontBody: 14rem;
-$fontH1: 24rem;
-$fontH2: 19rem;
-$fontH3: 12rem;
+$border-base: $border-depth $border-style $secondary-color;
+$border-accent: $border-depth $border-style $middle-color;
+$border-light: $border-depth $border-style rgba(31, 32, 65, 0.1);
+
+
+//* базовые размеры шрифтов
+$font-body: 14rem;
+$font-h1: 24rem;
+$font-h2: 19rem;
+$font-h3: 12rem;
 
 
 //* брейкпоинты
-$mediaMax: 1224px; // уменьшается только второстепенный шрифт и высота строки в футере
-$mediaMid: 1024px; // уменьшается весь шрифт
-$mediaMin: 768px; // переход на мобильную версию
+$media-max: 1224px; // уменьшается только второстепенный шрифт и высота строки в футере
+$media-mid: 1024px; // уменьшается весь шрифт
+$media-min: 768px; // переход на мобильную версию
 
 
 @mixin head1 {
   font-family: $secondary-type;
   font-style: normal;
   font-weight: bold;
-  font-size: #{$fontH1/$fontBody}rem;
+  font-size: #{$font-h1/$font-body}rem;
   line-height: 1.26em;
   color: $dark-color;
-  letter-spacing: -0.01em;
+  //letter-spacing: -0.01em;
 }
 
 h1, .head1 {
@@ -54,7 +62,7 @@ h1, .head1 {
   font-family: $secondary-type;
   font-style: normal;
   font-weight: bold;
-  font-size: #{$fontH2/$fontBody}rem;
+  font-size: #{$font-h2/$font-body}rem;
   //line-height: 24px;
   color: $dark-color;
   letter-spacing: -0.01em;
@@ -68,7 +76,7 @@ h2, .head2 {
   font-family: $primary-type;
   font-style: normal;
   font-weight: bold;
-  font-size: #{$fontH3/$fontBody}rem;
+  font-size: #{$font-h3/$font-body}rem;
   line-height: 1.25em;
   /* identical to box height */
   text-transform: uppercase;
@@ -86,6 +94,7 @@ h3, .head3 {
   font-size: 1rem;
   line-height: 1.71em; // 24px;
   color: $primary-color;
+  letter-spacing: -0.001em;
 }
 
 body {
@@ -94,7 +103,7 @@ body {
 
 @mixin materialIcons {
   font-family: "Material Icons";
-  font-size: #{$fontH1/$fontBody}rem;
+  font-size: #{$font-h1/$font-body}rem;
   font-weight: normal;
   text-align: center;
 }
@@ -112,13 +121,12 @@ body {
 }
 
 //* рамка для карточек (обертка карточек)
-
 @mixin cardWrapper {
   width: 380px;
   padding: 41px 29px 29px 29px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: $border-light;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+  border-radius: $border-radius;
   background: #ffffff;
 
   &:not(:only-child) {
@@ -129,8 +137,8 @@ body {
 //* миксины для медиазапросов
 
 @mixin widthMax {
-  @media (max-width: $mediaMax) {
-    font-size: #{$fontH3/$fontBody}rem;
+  @media (max-width: $media-max) {
+    font-size: #{$font-h3/$font-body}rem;
   }
 }
 

@@ -8,9 +8,9 @@ mixin counter(title, name, valueDefault="0")
     .counter__buttons
       if (valueDefault != "0")
         - disabled = false
-      button(class = "counter__btn counter__btn--minus" disabled = disabled) -
+      button(class = "counter__btn counter__btn--minus" type = "button" disabled = disabled) -
       input(class="counter__value" name= name value= valueDefault type="text" readonly)
-      button(class = "counter__btn counter__btn--plus") +
+      button(class = "counter__btn counter__btn--plus" type = "button") +
 
 mixin dropdown(options = {}, counters = [], buttons = true)
   - const {title= "", style= "dropdown", expanded= false, description= "", type= "text", name= "", value= "", ariaLabel= ""} = options
@@ -30,23 +30,21 @@ mixin dropdown(options = {}, counters = [], buttons = true)
         .dropdown__buttons
           .dropdown__buttons__item
             +button({
-                title: "Очистить",
-                color: "complementary",
-                style: "default",
-                name: "default",
-                value: "value",
-                type: "reset",
-                isVisible: false,
-                ariaLabel: "reset",
-                })
+              title: "Очистить",
+              color: "complementary",
+              style: "default",
+              value: "reset",
+              type: "button",
+              isVisible: false,
+              ariaLabel: "reset",
+            })
 
           .dropdown__buttons__item
             +button({
-                title: "Применить",
-                color: "complementary",
-                style: "default",
-                name: "default",
-                value: "value",
-                type: "submit",
-                ariaLabel: "submit",
-                })
+              title: "Применить",
+              color: "complementary",
+              style: "default",
+              value: "submit",
+              type: "button",
+              ariaLabel: "submit",
+            })

@@ -45,9 +45,9 @@ footer.mobile {
     margin-right: 40px;
 
     &__title {
-      @include head3;
       margin-top: 4px;
       margin-bottom: 18px;
+      @include head3;
     }
   }
 }
@@ -72,7 +72,7 @@ footer.mobile {
 }
 
 .container.copyright-bar {
-    border-top: 1px solid rgba(31, 32, 65, 0.1);
+  border-top: $border-light;
 }
 
 .copyright-bar__info--mobile {

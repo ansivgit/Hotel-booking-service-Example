@@ -8,7 +8,7 @@
   grid-column-gap: 10px;
   margin: 21px 0 0 0;
   padding-bottom: 19px;
-  border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+  border-bottom: $border-light;
 
   &:last-child {
     border-bottom: none;
@@ -20,10 +20,9 @@
       grid-column-end: 2;
       grid-row-start: 1;
       grid-row-end: 3;
-      font-family: "Material Icons";
-      font-size: 48px;
+      @include materialIcons;
+      font-size: 3.42857rem;
       align-items: center;
-      text-align: center;
       background: $primary-gradient;
       background-clip: content-box;
       -webkit-background-clip: text;

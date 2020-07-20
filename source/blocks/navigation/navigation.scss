@@ -1,6 +1,4 @@
 .menu__layout {
-  //display: flex;
-
   &--horizontal {
     display: flex;
   }
@@ -10,10 +8,7 @@
     top: 75%;
     z-index: 10;
     min-width: 200px;
-    //margin-top: 10px;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-    //background-color: inherit;
-    //outline: 1px solid seagreen;
 
     &--close {
       display: none;
@@ -22,10 +17,9 @@
 }
 
 .menu-item {
-  line-height: 24px;
+  line-height: #{$font-h1/$font-body}rem;
   list-style-type: none;
   color: $middle-color;
-  //outline: 2px solid red;
 
   &--horizontal {
     display: flex;
@@ -36,15 +30,14 @@
 
   &--vertical {
     margin: 14px 0 14px 0;
-    //padding: 22px 0 22px 0;
   }
 
   &--submenu {
     margin: 0;
     padding: 10px 5px 10px 10px;
-    line-height: 18px;
+    line-height: 1.28571rem;
     background-color: #ffffff;
-    border-bottom: 1px solid $lightest-color;
+    border-bottom: $border-depth $border-style $lightest-color;
 
     &:hover {
       color: $primary-color;

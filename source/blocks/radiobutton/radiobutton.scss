@@ -1,12 +1,12 @@
 .radio-buttons-block {
   display: flex;
-  margin: 0px;
+  margin: 0;
 }
 
 .radio-buttons__item {
   max-width: 105px;
   margin-right: 20px;
-  line-height: 20px;
+  line-height: 1.42857rem;
 
   input[type=radio] {
     position: absolute;
@@ -17,7 +17,6 @@
 
   label {
     display: block;
-    /*margin-left: 30px;*/
   }
 
   input[type=radio] ~ label::before {
@@ -25,12 +24,10 @@
     display: inline-block;
     width: 20px;
     height: 20px;
-    /*margin-left: -30px;*/
     margin-right: 10px;
-    //margin-top: -7px;
     vertical-align: middle;
-    border: 1px solid $secondary-color;
-    box-sizing: border-box;
+    border: $border-base;
+    box-sizing: border-box; // необходим, т.к. это псевдоэлемент(?)
     border-radius: 50%;
   }
 
@@ -40,9 +37,8 @@
     width: 20px;
     height: 20px;
     margin-right: 10px;
-    //margin-top: -7px;
     vertical-align: middle;
-    border: 1px solid $primary-theme-color;
+    border: $border-depth $border-style $primary-theme-color;
     box-sizing: border-box;
     border-radius: 50%;
     background-image: $primary-gradient;

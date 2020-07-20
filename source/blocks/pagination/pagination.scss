@@ -1,8 +1,6 @@
 .pagination-block {
   display: inline-block;
   max-width: 100%;
-  /*outline: 2px solid black;
-  box-sizing: border-box;*/
 
   .visually-hidden {
     display: none;
@@ -16,17 +14,13 @@
     text-align: center;
     line-height: 40px;
     color: $middle-color;
-    /*outline: 2px solid blue;
-    box-sizing: border-box;*/
   }
 
   i {
     margin-top: -3px;
-    font-family: "Material Icons";
-    font-size: 24px;
-    line-height: 20px;
+    @include materialIcons;
+    line-height: 1.42857rem;
     vertical-align: middle;
-    text-align: center;
     color: #ffffff;
   }
 

@@ -7,19 +7,14 @@
   height: 100%;
   width: 100%;
   border-radius: 22px;
-  box-sizing: border-box;
-  font-family: $primary-type;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  //line-height: 15px;
-  text-transform: uppercase;
+  @include head3;
+  color: #ffffff;
   outline: none;
   cursor: pointer;
 
 &--primary--default,
 &--primary--hover {
-  padding: 0 20px 0 20px;
+  padding: 0 20px 0 20px; //если кнопки на страницах основных не ПП, изменить на 19рх
   border: none;
   color: #ffffff;
 }
@@ -41,7 +36,7 @@
 &--secondary--default,
 &--secondary--hover {
   height: 100%;
-  padding: 0 18px 0 18px;
+  padding: 0 18px 0 18px; //если кнопки на страницах основных не ПП, изменить на 17рх
   color: $primary-theme-color;
   border: 2px solid transparent;
   background-image:
@@ -62,16 +57,15 @@
 /*кнопки без рамки*/
 
 &--complementary--default {
-  //height: 25px;
-  padding: 10px 0 10px 0;
+  padding: 8px 0 8px 0;
   border: none;
   background: #ffffff;
 
-  &[type= submit] {
+  &[value = submit] {
   color: $primary-theme-color;
   }
 
-  &[type= reset] {
+  &[value = reset] {
     color: $middle-color;
   }
 }

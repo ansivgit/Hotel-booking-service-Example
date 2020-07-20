@@ -7,19 +7,19 @@
     }
 
     &--twitter:before {
-      @include fontAwesomeIcons;
       content: '\f099';
+      @include fontAwesomeIcons;
       font-size: 27px;
     }
 
     &--fb:before {
-      @include fontAwesomeIcons;
       content: '\f308';
+      @include fontAwesomeIcons;
     }
 
     &--instagram:before {
-      @include fontAwesomeIcons;
       content: '\f16d';
+      @include fontAwesomeIcons;
     }
   }
 }

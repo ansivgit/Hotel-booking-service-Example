@@ -22,12 +22,9 @@ html {
 
 section.form-elements {
   display: grid;
-  grid-template-columns: 447px 392px 320px;
-  /*width: 100%;*/
+  grid-template-columns: 447px 392px 321px;
   padding: 0;
   margin: 66px 0 146px 140px;
-  /*outline: 2px solid rgb(0, 255, 115);
-  box-sizing: border-box;*/
 }
 
 .inputs-wrapper {
@@ -35,10 +32,7 @@ section.form-elements {
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
-
   width: 320px;
-  outline: 2px dotted green;
-  box-sizing: border-box;
 
   &--smaller {
     display: flex;
@@ -50,21 +44,15 @@ section.form-elements {
 
 .input__item {
   margin-bottom: 20px;
-  outline: 2px solid green;
-  box-sizing: border-box;
 
   &--middle {
     width: 266px / 320px * 100%;
     margin-top: 21px;
-    margin-bottom: 43px;
-    outline: 2px solid red;
-    box-sizing: border-box;
+    margin-bottom: 41px;
   }
 
   &--small {
     width: 150px / 320px * 100%;
-    outline: 2px solid blue;
-    box-sizing: border-box;
   }
 
   &:last-child {
@@ -77,10 +65,6 @@ section.form-elements {
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
-  /*width: 265px;*/
-  /*margin-left: 126px;*/
-  outline: 2px solid green;
-  box-sizing: border-box;
 }
 
 .checkbox-buttons__title,
@@ -97,48 +81,32 @@ section.form-elements {
 
 .checkbox-buttons {
   max-width: 225px;
-  margin-bottom: 45px;
-  /*outline: 2px solid red;
-  box-sizing: border-box;*/
+  margin-bottom: 42px;
 }
 
 .radio-buttons {
-  /*max-width: 100%;*/
   margin-bottom: 40px;
-  /*outline: 2px solid red;
-  box-sizing: border-box;*/
 }
 
 .toggles {
-  /*max-width: 100%;*/
-  margin-bottom: 40px;
-  /*outline: 2px solid red;
-  box-sizing: border-box;*/
+  margin-bottom: 42px;
 }
 
 .toggle__item {
   margin-bottom: 10px;
-  /*outline: 2px solid rosybrown;
-  box-sizing: border-box;*/
 }
 
 .like-buttons {
-  margin-bottom: 40px;
-  outline: 2px solid red;
-  box-sizing: border-box;
+  margin-bottom: 39px;
 }
 
 .like-buttons__item {
   display: inline-block;
   margin-right: 10px;
-  /*outline: 2px dashed yellow;
-  box-sizing: border-box;*/
 }
 
 .rate-buttons {
   margin-bottom: 41px;
-  outline: 2px solid red;
-  box-sizing: border-box;
 
   .rate-buttons__item {
     display: inline-block;
@@ -157,13 +125,11 @@ section.form-elements {
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 2;
-  /*margin-left: 132px;*/
 }
 
 .range-slider__wrapper {
   width: 266px;
-  margin-bottom: 33px;
-  outline: 1px solid red;
+  margin-bottom: 32px;
 }
 
 .buttons {
@@ -171,10 +137,8 @@ section.form-elements {
   .buttons__positioner {
     display: flex;
     justify-content: space-between;
-    width: 218px;
+    width: 219px;
     margin-bottom: 30px;
-    box-sizing: border-box;
-    outline: 2px solid red;
 
     &--tight {
       width: 142px;
@@ -186,15 +150,15 @@ section.form-elements {
   .button__item {
     display: flex;
     height: 44px;
-    min-width: 99px;
+    //min-width: 99px;
 
     &--tight {
-      height: 44px;
+      height: 38px;
       width: 61px;
     }
 
     &--wide {
-      margin-top: 23px;
+      margin-top: 28px;
       margin-bottom: 40px;
       width: 320px;
     }
@@ -211,14 +175,10 @@ section.form-elements {
   width: 266px;
   height: 286px;
   margin-top: 100px;
-  outline: 2px solid rgb(128, 87, 0);
-  box-sizing: border-box;
 }
 
   .dropdown__item {
     margin-bottom: 20px;
-    box-sizing: border-box;
-    /*outline: 2px solid rgb(0, 55, 128);*/
 
     &--guests {
       width: 320px;
@@ -244,9 +204,6 @@ section.form-elements {
     display: flex;
     justify-content: space-between;
     margin: 15px 7px 5px 14px;
-    /*background-color: red;
-    outline: 2px solid green;*/
-    box-sizing: border-box;
 
     button {
       height: 25px;
@@ -295,5 +252,5 @@ section.form-elements {
   grid-column-end: 4;
   grid-row-start: 4;
   grid-row-end: 5;
-  margin-top: 38px;
+  margin-top: 40px;
 }
