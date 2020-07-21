@@ -17,3 +17,10 @@ const submenuClose = (() => {
 
 mainNav.addEventListener('mouseover', submenuOpen);
 mainNav.addEventListener('mouseleave', submenuClose);
+
+/* на завтра:
+ищем элемент button.menu - mobile
+и по клику на него добавляем ему стиль
+.menu-mobile--active
+а также добавляем видимость меню мобильному
+*/

@@ -44,6 +44,10 @@ body {
     width: 297px;
     align-self: flex-end;
     text-align: right;
+
+    @media (max-width: $media-min) {
+      display: none;
+    }
   }
 }
 

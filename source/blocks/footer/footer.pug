@@ -1,101 +1,99 @@
 include ../../blocks/input/input.pug
 include ../../blocks/social/social.pug
 
-mixin footer(frame)
-  if(frame !== 'mobile')
-    footer.standard
-      .container.footer-wrapper
-        .footer-aside
-          +logo('color')
-          .footer-aside__description Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-        .footer-menu
-          .footer-menu__section
-            .footer-menu__section__title Навигация
-            +navigation([
-              {
-                title: 'О нас',
-                link: '/some-address/change-me',
-                style: '',
-              },
-              {
-                title: 'Новости',
-                link: '/some-address/change-me',
-                style: '',
-              },
-              {
-                title: 'Служба поддержки',
-                link: '/some-address/change-me',
-                style: '',
-              },
-              {
-                title: 'Услуги',
-                link: '/some-address/change-me',
-                style: '',
-              },
-            ], 'vertical')
-          .footer-menu__section
-            .footer-menu__section__title О нас
-            +navigation([
-              {
-                title: 'О сервисе',
-                link: '/some-address/change-me',
-                style: '',
-              },
-              {
-                title: 'Наша команда',
-                link: '/some-address/change-me',
-                style: '',
-              },
-              {
-                title: 'Вакансии',
-                link: '/some-address/change-me',
-                style: '',
-              },
-              {
-                title: 'Инвесторы',
-                link: '/some-address/change-me',
-                style: '',
-              },
-            ], 'vertical')
-          .footer-menu__section
-            .footer-menu__section__title Служба поддержки
-            +navigation([
-              {
-                title: 'Соглашения',
-                link: '/some-address/change-me',
-                style: '',
-              },
-              {
-                title: 'Сообщества',
-                link: '/some-address/change-me',
-                style: '',
-              },
-              {
-                title: 'Связь с нами',
-                link: '/some-address/change-me',
-                style: '',
-              },
-            ], 'vertical')
+mixin footer()
+  footer.standard
+    .container.footer-wrapper
+      .footer-aside
+        +logo('color')
+        .footer-aside__description Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+      .footer-menu
+        .footer-menu__section
+          .footer-menu__section__title Навигация
+          +navigation([
+            {
+              title: 'О нас',
+              link: '/some-address/change-me',
+              style: '',
+            },
+            {
+              title: 'Новости',
+              link: '/some-address/change-me',
+              style: '',
+            },
+            {
+              title: 'Служба поддержки',
+              link: '/some-address/change-me',
+              style: '',
+            },
+            {
+              title: 'Услуги',
+              link: '/some-address/change-me',
+              style: '',
+            },
+          ], 'vertical')
+        .footer-menu__section
+          .footer-menu__section__title О нас
+          +navigation([
+            {
+              title: 'О сервисе',
+              link: '/some-address/change-me',
+              style: '',
+            },
+            {
+              title: 'Наша команда',
+              link: '/some-address/change-me',
+              style: '',
+            },
+            {
+              title: 'Вакансии',
+              link: '/some-address/change-me',
+              style: '',
+            },
+            {
+              title: 'Инвесторы',
+              link: '/some-address/change-me',
+              style: '',
+            },
+          ], 'vertical')
+        .footer-menu__section
+          .footer-menu__section__title Служба поддержки
+          +navigation([
+            {
+              title: 'Соглашения',
+              link: '/some-address/change-me',
+              style: '',
+            },
+            {
+              title: 'Сообщества',
+              link: '/some-address/change-me',
+              style: '',
+            },
+            {
+              title: 'Связь с нами',
+              link: '/some-address/change-me',
+              style: '',
+            },
+          ], 'vertical')
 
-        .footer-subscribe
-          .footer-menu__section__title Подписка
-          .footer-subscribe__description Получайте специальные предложения и новости сервиса
-          .footer-subscribe__input
-            +textField({
-              title: '',
-              style: 'subscribe',
-              type: 'text',
-              name: 'email',
-              placeholder: 'Email',
-              placeholderColor: '--light',
-              ariaLabel: 'email for subscribe'
-            })
-      .container.copyright-bar
-        .copyright-bar__info Copyright © 2018 Toxin отель. Все права зачищены.
-        +social()
-
-  else
-    footer.mobile
-      +logo('color')
-      .copyright-bar__info--mobile Copyright © 2018 Toxin отель. Все права зачищены.
+      .footer-subscribe
+        .footer-menu__section__title Подписка
+        .footer-subscribe__description Получайте специальные предложения и новости сервиса
+        .footer-subscribe__input
+          +textField({
+            title: '',
+            style: 'subscribe',
+            type: 'text',
+            name: 'email',
+            placeholder: 'Email',
+            placeholderColor: '--light',
+            ariaLabel: 'email for subscribe'
+          })
+    .container.copyright-bar
+      .copyright-bar__info Copyright © 2018 Toxin отель. Все права зачищены.
       +social()
+
+  footer.container.mobile
+    +logo('color')
+    .copyright-bar__info--mobile Copyright © 2018 Toxin отель. Все права зачищены.
+    +social()

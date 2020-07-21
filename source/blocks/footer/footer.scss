@@ -4,32 +4,40 @@
 footer.standard {
   background-color: #ffffff;
   box-shadow: 0px 10px 20px $lightest-color;
+
+  @media (max-width: $media-mid) {
+    display: none;
+  }
 }
 
 footer.mobile {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
-  width: 768px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 140px;
   padding: 120px 0 116px 0;
   background-color: #ffffff;
   box-shadow: 0px 10px 20px $lightest-color;
+
+  @media (max-width: $media-mid) {
+    display: flex;
+  }
 }
 
 .footer-wrapper {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding-top: 100px;
-  padding-bottom: 83px;
+  padding-top: 11.11vh;
+  padding-bottom: 9.22vh;
 }
 
 .footer-aside {
   max-width: 260px;
-  margin-right: 40px;
+  margin-right: 2.86rem;
 
   &__description {
     @include widthMax; // уменьшает шрифт конкретного текста до 12рх
@@ -41,12 +49,12 @@ footer.mobile {
   display: flex;
 
   &__section {
-    width: 160px;
-    margin-right: 40px;
+    width: 11.43rem;
+    margin-right: 2.86rem;
 
     &__title {
       margin-top: 4px;
-      margin-bottom: 18px;
+      margin-bottom: 1.29rem;
       @include head3;
     }
   }
@@ -56,7 +64,7 @@ footer.mobile {
   max-width: 260px;
 
   &__input {
-    margin-top: 23px;
+    margin-top: 1.64rem;
   }
 
   &__description {
@@ -67,8 +75,8 @@ footer.mobile {
 .copyright-bar {
   display: flex;
   justify-content: space-between;
-  padding-top: 23px;
-  padding-bottom: 19px;
+  padding-top: 1.64rem;
+  padding-bottom: 1.36rem;
 }
 
 .container.copyright-bar {

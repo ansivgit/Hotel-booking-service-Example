@@ -1,6 +1,11 @@
 .menu__layout {
   &--horizontal {
     display: flex;
+
+    @media (max-width: $media-mid) {
+      flex-direction: column;
+      display: none;
+    }
   }
 
   &--vertical.submenu {
@@ -70,5 +75,57 @@
     background: inherit;
     cursor: pointer;
     outline: none;
+  }
+}
+
+// menu mobile (burger)
+.menu-mobile {
+  margin-right: 2.5rem;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  @media (min-width: $media-mid) {
+    //display: none;
+  }
+
+  &__decorate,
+  &__decorate::before,
+  &__decorate::after {
+    display: block;
+    width: 40px;
+    height: 6px;
+    margin: 7px 0;
+    border-radius: 3px;
+    background: $primary-gradient;
+  }
+
+  &__decorate {
+    position: relative;
+    opacity: 0.8;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 6px;
+    }
+  }
+
+  &--active > .menu-mobile__decorate {
+    transform: rotate(45deg);
+
+    &::before {
+      transform: rotate(90deg) translate(8px, 14px);
+    }
+    &::after {
+      display: none;
+      //transform: rotate(-45deg) translate(4px, -9px);
+    }
   }
 }
