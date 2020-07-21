@@ -1,5 +1,6 @@
 @import '../../blocks/navigation/navigation.scss';
 @import '../../blocks/button/button.scss';
+//@import '../../blocks/menu-mobile/menu-mobile.scss';
 
 header.standard {
   background-color: #ffffff;
@@ -8,6 +9,7 @@ header.standard {
 
 .header__wrapper {
   display: flex;
+  min-height: 60px;
   align-items: center;
   justify-content: space-between;
 }
@@ -18,7 +20,8 @@ header.standard {
 }
 
 nav.main-nav {
-  margin-right: 12px;
+  display: flex;
+  margin-right: 0.86rem;
 }
 
 .header-button {
@@ -26,12 +29,12 @@ nav.main-nav {
   height: 34px;
 
   &--signIn {
-    margin-right: 20px;
+    margin-right: 1.43rem;
   }
 }
 
 .header__userName {
-  padding-left: 20px;
+  padding-left: 1.43rem;
   border-left: $border-light;
   text-decoration: none;
   color: $middle-color;
