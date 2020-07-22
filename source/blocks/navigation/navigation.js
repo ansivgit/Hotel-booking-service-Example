@@ -1,4 +1,7 @@
 const mainNav = document.querySelector('.main-nav');
+const btnMenuMobile = mainNav.querySelector('.menu-mobile');
+const menuLayout = mainNav.querySelector('.menu__layout--horizontal');
+
 let submenu = null;
 
 const submenuOpen = ((event) => {
@@ -8,19 +11,21 @@ const submenuOpen = ((event) => {
     submenu = menuItem.querySelector('.submenu');
 
     submenu.classList.remove('submenu--close');
+
+    submenu.addEventListener('mouseleave', () => submenu.classList.add('submenu--close'));
+    menuItem.addEventListener('click', () => submenu.classList.toggle('submenu--close'));
   }
 });
 
-const submenuClose = (() => {
-  submenu.classList.add('submenu--close');
+const menuMobileOpenClose = (() => {
+  btnMenuMobile.classList.toggle('menu-mobile--active');
+
+  if (menuLayout.style.display === 'flex') {
+    menuLayout.style.display = 'none';
+  } else {
+    menuLayout.style.display = 'flex';
+  }
 });
 
 mainNav.addEventListener('mouseover', submenuOpen);
-mainNav.addEventListener('mouseleave', submenuClose);
-
-/* на завтра:
-ищем элемент button.menu - mobile
-и по клику на него добавляем ему стиль
-.menu-mobile--active
-а также добавляем видимость меню мобильному
-*/
+btnMenuMobile.addEventListener('click', menuMobileOpenClose);

@@ -5,6 +5,13 @@
     @media (max-width: $media-mid) {
       flex-direction: column;
       display: none;
+      position: absolute;
+      top: 60px;
+      z-index: 10;
+      width: 220px;
+      box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+      border-radius: 0 0 $border-radius $border-radius;
+      background-color: #ffffff;
     }
   }
 
@@ -13,6 +20,7 @@
     top: 75%;
     z-index: 10;
     min-width: 200px;
+    margin-top: 10px;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
     &--close {
@@ -31,6 +39,16 @@
     position: relative;
     margin: 0 10px 0 10px;
     padding: 22px 0 22px 0;
+
+    &:hover,
+    &:active {
+      color: $primary-color;
+    }
+
+    @media (max-width: $media-mid) {
+      padding: 12px 0 12px 0;
+      border-top: $border-base;
+    }
   }
 
   &--vertical {
@@ -56,11 +74,6 @@
   &__link {
     text-decoration: none;
     color: inherit;
-
-    &--different {
-      font-weight: bold;
-      color: $primary-color;
-    }
   }
 
   &__btn {
@@ -81,13 +94,15 @@
 // menu mobile (burger)
 .menu-mobile {
   margin-right: 2.5rem;
+  height: 40px;
   padding: 0;
   border: none;
   background-color: transparent;
   cursor: pointer;
+  outline: none;
 
   @media (min-width: $media-mid) {
-    //display: none;
+    display: none;
   }
 
   &__decorate,
@@ -99,6 +114,7 @@
     margin: 7px 0;
     border-radius: 3px;
     background: $primary-gradient;
+    transition: all 0.3s;
   }
 
   &__decorate {
@@ -121,7 +137,7 @@
     transform: rotate(45deg);
 
     &::before {
-      transform: rotate(90deg) translate(8px, 14px);
+      transform: rotate(90deg) translate(13px, 0px);
     }
     &::after {
       display: none;
