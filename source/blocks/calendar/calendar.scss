@@ -3,14 +3,13 @@
 .calendar-container {
   display: flex;
   justify-content: space-between;
-  width: 320px;
+  width: 100%;
 }
 
 .inputs-wrapper--smaller {
   display: grid;
-  //margin: auto;
   margin-bottom: 21px;
   grid-template-columns: 46.875% 46.875%;
-  gap: 20px;
+  gap: 6.25%;
   width: 100%;
 }

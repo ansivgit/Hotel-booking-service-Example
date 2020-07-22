@@ -12,7 +12,7 @@
 }
 
 html {
-  @media (max-width: $media-mid) {
+  @media (max-width: $media-midW) {
     font-size: 12px;
   }
 }
@@ -24,6 +24,7 @@ body {
 }
 
 .landing {
+  height: calc(100vh - 70px);
   animation-name: backgroundSlide;
   animation-duration: 20s;
   animation-iteration-count: infinite;
@@ -38,6 +39,17 @@ body {
     min-height: 100%;
     padding-top: 70px;
     padding-bottom: 21px;
+
+    @media (max-width: $media-sMinW) {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+
+  &__card {
+    @media (max-width: $media-minW) {
+      margin: 0 auto 0 auto;
+    }
   }
 
   &__brief {
@@ -45,7 +57,7 @@ body {
     align-self: flex-end;
     text-align: right;
 
-    @media (max-width: $media-min) {
+    @media (max-width: $media-minW) {
       display: none;
     }
   }

@@ -6,21 +6,40 @@ header.standard {
   box-shadow: 0px 10px 20px $lightest-color;
 }
 
+.header__logo {
+  @media (max-width: $media-sMinW) {
+    display: none;
+  }
+}
+
 .header__wrapper {
   display: flex;
   min-height: 60px;
   align-items: center;
   justify-content: space-between;
+
+  /*@media (max-width: $media-sMinW) {
+    align-self: end;
+  }*/
 }
 
 .menu-container {
   display: flex;
   align-items: center;
+
+  @media (max-width: $media-sMinW) {
+    width: 100%;
+    justify-content: flex-end;
+  }
 }
 
 nav.main-nav {
   display: flex;
   margin-right: 0.86rem;
+
+  @media (max-width: $media-sMinW) {
+    margin-right: auto;
+  }
 }
 
 .header-button {

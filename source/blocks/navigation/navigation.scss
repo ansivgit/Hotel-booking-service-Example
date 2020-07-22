@@ -2,7 +2,7 @@
   &--horizontal {
     display: flex;
 
-    @media (max-width: $media-mid) {
+    @media (max-width: $media-midW) {
       flex-direction: column;
       display: none;
       position: absolute;
@@ -45,7 +45,7 @@
       color: $primary-color;
     }
 
-    @media (max-width: $media-mid) {
+    @media (max-width: $media-midW) {
       padding: 12px 0 12px 0;
       border-top: $border-base;
     }
@@ -101,7 +101,7 @@
   cursor: pointer;
   outline: none;
 
-  @media (min-width: $media-mid) {
+  @media (min-width: $media-midW) {
     display: none;
   }
 
@@ -141,7 +141,6 @@
     }
     &::after {
       display: none;
-      //transform: rotate(-45deg) translate(4px, -9px);
     }
   }
 }

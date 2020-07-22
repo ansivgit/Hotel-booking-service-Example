@@ -7,6 +7,13 @@
 
 .card-wrapper {
   @include cardWrapper;
+
+  @media (max-width: $media-uMinW) {
+    width: 100vw;
+    padding: 20px 5vw 10px 5vw;
+    border: $border-light;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .card__title {
