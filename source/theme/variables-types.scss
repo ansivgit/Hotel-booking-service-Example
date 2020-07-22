@@ -39,9 +39,12 @@ $font-h3: 12rem;
 
 
 //* брейкпоинты
-$media-max: 1224px; // уменьшается только второстепенный шрифт и высота строки в футере
-$media-mid: 1024px; // уменьшается весь шрифт, мобильное меню
-$media-min: 768px; //
+$media-maxW: 1223px; // уменьшается только второстепенный шрифт и высота строки в футере
+$media-midW: 1023px; // уменьшается весь шрифт, мобильное меню и футер
+$media-minW: 760px; // убираем бриф справа, центрируем карточку
+$media-sMinW: 560px; // убираем логотип
+$media-uMinW: 410px; // под узкие мобильные экраны - сужаем карточку
+
 
 
 @mixin head1 {
@@ -132,12 +135,19 @@ body {
   &:not(:only-child) {
     margin-bottom: 40px;
   }
+
+  @media (max-width: $media-uMinW) {
+    width: 320px;
+    padding: 20px 5vw 10px 5vw;
+    border: $border-light;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
 }
 
 //* миксины для медиазапросов
 
 @mixin widthMax {
-  @media (max-width: $media-max) {
+  @media (max-width: $media-maxW) {
     font-size: #{$font-h3/$font-body}rem;
   }
 }
