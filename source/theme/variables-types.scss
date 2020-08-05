@@ -154,12 +154,6 @@ body {
 
 //! общие стили макета
 
-html {
-  @media (max-width: $media-midW) {
-    font-size: 12px;
-  }
-}
-
 //* отступы для логотипа в ui-kit
 .logo-block {
   margin: 30px 0 0 30px;
