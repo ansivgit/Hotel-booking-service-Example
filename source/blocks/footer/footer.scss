@@ -25,6 +25,11 @@ footer.mobile {
   @media (max-width: $media-midW) {
     display: flex;
   }
+
+  @media (max-width: $media-uMinW) {
+    display: flex;
+    box-shadow: 0px 0px 5vw $lightest-color;
+  }
 }
 
 .footer-wrapper {

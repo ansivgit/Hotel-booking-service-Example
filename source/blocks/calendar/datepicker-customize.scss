@@ -190,7 +190,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 320px; }
+  width: min(320px,100%); }
   @media print {
     .datepickers-container {
       display: none; } }

@@ -20,11 +20,10 @@ html {
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
 }
 
 .landing {
-  height: calc(100vh - 70px);
+  height: clamp(480px,calc(100vh - 70px),830px);
   animation-name: backgroundSlide;
   animation-duration: 20s;
   animation-iteration-count: infinite;
@@ -32,6 +31,10 @@ body {
   background-clip: padding-box;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media (max-width: $media-midW) {
+    height: max(480px,calc(100vh - 440px));
+  }
 
   &__wrapper {
     display: flex;
