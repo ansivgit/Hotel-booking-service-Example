@@ -1,15 +1,18 @@
+@import '../../blocks/checkbox/checkbox.scss';
+
 .checkbox-list {
   position: relative;
   width: 257px;
 
   &__title {
+    margin-bottom: 16px;
 
     &--expandable {
       cursor: pointer;
 
       &::after {
         @include materialIcons;
-        content: "\e5cf";
+        content: '\e5cf';
         display: inline-block;
         position: absolute;
         top: 0px;
