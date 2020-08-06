@@ -38,6 +38,7 @@ module.exports = {
     'cards': ['@babel/polyfill', './pages/cards/cards.js'],
     'headers-footers': ['@babel/polyfill', './pages/headers-footers/headers-footers.js'],
     'landing': ['@babel/polyfill', './pages/landing/landing.js'],
+    'search-room': ['@babel/polyfill', './pages/search-room/search-room.js'],
   },
   output: {
     filename: filename(ext = 'js'),
@@ -91,9 +92,17 @@ module.exports = {
       },
     }),
     new HTMLWebpackPlugin({
-      // filename: 'landing.html',
+      filename: 'landing.html',
       template: './pages/landing/landing.pug',
       chunks: ['landing'],
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      // filename: 'search-room.html',
+      template: './pages/search-room/search-room.pug',
+      chunks: ['search-room'],
       minify: {
         collapseWhitespace: isProd,
       },

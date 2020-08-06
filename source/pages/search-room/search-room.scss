@@ -1,0 +1,41 @@
+@import '../../theme/global.scss';
+
+@import '../../blocks/header/header.scss';
+@import '../../blocks/footer/footer.scss';
+
+@import '../../blocks/calendar/calendar.scss';
+@import '../../blocks/dropdown/dropdown.scss';
+@import '../../blocks/range-slider/range-slider.scss';
+@import '../../blocks/checkbox-list/checkbox-list.scss';
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.container.search-room {
+  display: flex;
+  align-items: flex-start;
+}
+
+.room-filter {
+  flex: 0 1 auto;
+  margin-top: 30px;
+  margin-right: 60px;
+  max-width: 266px;
+
+  &__item {
+    margin-bottom: 30px;
+  }
+}
+
+.room-selection {
+  display: grid;
+  flex: 1 2 auto;
+  margin-top: 30px;
+  max-width: 1190px;
+
+  &__title {
+    @include head1;
+  }
+}

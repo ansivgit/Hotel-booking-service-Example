@@ -1,0 +1,62 @@
+extends ../base/template-page.pug
+
+include ../../blocks/calendar/calendar.pug
+include ../../blocks/dropdown/dropdown.pug
+include ../../blocks/range-slider/range-slider.pug
+include ../../blocks/checkbox-list/checkbox-list-date.pug
+include ../../blocks/checkbox-list/checkbox-list.pug
+
+block title
+  title TOXIN
+
+block scripts
+
+block main
+  .container.search-room
+    aside.room-filter
+      .room-filter__item
+        +calendar("datesRange")
+
+      .room-filter__item
+        +dropdown({
+        title: "Dropdown",
+        style: "dropdown",
+        type: "text",
+        name: "guests",
+        value: "Сколько гостей",
+        ariaLabel: "quantity guests"
+      },
+      [
+        {title: "Взрослые", name: "adults", valueDefault: 0},
+        {title: "Дети", name: "children", valueDefault: 0},
+        {title: "Младенцы", name: "babies", valueDefault: 0},
+      ])
+
+      .room-filter__item
+        +range-slider(5000, 10000)
+
+      .room-filter__item
+        +checkboxList("Checkbox Buttons", options = checkboxListPermission)
+
+      .room-filter__item
+        +checkboxList("Rich checkbox buttons", options = checkboxListRich)
+
+      .room-filter__item
+        +dropdown({
+        title: "Dropdown",
+        description: "",
+        name: "rooms",
+        value: "2 спальни, 2 кровати...",
+        ariaLabel: "room convenience",
+      },
+      [
+        {title: "Спальни", name: "bedrooms", valueDefault: 0},
+        {title: "Кровати", name: "beds", valueDefault: 0},
+        {title: "Ванные комнаты", name: "bathrooms", valueDefault: 0},
+      ], buttons = false)
+
+      .room-filter__item
+        +checkboxList("Expandable checkbox list", options = checkboxListComfort, isExpandable = true, isExpanded = false)
+
+    section.room-selection
+      .room-selection__title Номера, которые мы для вас подобрали
