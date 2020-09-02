@@ -1,111 +1,109 @@
-{
-  "filtered_rooms_date": [
-    {
-      "roomNumber": 888,
-      "roomPhoto": ["room01.png", "room02.png"],
-      "roomType": "Люкс",
-      "costPerDay": 9990,
-      "currency": "₽",
-      "vote": 5,
-      "votesNumber": 145
-    },
-    {
-      "roomNumber": 840,
-      "roomPhoto": ["room02.png","room01.png"],
-      "roomType": "",
-      "costPerDay": 9900,
-      "currency": "₽",
-      "vote": 4,
-      "votesNumber": 65
-    },
-    {
-      "roomNumber": 980,
-      "roomPhoto": ["room03.png"],
-      "roomType": "Люкс",
-      "costPerDay": 5800,
-      "currency": "₽",
-      "vote": 3,
-      "votesNumber": 56
-    },
-    {
-      "roomNumber": 856,
-      "roomPhoto": ["room04.png"],
-      "roomType": "",
-      "costPerDay": 7300,
-      "currency": "₽",
-      "vote": 5,
-      "votesNumber": 19
-    },
-    {
-      "roomNumber": 740,
-      "roomPhoto": ["room05.png"],
-      "roomType": "",
-      "costPerDay": 6000,
-      "currency": "₽",
-      "vote": 4,
-      "votesNumber": 44
-    },
-    {
-      "roomNumber": 982,
-      "roomPhoto": ["room06.png"],
-      "roomType": "",
-      "costPerDay": 5800,
-      "currency": "₽",
-      "vote": 3,
-      "votesNumber": 56
-    },
-    {
-      "roomNumber": 678,
-      "roomPhoto": ["room07.png"],
-      "roomType": "",
-      "costPerDay": 5500,
-      "currency": "₽",
-      "vote": 5,
-      "votesNumber": 45
-    },
-    {
-      "roomNumber": 450,
-      "roomPhoto": ["room08.png"],
-      "roomType": "",
-      "costPerDay": 5300,
-      "currency": "₽",
-      "vote": 4,
-      "votesNumber": 39
-    },
-    {
-      "roomNumber": 350,
-      "roomPhoto": ["room09.png"],
-      "roomType": "",
-      "costPerDay": 5000,
-      "currency": "₽",
-      "vote": 3,
-      "votesNumber": 77
-    },{
-      "roomNumber": 666,
-      "roomPhoto": ["room10.png"],
-      "roomType": "",
-      "costPerDay": 5000,
-      "currency": "₽",
-      "vote": 5,
-      "votesNumber": 25
-    },
-    {
-      "roomNumber": 444,
-      "roomPhoto": ["room11.png"],
-      "roomType": "",
-      "costPerDay": 5000,
-      "currency": "₽",
-      "vote": 3,
-      "votesNumber": 15
-    },
-    {
-      "roomNumber": 352,
-      "roomPhoto": ["room12.png"],
-      "roomType": "",
-      "costPerDay": 5000,
-      "currency": "₽",
-      "vote": 3,
-      "votesNumber": 55
-    }
-  ]
-}
+[
+  {
+    "roomNumber": 888,
+    "roomPhoto": ["room01.png", "room02.png"],
+    "roomType": "Люкс",
+    "costPerDay": 9990,
+    "currency": "₽",
+    "vote": 5,
+    "votesNumber": 145
+  },
+  {
+    "roomNumber": 840,
+    "roomPhoto": ["room02.png","room01.png"],
+    "roomType": "",
+    "costPerDay": 9900,
+    "currency": "₽",
+    "vote": 4,
+    "votesNumber": 65
+  },
+  {
+    "roomNumber": 980,
+    "roomPhoto": ["room03.png"],
+    "roomType": "Люкс",
+    "costPerDay": 5800,
+    "currency": "₽",
+    "vote": 3,
+    "votesNumber": 56
+  },
+  {
+    "roomNumber": 856,
+    "roomPhoto": ["room04.png"],
+    "roomType": "",
+    "costPerDay": 7300,
+    "currency": "₽",
+    "vote": 5,
+    "votesNumber": 19
+  },
+  {
+    "roomNumber": 740,
+    "roomPhoto": ["room05.png"],
+    "roomType": "",
+    "costPerDay": 6000,
+    "currency": "₽",
+    "vote": 4,
+    "votesNumber": 44
+  },
+  {
+    "roomNumber": 982,
+    "roomPhoto": ["room06.png"],
+    "roomType": "",
+    "costPerDay": 5800,
+    "currency": "₽",
+    "vote": 3,
+    "votesNumber": 56
+  },
+  {
+    "roomNumber": 678,
+    "roomPhoto": ["room07.png"],
+    "roomType": "",
+    "costPerDay": 5500,
+    "currency": "₽",
+    "vote": 5,
+    "votesNumber": 45
+  },
+  {
+    "roomNumber": 450,
+    "roomPhoto": ["room08.png"],
+    "roomType": "",
+    "costPerDay": 5300,
+    "currency": "₽",
+    "vote": 4,
+    "votesNumber": 39
+  },
+  {
+    "roomNumber": 350,
+    "roomPhoto": ["room09.png"],
+    "roomType": "",
+    "costPerDay": 5000,
+    "currency": "₽",
+    "vote": 3,
+    "votesNumber": 77
+  },{
+    "roomNumber": 666,
+    "roomPhoto": ["room10.png"],
+    "roomType": "",
+    "costPerDay": 5000,
+    "currency": "₽",
+    "vote": 5,
+    "votesNumber": 25
+  },
+  {
+    "roomNumber": 444,
+    "roomPhoto": ["room11.png"],
+    "roomType": "",
+    "costPerDay": 5000,
+    "currency": "₽",
+    "vote": 3,
+    "votesNumber": 15
+  },
+  {
+    "roomNumber": 352,
+    "roomPhoto": ["room12.png"],
+    "roomType": "",
+    "costPerDay": 5000,
+    "currency": "₽",
+    "vote": 3,
+    "votesNumber": 55
+  }
+]
