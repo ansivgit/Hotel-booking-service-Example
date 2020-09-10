@@ -1,7 +1,7 @@
 include ../../blocks/ratebutton/ratebutton.pug
 
-mixin cardRoomSearch(roomParams = [{}])
-  each item in roomParams
+mixin cardRoomSearch(roomParams = {})
+  each item in roomParams.roomSearchResult
     - const {roomNumber, roomPhoto=[], roomType, costPerDay, currency= '₽', vote, votesNumber,} = item
 
     mixin numFormatted(number)
@@ -12,7 +12,7 @@ mixin cardRoomSearch(roomParams = [{}])
         - let baseClass = "card-room__img img--base"
         if (index == 0)
           - baseClass = `${baseClass}--active`
-        div(class= `${baseClass}`, style=`background-image: url(${require('../../blocks/cardRoomSearch/img/' + item)}`)
+          div(class= `${baseClass}`, style=`background-image: url(${require('../../blocks/cardRoomSearch/img/' + item)})`)
           .card-room__btn.card-room__btn--prev.material-icons expand_more
           .card-room__btn.card-room__btn--next.material-icons expand_more
       .card-room__dotes

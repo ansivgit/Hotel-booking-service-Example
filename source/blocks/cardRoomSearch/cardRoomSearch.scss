@@ -17,6 +17,7 @@
   box-shadow: 0px 10px 20px $lightest-color;
   border-radius: $border-radius;
   background: #ffffff;
+  list-style: none;
 
   &:not(:only-child) {
     margin-top: 40px;
@@ -34,7 +35,7 @@
     background-position: center center;
     background-size: cover;
     border-radius: $border-radius $border-radius 0 0;
-    background-image: var(--background);
+    //background-image: var(--background);
   }
 
   &__img.img--base {
@@ -42,7 +43,7 @@
   }
 
   &__img:hover {
-    background-image: var(--hoverGradient), var(--background);
+    //background-image: var(--hoverGradient), var(--background);
   }
 
   &__img:hover .card-room__btn {
