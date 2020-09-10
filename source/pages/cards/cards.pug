@@ -30,23 +30,26 @@ block main
 
     .cards-container
       div(class= "datepicker-here start")
-      +cardRoomSearch([
-        {
-          roomNumber: 888,
-          roomPhoto: ["room01.png", "room02.png"],
-          roomType: 'Люкс',
-          costPerDay: 9990,
-          currency: '₽',
-          vote: 5,
-          votesNumber: 145,
-        },
-        {
-          roomNumber: 840,
-          roomPhoto: ["room02.png","room01.png"],
-          roomType: '',
-          costPerDay: 9900,
-          currency: '₽',
-          vote: 4,
-          votesNumber: 65,
-        },
-      ])
+      +cardRoomSearch({
+        imagesPath: '../source/blocks/cardRoomSearch/img/',
+        roomSearchResult: [
+          {
+            roomNumber: 888,
+            roomPhoto: ["room01.png", "room02.png"],
+            roomType: 'Люкс',
+            costPerDay: 9990,
+            currency: '₽',
+            vote: 5,
+            votesNumber: 145,
+          },
+          {
+            roomNumber: 840,
+            roomPhoto: ["room02.png","room01.png"],
+            roomType: '',
+            costPerDay: 9900,
+            currency: '₽',
+            vote: 4,
+            votesNumber: 65,
+          },
+        ]
+      })
