@@ -108,12 +108,14 @@ module.exports = {
       },
     }),
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, 'source/theme/img/favicon.png'), // копируем в напку сборки фавиконку
-        to: path.resolve(__dirname, 'dist'),
-      },
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'source/theme/img/favicon.png'), // копируем в напку сборки фавиконку
+          to: path.resolve(__dirname, 'dist'),
+        },
+      ]
+    }),
     new MiniCssExtractPlugin({
       filename: filename(ext = 'css'),
     }),
