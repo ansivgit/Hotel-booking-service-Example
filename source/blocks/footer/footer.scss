@@ -1,34 +1,36 @@
 @import '../../blocks/input/input.scss';
 @import '../../blocks/social/social.scss';
 
-footer.standard {
-  background-color: #ffffff;
+footer {
   box-shadow: 0px 10px 20px $lightest-color;
+  background-color: #ffffff;
+
+  &.standard {
+    border-top: $border-base;
+  }
 
   @media (max-width: $media-midW) {
     display: none;
   }
-}
 
-footer.mobile {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  //width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 140px;
-  padding: 120px 0 116px 0;
-  background-color: #ffffff;
-  box-shadow: 0px 10px 20px $lightest-color;
+  &.mobile {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    //width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 140px;
+    padding: 120px 0 116px 0;
 
-  @media (max-width: $media-midW) {
-    display: flex;
-  }
+    @media (max-width: $media-midW) {
+      display: flex;
+    }
 
-  @media (max-width: $media-uMinW) {
-    display: flex;
-    box-shadow: 0px 0px 5vw $lightest-color;
+    @media (max-width: $media-uMinW) {
+      display: flex;
+      box-shadow: 0px 0px 5vw $lightest-color;
+    }
   }
 }
 
