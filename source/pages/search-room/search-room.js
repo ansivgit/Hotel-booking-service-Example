@@ -9,7 +9,8 @@ import '../../blocks/checkbox-list/checkbox-list';
 
 import './search-room.scss';
 
-const searchResult = require('./room-base.json');
+/*
+const roomBase = require('./room-base.json');
 
 const roomSelectionTitle = document.querySelector('.room-selection__title');
 
@@ -26,13 +27,15 @@ const renderCard = (arrResponse) => {
   arrResponse.forEach((item) => {
     const {
       roomNumber,
-      roomPhoto: [],
+      roomPhoto,
       roomType,
       costPerDay,
       currency,
       vote,
       votesNumber,
     } = item;
+
+    const costFormatted = costPerDay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '&#160;') + currency;
 
     const card = document.createElement('li');
     card.className = 'card-room';
@@ -43,25 +46,27 @@ const renderCard = (arrResponse) => {
       </div>
       <div class = "card-room__dotes"></div>
       <div class = "card-room__content">
-        .card-room__info
-          .card-room__roomID
-            span.card-room__roomNumber= roomNumber
-            span.card-room__roomType= roomType
-          .card-room__costPerDay
-            span.card-room__cost
-              +numFormatted(costPerDay)
-            span.card-room__costComment= ' в сутки'
-        .card-room__vote
+        <div class = "card-room__info">
+          <div class = "card-room__roomID">
+            <span class = "card-room__roomNumber">${roomNumber}</span>
+            <span class = "card-room__roomType">${roomType}</span>
+          </div>
+          <div class = "card-room__costPerDay">
+            <span class = "card-room__cost">${costFormatted}</span>
+            <span class = "card-room__costComment"> в сутки</span>
+          </div>
+        </div>
+        <div class = "card-room__vote">
           +rating(vote)
-          .card-room__votes
+          <div class = "card-room__votes">
             span.card-room__votesNumber= votesNumber
             span.card-room__votesComment= ' Отзывов'
       </div>
     `;
 
     searchResult.append(card);
-
   });
 };
 
-renderCard(searchResult);
+renderCard(roomBase);
+*/

@@ -5,6 +5,8 @@ include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/range-slider/range-slider.pug
 include ../../blocks/checkbox-list/checkbox-list-date.pug
 include ../../blocks/checkbox-list/checkbox-list.pug
+include ../../blocks/cardRoomSearch/cardRoomSearch.pug
+include ../../blocks/pagination/pagination.pug
 
 block title
   title TOXIN
@@ -12,53 +14,57 @@ block title
 block scripts
 
 block main
+  - const roomData = require('./room-data.json');
+
   .container.search-room
     aside.room-filter
       .room-filter__item
-        +calendar("datesRange")
+        +calendar('datesRange')
 
       .room-filter__item
         +dropdown({
-        title: "Dropdown",
-        style: "dropdown",
-        type: "text",
-        name: "guests",
-        value: "Сколько гостей",
-        ariaLabel: "quantity guests"
+        title: 'Dropdown',
+        style: 'dropdown',
+        type: 'text',
+        name: 'guests',
+        value: 'Сколько гостей',
+        ariaLabel: 'quantity guests'
       },
       [
-        {title: "Взрослые", name: "adults", valueDefault: 0},
-        {title: "Дети", name: "children", valueDefault: 0},
-        {title: "Младенцы", name: "babies", valueDefault: 0},
+        {title: 'Взрослые', name: 'adults', valueDefault: 0},
+        {title: 'Дети', name: 'children', valueDefault: 0},
+        {title: 'Младенцы', name: 'babies', valueDefault: 0},
       ])
 
       .room-filter__item
         +range-slider(5000, 10000)
+        .slider-comment Стоимость за сутки пребывания в номере
 
       .room-filter__item
-        +checkboxList("Checkbox Buttons", options = checkboxListPermission)
+        +checkboxList('Checkbox Buttons', options = checkboxListPermission)
 
       .room-filter__item
-        +checkboxList("Rich checkbox buttons", options = checkboxListRich)
+        +checkboxList('Доступность', options = checkboxListRich)
 
       .room-filter__item
         +dropdown({
-        title: "Dropdown",
-        description: "",
-        name: "rooms",
-        value: "2 спальни, 2 кровати...",
-        ariaLabel: "room convenience",
+        title: 'Удобства номера',
+        description: '',
+        name: 'rooms',
+        value: '2 спальни, 2 кровати...',
+        ariaLabel: 'room convenience',
       },
       [
-        {title: "Спальни", name: "bedrooms", valueDefault: 0},
-        {title: "Кровати", name: "beds", valueDefault: 0},
-        {title: "Ванные комнаты", name: "bathrooms", valueDefault: 0},
+        {title: 'Спальни', name: 'bedrooms', valueDefault: 0},
+        {title: 'Кровати', name: 'beds', valueDefault: 0},
+        {title: 'Ванные комнаты', name: 'bathrooms', valueDefault: 0},
       ], buttons = false)
 
       .room-filter__item
-        +checkboxList("Expandable checkbox list", options = checkboxListComfort, isExpandable = true, isExpanded = false)
+        +checkboxList('Дополнительные удобства', options = checkboxListComfort, isExpandable = true, isExpanded = false)
 
     section.room-selection
-      .room-selection__title
-      .room-selection__wrapper
-        ul.search-result
+      .room-selection__title Номера, которые мы для вас подобрали
+      ul.room-selection__wrapper
+        +cardRoomSearch(roomData)
+      +pagination(1, 15)

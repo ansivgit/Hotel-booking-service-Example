@@ -7,6 +7,8 @@
 @import '../../blocks/dropdown/dropdown.scss';
 @import '../../blocks/range-slider/range-slider.scss';
 @import '../../blocks/checkbox-list/checkbox-list.scss';
+@import '../../blocks/cardRoomSearch/cardRoomSearch.scss';
+@import '../../blocks/pagination/pagination.scss';
 
 body {
   display: grid;
@@ -26,16 +28,39 @@ body {
 
   &__item {
     margin-bottom: 30px;
+
+    &:first-child {
+      margin-bottom: 20px;
+    }
   }
+}
+
+.slider-comment {
+  margin-bottom: -6px;
+  font-size: #{$font-h3/$font-body}rem;
+  color: $middle-color;
 }
 
 .room-selection {
   display: grid;
   flex: 1 2 auto;
+  width: 100%;
   margin-top: 30px;
-  max-width: 1190px;
+  margin-bottom: 71px;
 
   &__title {
     @include head1;
+    margin: 2px 0 16px 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 22px;
+
+    & >.card-room {
+      margin: 3px 0 19px 0;
+    }
   }
 }
